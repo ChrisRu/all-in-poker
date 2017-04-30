@@ -9,11 +9,15 @@ namespace AllInPoker
         public List<string> ActiveTournaments { get; set; }
         public List<string> UpcomingTournaments { get; set; }
 
+        public readonly int buttonMargin;
+
         public Form1()
         {
-            InitializeComponent();
+            this.buttonMargin = 10;
+            this.InitializeComponent();
 
-            this.ActiveTournaments = new List<string> {
+            this.ActiveTournaments = new List<string>
+            {
                 "Pijnacker",
                 "Zoetermeer",
                 "Rijswijk",
@@ -34,8 +38,8 @@ namespace AllInPoker
                     LeftText = this.ActiveTournaments[i],
                     RightText = "16"
                 };
-                button.Location = new Point(i * (button.Width + 10) + 10, 80);
-                Controls.Add(button);
+                button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
+                this.activeTournamentsPanel.Controls?.Add(button);
             }
 
             for (int i = 0; i < this.UpcomingTournaments.Count; i++)
@@ -45,8 +49,8 @@ namespace AllInPoker
                     LeftText = this.UpcomingTournaments[i],
                     RightText = "16"
                 };
-                button.Location = new Point(i * (button.Width + 10) + 10, 220);
-                Controls.Add(button);
+                button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
+                this.upcomingTournamentsPanel.Controls?.Add(button);
             }
         }
     }

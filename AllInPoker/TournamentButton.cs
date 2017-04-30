@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AllInPoker
@@ -7,7 +8,7 @@ namespace AllInPoker
     {
         public override string Text
         {
-            get { return ""; }
+            get { return string.Empty; }
             set { base.Text = value; }
         }
 
@@ -16,30 +17,33 @@ namespace AllInPoker
 
         public TournamentButton()
         {
-            Width = 140;
-            Height = 70;
-            BackColor = Color.White;
-            Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
-            UseVisualStyleBackColor = false;
-            TextImageRelation = TextImageRelation.ImageAboveText;
+            this.Width = 140;
+            this.Height = 70;
+            this.FlatStyle = FlatStyle.Flat;
+            this.FlatAppearance.BorderColor = Color.FromArgb(200, 200, 200);
+            this.BackColor = Color.FromArgb(255, 255, 255);
+            this.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+            this.Cursor = Cursors.Hand;
+            this.UseVisualStyleBackColor = false;
+            this.TextImageRelation = TextImageRelation.ImageAboveText;
         }
 
-        protected override void OnPaint(PaintEventArgs pevent)
+        protected override void OnPaint(PaintEventArgs pEvent)
         {
-            base.OnPaint(pevent);
+            base.OnPaint(pEvent);
             Rectangle rect = ClientRectangle;
             rect.Inflate(-5, -5);
             using (StringFormat sf = new StringFormat()
             {
                 Alignment = StringAlignment.Near,
-                LineAlignment = StringAlignment.Far
+                LineAlignment = StringAlignment.Center
             })
             {
                 using (Brush brush = new SolidBrush(ForeColor))
                 {
-                    pevent.Graphics.DrawString(LeftText, Font, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.LeftText, this.Font, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    pevent.Graphics.DrawString(RightText, Font, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.RightText, this.Font, brush, rect, sf);
                 }
             }
         }
