@@ -189,7 +189,7 @@
             this.genderGroupBox.Location = new System.Drawing.Point(139, 77);
             this.genderGroupBox.Name = "genderGroupBox";
             this.genderGroupBox.Size = new System.Drawing.Size(311, 31);
-            this.genderGroupBox.TabIndex = 17;
+            this.genderGroupBox.TabIndex = 0;
             this.genderGroupBox.TabStop = false;
             // 
             // femaleRadioButton
@@ -273,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 468);
+            this.ClientSize = new System.Drawing.Size(459, 472);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.ibanTextBox);
             this.Controls.Add(this.label9);
@@ -294,6 +294,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.genderGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CreateUserView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
