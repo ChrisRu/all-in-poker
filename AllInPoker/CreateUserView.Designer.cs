@@ -300,7 +300,7 @@
             this.Name = "CreateUserView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Maak Toernooi";
+            this.Text = "All In Poker - Maak Speler";
             this.genderGroupBox.ResumeLayout(false);
             this.genderGroupBox.PerformLayout();
             this.ResumeLayout(false);

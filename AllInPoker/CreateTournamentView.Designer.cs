@@ -137,7 +137,7 @@
             this.Name = "CreateTournamentView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Maak Toernooi";
+            this.Text = "All In Poker - Maak Toernooi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

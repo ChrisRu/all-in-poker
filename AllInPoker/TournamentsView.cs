@@ -21,6 +21,7 @@ namespace AllInPoker
         {
             this._buttonMargin = 10;
             this.InitializeComponent();
+
             this.CreateTournamentView = new CreateTournamentView();
             this.CreateUserView = new CreateUserView();
 
@@ -39,35 +40,25 @@ namespace AllInPoker
                 "Gouda"
             };
 
-            for (int i = 0; i < this.ActiveTournaments.Count; i++)
+            foreach (string tournament in this.ActiveTournaments)
             {
-                this.activeTournamentsPanel.Controls?.Add(this.GetTournamentButton(i, this.ActiveTournaments[i], 16, "01/05/17"));
+                this.activeTournamentsPanel.Controls?.Add(new TournamentButton
+                {
+                    Location = tournament,
+                    PlayerCount = 16,
+                    Date = "02/05/17"
+                });
             }
 
-            for (int i = 0; i < this.UpcomingTournaments.Count; i++)
+            foreach (string tournament in this.UpcomingTournaments)
             {
-                this.upcomingTournamentsPanel.Controls?.Add(this.GetTournamentButton(i, this.ActiveTournaments[i], 12, "22/01/18"));
+                this.upcomingTournamentsPanel.Controls?.Add(new TournamentButton
+                {
+                    Location = tournament,
+                    PlayerCount = 12,
+                    Date = "18/11/17"
+                });
             }
-        }
-
-        /// <summary>
-        /// Get New Tournament Button
-        /// </summary>
-        /// <param name="index">Number location in list</param>
-        /// <param name="location">Location of tournament</param>
-        /// <param name="playerCount">Player Count of tournament</param>
-        /// <param name="date">Dat of tournament</param>
-        /// <returns>New Custom TournamentButton</returns>
-        private TournamentButton GetTournamentButton(int index, string location, int playerCount, string date)
-        {
-            var button = new TournamentButton
-            {
-                LocatieText = location,
-                PlayerCountText = playerCount.ToString(),
-                DatumText = date
-            };
-            button.Location = new Point(index * (button.Width + this._buttonMargin), 0);
-            return button;
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace AllInPoker
@@ -12,9 +11,9 @@ namespace AllInPoker
             set { base.Text = value; }
         }
 
-        public string LocatieText { get; set; }
-        public string PlayerCountText { get; set; }
-        public string DatumText { get; set; }
+        public string Location { get; set; }
+        public int PlayerCount { get; set; }
+        public string Date { get; set; }
 
         private Font RegularFont { get; }
         private Font BigFont { get; }
@@ -53,11 +52,11 @@ namespace AllInPoker
                 using (Brush brush = new SolidBrush(ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Center;
-                    pEvent.Graphics.DrawString(this.LocatieText, this.BigFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.Location, this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.DatumText, this.RegularFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.Date, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.PlayerCountText, this.RegularFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.PlayerCount + " spelers", this.RegularFont, brush, rect, sf);
                 }
             }
         }
