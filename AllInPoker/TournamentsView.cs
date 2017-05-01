@@ -12,14 +12,11 @@ namespace AllInPoker
         public CreateTournamentView CreateTournamentView { get; set; }
         public CreateUserView CreateUserView { get; set; }
 
-        private readonly int _buttonMargin;
-
         /// <summary>
         /// Initialize TournamentsView
         /// </summary>
         public TournamentsView()
         {
-            this._buttonMargin = 10;
             this.InitializeComponent();
 
             this.CreateTournamentView = new CreateTournamentView();
