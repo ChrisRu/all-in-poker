@@ -1,6 +1,6 @@
 ﻿namespace AllInPoker
 {
-    partial class Form1
+    partial class TournamentsView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.newTournamentButton = new System.Windows.Forms.Button();
             this.activeTournamentsPanel = new System.Windows.Forms.Panel();
             this.upcomingTournamentsPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
@@ -55,26 +55,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Aankomende Toernooien";
             // 
-            // button1
+            // newTournamentButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(623, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "+ Nieuw Toernooi";
-            this.button1.UseVisualStyleBackColor = false;
+            this.newTournamentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.newTournamentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.newTournamentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newTournamentButton.ForeColor = System.Drawing.Color.White;
+            this.newTournamentButton.Location = new System.Drawing.Point(623, 12);
+            this.newTournamentButton.Name = "newTournamentButton";
+            this.newTournamentButton.Size = new System.Drawing.Size(149, 39);
+            this.newTournamentButton.TabIndex = 2;
+            this.newTournamentButton.Text = "+ Nieuw Toernooi";
+            this.newTournamentButton.UseVisualStyleBackColor = false;
+            this.newTournamentButton.Click += new System.EventHandler(this.newTournamentButton_Click);
             // 
             // activeTournamentsPanel
             // 
             this.activeTournamentsPanel.AutoScroll = true;
             this.activeTournamentsPanel.AutoSize = true;
-            this.activeTournamentsPanel.Location = new System.Drawing.Point(17, 90);
+            this.activeTournamentsPanel.Location = new System.Drawing.Point(17, 82);
             this.activeTournamentsPanel.Name = "activeTournamentsPanel";
             this.activeTournamentsPanel.Size = new System.Drawing.Size(755, 70);
             this.activeTournamentsPanel.TabIndex = 3;
@@ -83,12 +84,12 @@
             // 
             this.upcomingTournamentsPanel.AutoScroll = true;
             this.upcomingTournamentsPanel.AutoSize = true;
-            this.upcomingTournamentsPanel.Location = new System.Drawing.Point(17, 232);
+            this.upcomingTournamentsPanel.Location = new System.Drawing.Point(17, 224);
             this.upcomingTournamentsPanel.Name = "upcomingTournamentsPanel";
             this.upcomingTournamentsPanel.Size = new System.Drawing.Size(755, 70);
             this.upcomingTournamentsPanel.TabIndex = 4;
             // 
-            // Form1
+            // TournamentsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,11 +97,12 @@
             this.ClientSize = new System.Drawing.Size(784, 320);
             this.Controls.Add(this.upcomingTournamentsPanel);
             this.Controls.Add(this.activeTournamentsPanel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.newTournamentButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "TournamentsView";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All In Poker";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,7 +113,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button newTournamentButton;
         private System.Windows.Forms.Panel activeTournamentsPanel;
         private System.Windows.Forms.Panel upcomingTournamentsPanel;
     }

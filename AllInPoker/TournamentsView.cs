@@ -4,17 +4,23 @@ using System.Windows.Forms;
 
 namespace AllInPoker
 {
-    public partial class Form1 : Form
+    public partial class TournamentsView : Form
     {
         public List<string> ActiveTournaments { get; set; }
         public List<string> UpcomingTournaments { get; set; }
 
+        public CreateTournamentView CreateTournamentView { get; set; }
+
         public readonly int buttonMargin;
 
-        public Form1()
+        /// <summary>
+        /// Initialize TournamentsView
+        /// </summary>
+        public TournamentsView()
         {
             this.buttonMargin = 10;
             this.InitializeComponent();
+            this.CreateTournamentView = new CreateTournamentView();
 
             this.ActiveTournaments = new List<string>
             {
@@ -35,8 +41,9 @@ namespace AllInPoker
             {
                 var button = new TournamentButton
                 {
-                    LeftText = this.ActiveTournaments[i],
-                    RightText = "16"
+                    LocatieText = this.ActiveTournaments[i],
+                    PlayerCountText = "16",
+                    DatumText = "01/05/17"
                 };
                 button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
                 this.activeTournamentsPanel.Controls?.Add(button);
@@ -46,12 +53,23 @@ namespace AllInPoker
             {
                 var button = new TournamentButton
                 {
-                    LeftText = this.UpcomingTournaments[i],
-                    RightText = "16"
+                     LocatieText = this.ActiveTournaments[i],
+                     PlayerCountText = "12",
+                     DatumText = "22/01/18"
                 };
                 button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
                 this.upcomingTournamentsPanel.Controls?.Add(button);
             }
+        }
+
+        /// <summary>
+        /// On New Tournament Button click, show Create Tournament View
+        /// </summary>
+        /// <param name="sender">The Tournaments View</param>
+        /// <param name="e">Event Arguments for the New Tournament Event</param>
+        private void newTournamentButton_Click(object sender, System.EventArgs e)
+        {
+            this.CreateTournamentView.Show();
         }
     }
 }
