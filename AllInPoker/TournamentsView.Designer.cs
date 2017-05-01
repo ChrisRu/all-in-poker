@@ -100,7 +100,7 @@
             this.newUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newUserButton.ForeColor = System.Drawing.Color.Black;
-            this.newUserButton.Location = new System.Drawing.Point(458, 12);
+            this.newUserButton.Location = new System.Drawing.Point(462, 12);
             this.newUserButton.Name = "newUserButton";
             this.newUserButton.Size = new System.Drawing.Size(149, 39);
             this.newUserButton.TabIndex = 5;
