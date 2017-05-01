@@ -93,7 +93,7 @@
             this.createTournamentButton.Name = "createTournamentButton";
             this.createTournamentButton.Size = new System.Drawing.Size(149, 39);
             this.createTournamentButton.TabIndex = 10;
-            this.createTournamentButton.Text = "Maak Toernooi";
+            this.createTournamentButton.Text = "Maak Speler";
             this.createTournamentButton.UseVisualStyleBackColor = false;
             this.createTournamentButton.Click += new System.EventHandler(this.createUserButton_Click);
             // 
