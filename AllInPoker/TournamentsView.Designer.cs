@@ -33,6 +33,7 @@
             this.newTournamentButton = new System.Windows.Forms.Button();
             this.activeTournamentsPanel = new System.Windows.Forms.Panel();
             this.upcomingTournamentsPanel = new System.Windows.Forms.Panel();
+            this.newUserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,6 +61,7 @@
             this.newTournamentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.newTournamentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.newTournamentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newTournamentButton.FlatAppearance.BorderSize = 0;
             this.newTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newTournamentButton.ForeColor = System.Drawing.Color.White;
@@ -89,12 +91,30 @@
             this.upcomingTournamentsPanel.Size = new System.Drawing.Size(755, 70);
             this.upcomingTournamentsPanel.TabIndex = 4;
             // 
+            // newUserButton
+            // 
+            this.newUserButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.newUserButton.BackColor = System.Drawing.Color.LightGray;
+            this.newUserButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newUserButton.FlatAppearance.BorderSize = 0;
+            this.newUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newUserButton.ForeColor = System.Drawing.Color.Black;
+            this.newUserButton.Location = new System.Drawing.Point(458, 12);
+            this.newUserButton.Name = "newUserButton";
+            this.newUserButton.Size = new System.Drawing.Size(149, 39);
+            this.newUserButton.TabIndex = 5;
+            this.newUserButton.Text = "+ Nieuwe Speler";
+            this.newUserButton.UseVisualStyleBackColor = false;
+            this.newUserButton.Click += new System.EventHandler(this.newUserButton_Click);
+            // 
             // TournamentsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(784, 320);
+            this.Controls.Add(this.newUserButton);
             this.Controls.Add(this.upcomingTournamentsPanel);
             this.Controls.Add(this.activeTournamentsPanel);
             this.Controls.Add(this.newTournamentButton);
@@ -116,6 +136,7 @@
         private System.Windows.Forms.Button newTournamentButton;
         private System.Windows.Forms.Panel activeTournamentsPanel;
         private System.Windows.Forms.Panel upcomingTournamentsPanel;
+        private System.Windows.Forms.Button newUserButton;
     }
 }
 

@@ -10,17 +10,19 @@ namespace AllInPoker
         public List<string> UpcomingTournaments { get; set; }
 
         public CreateTournamentView CreateTournamentView { get; set; }
+        public CreateUserView CreateUserView { get; set; }
 
-        public readonly int buttonMargin;
+        private readonly int _buttonMargin;
 
         /// <summary>
         /// Initialize TournamentsView
         /// </summary>
         public TournamentsView()
         {
-            this.buttonMargin = 10;
+            this._buttonMargin = 10;
             this.InitializeComponent();
             this.CreateTournamentView = new CreateTournamentView();
+            this.CreateUserView = new CreateUserView();
 
             this.ActiveTournaments = new List<string>
             {
@@ -39,27 +41,33 @@ namespace AllInPoker
 
             for (int i = 0; i < this.ActiveTournaments.Count; i++)
             {
-                var button = new TournamentButton
-                {
-                    LocatieText = this.ActiveTournaments[i],
-                    PlayerCountText = "16",
-                    DatumText = "01/05/17"
-                };
-                button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
-                this.activeTournamentsPanel.Controls?.Add(button);
+                this.activeTournamentsPanel.Controls?.Add(this.GetTournamentButton(i, this.ActiveTournaments[i], 16, "01/05/17"));
             }
 
             for (int i = 0; i < this.UpcomingTournaments.Count; i++)
             {
-                var button = new TournamentButton
-                {
-                     LocatieText = this.ActiveTournaments[i],
-                     PlayerCountText = "12",
-                     DatumText = "22/01/18"
-                };
-                button.Location = new Point(i * (button.Width + this.buttonMargin), 0);
-                this.upcomingTournamentsPanel.Controls?.Add(button);
+                this.upcomingTournamentsPanel.Controls?.Add(this.GetTournamentButton(i, this.ActiveTournaments[i], 12, "22/01/18"));
             }
+        }
+
+        /// <summary>
+        /// Get New Tournament Button
+        /// </summary>
+        /// <param name="index">Number location in list</param>
+        /// <param name="location">Location of tournament</param>
+        /// <param name="playerCount">Player Count of tournament</param>
+        /// <param name="date">Dat of tournament</param>
+        /// <returns>New Custom TournamentButton</returns>
+        private TournamentButton GetTournamentButton(int index, string location, int playerCount, string date)
+        {
+            var button = new TournamentButton
+            {
+                LocatieText = location,
+                PlayerCountText = playerCount.ToString(),
+                DatumText = date
+            };
+            button.Location = new Point(index * (button.Width + this._buttonMargin), 0);
+            return button;
         }
 
         /// <summary>
@@ -70,6 +78,16 @@ namespace AllInPoker
         private void newTournamentButton_Click(object sender, System.EventArgs e)
         {
             this.CreateTournamentView.Show();
+        }
+
+        /// <summary>
+        /// On New User Button click, show Create User View
+        /// </summary>
+        /// <param name="sender">The Tournaments View</param>
+        /// <param name="e">Event Arguments for the New User Event</param>
+        private void newUserButton_Click(object sender, System.EventArgs e)
+        {
+            this.CreateUserView.Show();
         }
     }
 }
