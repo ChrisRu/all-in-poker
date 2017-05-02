@@ -38,7 +38,7 @@ namespace AllInPoker
 
             foreach (string tournament in this.ActiveTournaments)
             {
-                this.activeTournamentsPanel.Controls?.Add(new TournamentButton
+                this.activeTournamentsPanel.Controls?.Add(new TournamentsViewButton
                 {
                     Location = tournament,
                     PlayerCount = 16,
@@ -48,7 +48,7 @@ namespace AllInPoker
 
             foreach (string tournament in this.UpcomingTournaments)
             {
-                this.upcomingTournamentsPanel.Controls?.Add(new TournamentButton
+                this.upcomingTournamentsPanel.Controls?.Add(new TournamentsViewButton
                 {
                     Location = tournament,
                     PlayerCount = 12,

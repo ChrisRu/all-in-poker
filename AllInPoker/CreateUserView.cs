@@ -6,7 +6,7 @@ namespace AllInPoker
     public partial class CreateUserView : Form
     {
         /// <summary>
-        /// Initialize CreateTournamentComponent
+        /// Initialize CreateUserComponent
         /// </summary>
         public CreateUserView()
         {

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TournamentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TournamentView.Designer.cs">
+      <DependentUpon>TournamentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateUserView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,9 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TournamentButton.cs">
+    <Compile Include="TournamentsViewButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="TournamentView.resx">
+      <DependentUpon>TournamentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUserView.resx">
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </EmbeddedResource>

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace AllInPoker
 {
-    class TournamentButton : Button
+    class TournamentsViewButton : Button
     {
         public override string Text
         {
@@ -21,7 +21,7 @@ namespace AllInPoker
         /// <summary>
         /// Initialize TournamentButton
         /// </summary>
-        public TournamentButton()
+        public TournamentsViewButton()
         {
             this.Width = 140;
             this.Height = 70;
@@ -32,6 +32,8 @@ namespace AllInPoker
             this.BigFont = new Font("Microsoft Sans Serif", 11, FontStyle.Bold);
             this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
+
+            this.Click += (sender, args) => new TournamentView(this.Location).ShowDialog();
         }
 
         /// <summary>
