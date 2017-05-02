@@ -5,7 +5,7 @@ namespace AllInPoker
 {
     public partial class TournamentView : Form
     {
-        private string tournamentId { get; set; }
+        private string TournamentId { get; set; }
 
         private new string Location { get; set; }
         private int PlayerCount { get; set; }
@@ -17,10 +17,12 @@ namespace AllInPoker
         /// <param name="id">MySQL Tournament ID</param>
         public TournamentView(string id)
         {
-            this.tournamentId = id;
+            this.TournamentId = id;
+
+            // TODO: Add tables and user view to GUI
 
             // Temporary variables
-            this.Location = this.tournamentId;
+            this.Location = id;
             this.PlayerCount = 16;
             this.TableCount = this.PlayerCount / 8;
 
@@ -28,6 +30,14 @@ namespace AllInPoker
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
             this.title.Text = "Toernooi " + this.Location;
+        }
+
+        /// <summary>
+        /// Get the data about the tournament from the database
+        /// </summary>
+        private void GetData()
+        {
+            // TODO: MySQL Request here
         }
     }
 }
