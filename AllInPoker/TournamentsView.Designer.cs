@@ -71,7 +71,7 @@
             this.newTournamentButton.TabIndex = 2;
             this.newTournamentButton.Text = "+ Nieuw Toernooi";
             this.newTournamentButton.UseVisualStyleBackColor = false;
-            this.newTournamentButton.Click += new System.EventHandler(this.newTournamentButton_Click);
+            this.newTournamentButton.Click += new System.EventHandler(this.NewTournamentButtonClick);
             // 
             // newUserButton
             // 
@@ -88,7 +88,7 @@
             this.newUserButton.TabIndex = 5;
             this.newUserButton.Text = "+ Nieuwe Speler";
             this.newUserButton.UseVisualStyleBackColor = false;
-            this.newUserButton.Click += new System.EventHandler(this.newUserButton_Click);
+            this.newUserButton.Click += new System.EventHandler(this.NewUserButtonClick);
             // 
             // activeTournamentsPanel
             // 
@@ -112,7 +112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(784, 316);
+            this.ClientSize = new System.Drawing.Size(784, 338);
             this.Controls.Add(this.upcomingTournamentsPanel);
             this.Controls.Add(this.activeTournamentsPanel);
             this.Controls.Add(this.newUserButton);

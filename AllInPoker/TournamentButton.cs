@@ -11,7 +11,7 @@ namespace AllInPoker
             set { base.Text = value; }
         }
 
-        public string Location { get; set; }
+        public new string Location { get; set; }
         public int PlayerCount { get; set; }
         public string Date { get; set; }
 

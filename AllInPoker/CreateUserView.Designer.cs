@@ -95,7 +95,7 @@
             this.createTournamentButton.TabIndex = 10;
             this.createTournamentButton.Text = "Maak Speler";
             this.createTournamentButton.UseVisualStyleBackColor = false;
-            this.createTournamentButton.Click += new System.EventHandler(this.createUserButton_Click);
+            this.createTournamentButton.Click += new System.EventHandler(this.CreateUserButtonClick);
             // 
             // surnameTextBox
             // 

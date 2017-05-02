@@ -48,7 +48,7 @@ namespace AllInPoker
         /// </summary>
         /// <param name="sender">The Create User View</param>
         /// <param name="e">Event Arguments from the Create User Event</param>
-        private void createUserButton_Click(object sender, EventArgs e)
+        private void CreateUserButtonClick(object sender, EventArgs e)
         {
             bool male = this.maleRadioButton.Checked;
             string name = this.nameTextBox.Text;

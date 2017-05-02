@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace AllInPoker
@@ -63,9 +62,9 @@ namespace AllInPoker
         /// </summary>
         /// <param name="sender">The Tournaments View</param>
         /// <param name="e">Event Arguments for the New Tournament Event</param>
-        private void newTournamentButton_Click(object sender, System.EventArgs e)
+        private void NewTournamentButtonClick(object sender, System.EventArgs e)
         {
-            this.CreateTournamentView.Show();
+            this.CreateTournamentView.ShowDialog();
         }
 
         /// <summary>
@@ -73,9 +72,9 @@ namespace AllInPoker
         /// </summary>
         /// <param name="sender">The Tournaments View</param>
         /// <param name="e">Event Arguments for the New User Event</param>
-        private void newUserButton_Click(object sender, System.EventArgs e)
+        private void NewUserButtonClick(object sender, System.EventArgs e)
         {
-            this.CreateUserView.Show();
+            this.CreateUserView.ShowDialog();
         }
     }
 }
