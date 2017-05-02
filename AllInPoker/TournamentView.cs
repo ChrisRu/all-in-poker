@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace AllInPoker
 {
+    using System.Runtime.CompilerServices;
+
     public partial class TournamentView : Form
     {
         private string TournamentId { get; set; }
 
         private new string Location { get; set; }
-        private int PlayerCount { get; set; }
+        private List<string> Players { get; set; }
         private int TableCount { get; set; }
 
         /// <summary>
@@ -23,13 +26,22 @@ namespace AllInPoker
 
             // Temporary variables
             this.Location = id;
-            this.PlayerCount = 16;
-            this.TableCount = this.PlayerCount / 8;
+            this.Players = new List<string>
+            {
+                "Henk", "Aard", "Erik", "Joop", "Bob", "Marie"                     
+            };
+            this.TableCount = 4;
 
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
             this.title.Text = "Toernooi " + this.Location;
+
+            this.playerListBox.Columns.Add("Name");
+            foreach (string player in this.Players)
+            {
+                this.playerListBox.Items.Add(player);
+            }
         }
 
         /// <summary>
@@ -38,6 +50,19 @@ namespace AllInPoker
         private void GetData()
         {
             // TODO: MySQL Request here
+        }
+
+        /// <summary>
+        /// Remove Selected Players
+        /// </summary>
+        /// <param name="sender">ListView</param>
+        /// <param name="e">Event Arguments Remove Player Button Click Event</param>
+        private void RemovePlayerButtonClick(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in this.playerListBox.SelectedItems)
+            {
+                MessageBox.Show(item.Text);
+            }
         }
     }
 }
