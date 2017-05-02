@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.title = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.playerListBox = new System.Windows.Forms.ListView();
             this.addPlayerButton = new System.Windows.Forms.Button();
             this.removePlayerButton = new System.Windows.Forms.Button();
+            this.dateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // title
+            // titleLabel
             // 
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(12, 46);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(86, 25);
-            this.title.TabIndex = 4;
-            this.title.Text = "Toernooi";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(12, 46);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(86, 25);
+            this.titleLabel.TabIndex = 4;
+            this.titleLabel.Text = "Toernooi";
             // 
             // playerListBox
             // 
             this.playerListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.playerListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerListBox.Location = new System.Drawing.Point(17, 88);
+            this.playerListBox.Location = new System.Drawing.Point(17, 103);
             this.playerListBox.Name = "playerListBox";
-            this.playerListBox.Size = new System.Drawing.Size(184, 290);
+            this.playerListBox.Size = new System.Drawing.Size(184, 275);
             this.playerListBox.TabIndex = 5;
             this.playerListBox.UseCompatibleStateImageBehavior = false;
             this.playerListBox.View = System.Windows.Forms.View.List;
@@ -88,15 +89,26 @@
             this.removePlayerButton.UseVisualStyleBackColor = false;
             this.removePlayerButton.Click += new System.EventHandler(this.RemovePlayerButtonClick);
             // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(14, 73);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(72, 16);
+            this.dateLabel.TabIndex = 8;
+            this.dateLabel.Text = "01/01/2017";
+            // 
             // TournamentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 429);
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.removePlayerButton);
             this.Controls.Add(this.addPlayerButton);
             this.Controls.Add(this.playerListBox);
-            this.Controls.Add(this.title);
+            this.Controls.Add(this.titleLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -110,9 +122,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.ListView playerListBox;
         private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.Button removePlayerButton;
+        private System.Windows.Forms.Label dateLabel;
     }
 }

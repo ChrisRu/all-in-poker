@@ -13,6 +13,7 @@ namespace AllInPoker
         private new string Location { get; set; }
         private List<string> Players { get; set; }
         private int TableCount { get; set; }
+        private string Date { get; set; }
 
         /// <summary>
         /// Initialize TournamentView
@@ -30,12 +31,14 @@ namespace AllInPoker
             {
                 "Henk", "Aard", "Erik", "Joop", "Bob", "Marie"                     
             };
+            this.Date = "15/04/2017";
             this.TableCount = 4;
 
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
-            this.title.Text = "Toernooi " + this.Location;
+            this.titleLabel.Text = "Toernooi " + this.Location;
+            this.dateLabel.Text = this.Date;
 
             this.playerListBox.Columns.Add("Name");
             foreach (string player in this.Players)
@@ -61,7 +64,8 @@ namespace AllInPoker
         {
             foreach (ListViewItem item in this.playerListBox.SelectedItems)
             {
-                MessageBox.Show(item.Text);
+                this.playerListBox.Items.Remove(item);
+                MessageBox.Show(item.Text + " is verwijderd uit het toernooi.");
             }
         }
     }
