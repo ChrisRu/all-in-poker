@@ -33,6 +33,7 @@
             this.addPlayerButton = new System.Windows.Forms.Button();
             this.removePlayerButton = new System.Windows.Forms.Button();
             this.dateLabel = new System.Windows.Forms.Label();
+            this.tablePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -99,11 +100,19 @@
             this.dateLabel.TabIndex = 8;
             this.dateLabel.Text = "01/01/2017";
             // 
+            // tablePanel
+            // 
+            this.tablePanel.Location = new System.Drawing.Point(208, 103);
+            this.tablePanel.Name = "tablePanel";
+            this.tablePanel.Size = new System.Drawing.Size(718, 275);
+            this.tablePanel.TabIndex = 9;
+            // 
             // TournamentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 429);
+            this.Controls.Add(this.tablePanel);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.removePlayerButton);
             this.Controls.Add(this.addPlayerButton);
@@ -127,5 +136,6 @@
         private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.Button removePlayerButton;
         private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.FlowLayoutPanel tablePanel;
     }
 }

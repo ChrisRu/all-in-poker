@@ -116,7 +116,7 @@
             this.createTournamentButton.TabIndex = 3;
             this.createTournamentButton.Text = "Maak Toernooi";
             this.createTournamentButton.UseVisualStyleBackColor = false;
-            this.createTournamentButton.Click += new System.EventHandler(this.createTournamentButton_Click);
+            this.createTournamentButton.Click += new System.EventHandler(this.CreateTournamentButtonClick);
             // 
             // CreateTournamentView
             // 

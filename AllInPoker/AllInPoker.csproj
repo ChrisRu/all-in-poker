@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TournamentViewTableButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TournamentView.cs">
       <SubType>Form</SubType>
     </Compile>

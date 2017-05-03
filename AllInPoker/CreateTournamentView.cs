@@ -1,8 +1,11 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace AllInPoker
+﻿namespace AllInPoker
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Create Tournament PopUp to create a new Tournament
+    /// </summary>
     public partial class CreateTournamentView : Form
     {
         /// <summary>
@@ -16,7 +19,7 @@ namespace AllInPoker
         /// <summary>
         /// Override default close, to hide, so data can be recovered on accidental close
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e">Form Close Event Arguments</param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -37,11 +40,11 @@ namespace AllInPoker
         }
 
         /// <summary>
-        /// Sumit data
+        /// Submit data
         /// </summary>
         /// <param name="sender">The Create Tournament View</param>
         /// <param name="e">Event Arguments from the Create Tournament Event</param>
-        private void createTournamentButton_Click(object sender, EventArgs e)
+        private void CreateTournamentButtonClick(object sender, EventArgs e)
         {
             string location = this.locationTextBox.Text;
             string date = this.datePicker.Text;

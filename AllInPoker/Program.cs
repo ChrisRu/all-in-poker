@@ -1,9 +1,13 @@
-﻿using System;
-using System.Windows.Forms;
-
+﻿
 namespace AllInPoker
 {
-    static class Program
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Main Program, starts the application
+    /// </summary>
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.

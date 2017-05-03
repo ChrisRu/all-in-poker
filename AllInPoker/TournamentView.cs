@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
+﻿
 namespace AllInPoker
 {
-    using System.Runtime.CompilerServices;
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Forms;
 
+    /// <summary>
+    /// Single Tournament View with players, tables, etc.
+    /// </summary>
     public partial class TournamentView : Form
     {
         private string TournamentId { get; set; }
@@ -27,10 +29,7 @@ namespace AllInPoker
 
             // Temporary variables
             this.Location = id;
-            this.Players = new List<string>
-            {
-                "Henk", "Aard", "Erik", "Joop", "Bob", "Marie"                     
-            };
+            this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.Date = "15/04/2017";
             this.TableCount = 4;
 
@@ -45,6 +44,11 @@ namespace AllInPoker
             {
                 this.playerListBox.Items.Add(player);
             }
+
+            for (int i = 0; i < this.TableCount; i++)
+            {
+                this.tablePanel.Controls.Add(new TournamentViewTableButton());
+            }
         }
 
         /// <summary>
@@ -58,10 +62,16 @@ namespace AllInPoker
         /// <summary>
         /// Remove Selected Players
         /// </summary>
-        /// <param name="sender">ListView</param>
+        /// <param name="sender">The ListView</param>
         /// <param name="e">Event Arguments Remove Player Button Click Event</param>
         private void RemovePlayerButtonClick(object sender, EventArgs e)
         {
+            if (this.playerListBox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Geen spelers geselecteerd om te verwijderen uit het toernooi.");
+                return;
+            }
+
             foreach (ListViewItem item in this.playerListBox.SelectedItems)
             {
                 this.playerListBox.Items.Remove(item);

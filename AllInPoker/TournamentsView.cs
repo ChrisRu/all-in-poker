@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-
+﻿
 namespace AllInPoker
 {
+    using System.Collections.Generic;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Main OverView of all active tournaments
+    /// </summary>
     public partial class TournamentsView : Form
     {
         public List<string> ActiveTournaments { get; set; }

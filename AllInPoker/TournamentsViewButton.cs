@@ -1,9 +1,13 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
+﻿
 namespace AllInPoker
 {
-    class TournamentsViewButton : Button
+    using System.Drawing;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Tournament Button inside the Main Tournaments View
+    /// </summary>
+    public class TournamentsViewButton : Button
     {
         public override string Text
         {

@@ -1,8 +1,12 @@
-﻿using System;
-using System.Windows.Forms;
-
+﻿
 namespace AllInPoker
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Create User PopUp to add a new User
+    /// </summary>
     public partial class CreateUserView : Form
     {
         /// <summary>
@@ -16,7 +20,7 @@ namespace AllInPoker
         /// <summary>
         /// Override default close, to hide, so data can be recovered on accidental close
         /// </summary>
-        /// <param name="e"></param>
+        /// <param name="e">Form Close Event Arguments</param>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
