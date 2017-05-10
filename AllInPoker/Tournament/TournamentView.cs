@@ -1,11 +1,9 @@
 ﻿
-namespace AllInPoker
+namespace AllInPoker.Tournament
 {
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Tournament;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.
@@ -38,18 +36,18 @@ namespace AllInPoker
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
-            this.titleLabel.Text = "Toernooi " + this.Location;
-            this.dateLabel.Text = this.Date;
+            this.lblTitle.Text = "Toernooi " + this.Location;
+            this.lblDate.Text = this.Date;
 
-            this.playerListBox.Columns.Add("Name");
+            this.lstPlayer.Columns.Add("Name");
             foreach (string player in this.Players)
             {
-                this.playerListBox.Items.Add(player);
+                this.lstPlayer.Items.Add(player);
             }
 
             for (int i = 0; i < this.TableCount; i++)
             {
-                this.tablePanel.Controls.Add(new TournamentViewTableButton());
+                this.pnlTable.Controls.Add(new TournamentViewTableButton());
             }
         }
 
@@ -68,15 +66,15 @@ namespace AllInPoker
         /// <param name="e">Event Arguments Remove Player Button Click Event</param>
         private void RemovePlayerButtonClick(object sender, EventArgs e)
         {
-            if (this.playerListBox.SelectedItems.Count == 0)
+            if (this.lstPlayer.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Geen spelers geselecteerd om te verwijderen uit het toernooi.");
                 return;
             }
 
-            foreach (ListViewItem item in this.playerListBox.SelectedItems)
+            foreach (ListViewItem item in this.lstPlayer.SelectedItems)
             {
-                this.playerListBox.Items.Remove(item);
+                this.lstPlayer.Items.Remove(item);
                 MessageBox.Show(item.Text + " is verwijderd uit het toernooi.");
             }
         }

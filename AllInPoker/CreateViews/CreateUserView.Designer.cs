@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.createTournamentButton = new System.Windows.Forms.Button();
-            this.surnameTextBox = new System.Windows.Forms.TextBox();
-            this.adressTextBox = new System.Windows.Forms.TextBox();
-            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.txtSurName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.postalTextBox = new System.Windows.Forms.TextBox();
+            this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.genderGroupBox = new System.Windows.Forms.GroupBox();
-            this.femaleRadioButton = new System.Windows.Forms.RadioButton();
-            this.maleRadioButton = new System.Windows.Forms.RadioButton();
+            this.rdoFemale = new System.Windows.Forms.RadioButton();
+            this.rdoMale = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.phoneTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.ibanTextBox = new System.Windows.Forms.TextBox();
+            this.txtIban = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.genderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // nameTextBox
+            // txtFirstName
             // 
-            this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTextBox.Location = new System.Drawing.Point(138, 117);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(312, 20);
-            this.nameTextBox.TabIndex = 2;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.Location = new System.Drawing.Point(138, 117);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(312, 20);
+            this.txtFirstName.TabIndex = 2;
             // 
             // label2
             // 
@@ -97,29 +97,29 @@
             this.createTournamentButton.UseVisualStyleBackColor = false;
             this.createTournamentButton.Click += new System.EventHandler(this.CreateUserButtonClick);
             // 
-            // surnameTextBox
+            // txtSurName
             // 
-            this.surnameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.surnameTextBox.Location = new System.Drawing.Point(138, 153);
-            this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(312, 20);
-            this.surnameTextBox.TabIndex = 3;
+            this.txtSurName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSurName.Location = new System.Drawing.Point(138, 153);
+            this.txtSurName.Name = "txtSurName";
+            this.txtSurName.Size = new System.Drawing.Size(312, 20);
+            this.txtSurName.TabIndex = 3;
             // 
-            // adressTextBox
+            // txtAddress
             // 
-            this.adressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.adressTextBox.Location = new System.Drawing.Point(138, 191);
-            this.adressTextBox.Name = "adressTextBox";
-            this.adressTextBox.Size = new System.Drawing.Size(312, 20);
-            this.adressTextBox.TabIndex = 4;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Location = new System.Drawing.Point(138, 191);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(312, 20);
+            this.txtAddress.TabIndex = 4;
             // 
-            // cityTextBox
+            // txtCity
             // 
-            this.cityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cityTextBox.Location = new System.Drawing.Point(138, 229);
-            this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(312, 20);
-            this.cityTextBox.TabIndex = 5;
+            this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCity.Location = new System.Drawing.Point(138, 229);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(312, 20);
+            this.txtCity.TabIndex = 5;
             // 
             // label1
             // 
@@ -151,13 +151,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Woonplaats";
             // 
-            // postalTextBox
+            // txtPostalCode
             // 
-            this.postalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.postalTextBox.Location = new System.Drawing.Point(138, 268);
-            this.postalTextBox.Name = "postalTextBox";
-            this.postalTextBox.Size = new System.Drawing.Size(312, 20);
-            this.postalTextBox.TabIndex = 6;
+            this.txtPostalCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPostalCode.Location = new System.Drawing.Point(138, 268);
+            this.txtPostalCode.Name = "txtPostalCode";
+            this.txtPostalCode.Size = new System.Drawing.Size(312, 20);
+            this.txtPostalCode.TabIndex = 6;
             // 
             // label6
             // 
@@ -182,8 +182,8 @@
             // genderGroupBox
             // 
             this.genderGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.genderGroupBox.Controls.Add(this.femaleRadioButton);
-            this.genderGroupBox.Controls.Add(this.maleRadioButton);
+            this.genderGroupBox.Controls.Add(this.rdoFemale);
+            this.genderGroupBox.Controls.Add(this.rdoMale);
             this.genderGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.genderGroupBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.genderGroupBox.Location = new System.Drawing.Point(139, 77);
@@ -192,28 +192,28 @@
             this.genderGroupBox.TabIndex = 0;
             this.genderGroupBox.TabStop = false;
             // 
-            // femaleRadioButton
+            // rdoFemale
             // 
-            this.femaleRadioButton.AutoSize = true;
-            this.femaleRadioButton.Location = new System.Drawing.Point(58, 8);
-            this.femaleRadioButton.Name = "femaleRadioButton";
-            this.femaleRadioButton.Size = new System.Drawing.Size(55, 17);
-            this.femaleRadioButton.TabIndex = 1;
-            this.femaleRadioButton.TabStop = true;
-            this.femaleRadioButton.Text = "Vrouw";
-            this.femaleRadioButton.UseVisualStyleBackColor = true;
+            this.rdoFemale.AutoSize = true;
+            this.rdoFemale.Location = new System.Drawing.Point(58, 8);
+            this.rdoFemale.Name = "rdoFemale";
+            this.rdoFemale.Size = new System.Drawing.Size(55, 17);
+            this.rdoFemale.TabIndex = 1;
+            this.rdoFemale.TabStop = true;
+            this.rdoFemale.Text = "Vrouw";
+            this.rdoFemale.UseVisualStyleBackColor = true;
             // 
-            // maleRadioButton
+            // rdoMale
             // 
-            this.maleRadioButton.AutoSize = true;
-            this.maleRadioButton.Checked = true;
-            this.maleRadioButton.Location = new System.Drawing.Point(6, 8);
-            this.maleRadioButton.Name = "maleRadioButton";
-            this.maleRadioButton.Size = new System.Drawing.Size(46, 17);
-            this.maleRadioButton.TabIndex = 0;
-            this.maleRadioButton.TabStop = true;
-            this.maleRadioButton.Text = "Man";
-            this.maleRadioButton.UseVisualStyleBackColor = true;
+            this.rdoMale.AutoSize = true;
+            this.rdoMale.Checked = true;
+            this.rdoMale.Location = new System.Drawing.Point(6, 8);
+            this.rdoMale.Name = "rdoMale";
+            this.rdoMale.Size = new System.Drawing.Size(46, 17);
+            this.rdoMale.TabIndex = 0;
+            this.rdoMale.TabStop = true;
+            this.rdoMale.Text = "Man";
+            this.rdoMale.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -225,21 +225,21 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Telefoonnummer";
             // 
-            // phoneTextBox
+            // txtPhone
             // 
-            this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.phoneTextBox.Location = new System.Drawing.Point(138, 308);
-            this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(312, 20);
-            this.phoneTextBox.TabIndex = 7;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.Location = new System.Drawing.Point(138, 308);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(312, 20);
+            this.txtPhone.TabIndex = 7;
             // 
-            // emailTextBox
+            // txtEmail
             // 
-            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.emailTextBox.Location = new System.Drawing.Point(138, 346);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(312, 20);
-            this.emailTextBox.TabIndex = 8;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Location = new System.Drawing.Point(138, 346);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(312, 20);
+            this.txtEmail.TabIndex = 8;
             // 
             // label9
             // 
@@ -251,13 +251,13 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Email";
             // 
-            // ibanTextBox
+            // txtIban
             // 
-            this.ibanTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ibanTextBox.Location = new System.Drawing.Point(138, 386);
-            this.ibanTextBox.Name = "ibanTextBox";
-            this.ibanTextBox.Size = new System.Drawing.Size(312, 20);
-            this.ibanTextBox.TabIndex = 9;
+            this.txtIban.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIban.Location = new System.Drawing.Point(138, 386);
+            this.txtIban.Name = "txtIban";
+            this.txtIban.Size = new System.Drawing.Size(312, 20);
+            this.txtIban.TabIndex = 9;
             // 
             // label10
             // 
@@ -275,24 +275,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 472);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.ibanTextBox);
+            this.Controls.Add(this.txtIban);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.phoneTextBox);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.postalTextBox);
+            this.Controls.Add(this.txtPostalCode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cityTextBox);
-            this.Controls.Add(this.adressTextBox);
-            this.Controls.Add(this.surnameTextBox);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtSurName);
             this.Controls.Add(this.createTournamentButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.genderGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -309,27 +309,27 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button createTournamentButton;
-        private System.Windows.Forms.TextBox surnameTextBox;
-        private System.Windows.Forms.TextBox adressTextBox;
-        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox txtSurName;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox postalTextBox;
+        private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox genderGroupBox;
-        private System.Windows.Forms.RadioButton femaleRadioButton;
-        private System.Windows.Forms.RadioButton maleRadioButton;
+        private System.Windows.Forms.RadioButton rdoFemale;
+        private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox phoneTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox ibanTextBox;
+        private System.Windows.Forms.TextBox txtIban;
         private System.Windows.Forms.Label label10;
     }
 }

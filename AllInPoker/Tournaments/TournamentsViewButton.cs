@@ -4,6 +4,8 @@ namespace AllInPoker.Tournaments
     using System.Drawing;
     using System.Windows.Forms;
 
+    using AllInPoker.Tournament;
+
     /// <summary>
     /// Tournament Button inside the Main Tournaments View
     /// </summary>

@@ -35,16 +35,16 @@ namespace AllInPoker.CreateViews
         /// </summary>
         private void ResetFields()
         {
-            this.femaleRadioButton.Checked = false;
-            this.maleRadioButton.Checked = true;
-            this.nameTextBox.ResetText();
-            this.surnameTextBox.ResetText();
-            this.adressTextBox.ResetText();
-            this.cityTextBox.ResetText();
-            this.postalTextBox.ResetText();
-            this.phoneTextBox.ResetText();
-            this.emailTextBox.ResetText();
-            this.ibanTextBox.ResetText();
+            this.rdoFemale.Checked = false;
+            this.rdoMale.Checked = true;
+            this.txtFirstName.ResetText();
+            this.txtSurName.ResetText();
+            this.txtAddress.ResetText();
+            this.txtCity.ResetText();
+            this.txtPostalCode.ResetText();
+            this.txtPhone.ResetText();
+            this.txtEmail.ResetText();
+            this.txtIban.ResetText();
         }
 
         /// <summary>
@@ -54,15 +54,15 @@ namespace AllInPoker.CreateViews
         /// <param name="e">Event Arguments from the Create User Event</param>
         private void CreateUserButtonClick(object sender, EventArgs e)
         {
-            bool male = this.maleRadioButton.Checked;
-            string name = this.nameTextBox.Text;
-            string surname = this.surnameTextBox.Text;
-            string adress = this.adressTextBox.Text;
-            string city = this.cityTextBox.Text;
-            string postal = this.postalTextBox.Text;
-            string phone = this.phoneTextBox.Text;
-            string email = this.emailTextBox.Text;
-            string iban = this.ibanTextBox.Text;
+            bool male = this.rdoMale.Checked;
+            string name = this.txtFirstName.Text;
+            string surname = this.txtSurName.Text;
+            string adress = this.txtAddress.Text;
+            string city = this.txtCity.Text;
+            string postal = this.txtPostalCode.Text;
+            string phone = this.txtPhone.Text;
+            string email = this.txtEmail.Text;
+            string iban = this.txtIban.Text;
 
             this.ResetFields();
             this.Hide();
