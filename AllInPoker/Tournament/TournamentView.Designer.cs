@@ -77,16 +77,18 @@
             // 
             this.removePlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.removePlayerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(82)))));
+            this.removePlayerButton.BackgroundImage = global::AllInPoker.Properties.Resources.garbage;
+            this.removePlayerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.removePlayerButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removePlayerButton.FlatAppearance.BorderSize = 0;
             this.removePlayerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removePlayerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removePlayerButton.ForeColor = System.Drawing.Color.White;
+            this.removePlayerButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.removePlayerButton.Location = new System.Drawing.Point(168, 384);
             this.removePlayerButton.Name = "removePlayerButton";
             this.removePlayerButton.Size = new System.Drawing.Size(33, 32);
             this.removePlayerButton.TabIndex = 7;
-            this.removePlayerButton.Text = "🗑️";
             this.removePlayerButton.UseVisualStyleBackColor = false;
             this.removePlayerButton.Click += new System.EventHandler(this.RemovePlayerButtonClick);
             // 
