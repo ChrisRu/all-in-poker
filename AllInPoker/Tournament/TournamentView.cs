@@ -3,6 +3,7 @@ namespace AllInPoker.Tournament
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Windows.Forms;
 
     /// <summary>
@@ -72,11 +73,32 @@ namespace AllInPoker.Tournament
                 return;
             }
 
-            foreach (ListViewItem item in this.lstPlayer.SelectedItems)
+            int selectedCount = this.lstPlayer.SelectedItems.Count;
+            string players = string.Empty;
+            for (int i = selectedCount; i-- > 0;)
             {
-                this.lstPlayer.Items.Remove(item);
-                MessageBox.Show(item.Text + " is verwijderd uit het toernooi.");
+                players += this.lstPlayer.SelectedItems[i].Text;
+                
+                if (i == 1)
+                {
+                    players += " en ";
+                }
+                else if (i > 1)
+                {
+                    players += ", ";
+                }
+
+                this.lstPlayer.Items.Remove(this.lstPlayer.SelectedItems[i]);
             }
+
+            if (selectedCount <= 1)
+            {
+                MessageBox.Show(players + " is verwijderd uit het toernooi.");
+            }
+            else
+            {
+                MessageBox.Show(players + " zijn verwijderd uit het toernooi.");
+            }       
         }
     }
 }
