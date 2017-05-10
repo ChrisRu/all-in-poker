@@ -1,5 +1,5 @@
 ﻿
-namespace AllInPoker
+namespace AllInPoker.Tournaments
 {
     using System.Drawing;
     using System.Windows.Forms;

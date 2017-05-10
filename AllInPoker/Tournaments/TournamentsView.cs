@@ -1,8 +1,10 @@
 ﻿
-namespace AllInPoker
+namespace AllInPoker.Tournaments
 {
     using System.Collections.Generic;
     using System.Windows.Forms;
+
+    using AllInPoker.CreateViews;
 
     /// <summary>
     /// Main OverView of all active tournaments

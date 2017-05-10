@@ -46,48 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TournamentViewTableButton.cs">
+    <Compile Include="Tournament\TournamentViewTableButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TournamentView.cs">
+    <Compile Include="Tournament\TournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentView.Designer.cs">
+    <Compile Include="Tournament\TournamentView.Designer.cs">
       <DependentUpon>TournamentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateUserView.cs">
+    <Compile Include="CreateViews\CreateUserView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateUserView.Designer.cs">
+    <Compile Include="CreateViews\CreateUserView.Designer.cs">
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTournamentView.cs">
+    <Compile Include="CreateViews\CreateTournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateTournamentView.Designer.cs">
+    <Compile Include="CreateViews\CreateTournamentView.Designer.cs">
       <DependentUpon>CreateTournamentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="TournamentsView.cs">
+    <Compile Include="Tournaments\TournamentsView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TournamentsView.Designer.cs">
+    <Compile Include="Tournaments\TournamentsView.Designer.cs">
       <DependentUpon>TournamentsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TournamentsViewButton.cs">
+    <Compile Include="Tournaments\TournamentsViewButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="TournamentView.resx">
+    <EmbeddedResource Include="Tournament\TournamentView.resx">
       <DependentUpon>TournamentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateUserView.resx">
+    <EmbeddedResource Include="CreateViews\CreateUserView.resx">
       <DependentUpon>CreateUserView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateTournamentView.resx">
+    <EmbeddedResource Include="CreateViews\CreateTournamentView.resx">
       <DependentUpon>CreateTournamentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TournamentsView.resx">
+    <EmbeddedResource Include="Tournaments\TournamentsView.resx">
       <DependentUpon>TournamentsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -4,6 +4,8 @@ namespace AllInPoker
     using System;
     using System.Windows.Forms;
 
+    using AllInPoker.Tournaments;
+
     /// <summary>
     /// Main Program, starts the application
     /// </summary>

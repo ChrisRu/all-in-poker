@@ -1,4 +1,5 @@
-﻿namespace AllInPoker
+﻿
+namespace AllInPoker.CreateViews
 {
     using System;
     using System.Windows.Forms;

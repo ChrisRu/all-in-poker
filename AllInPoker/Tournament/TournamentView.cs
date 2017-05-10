@@ -5,6 +5,8 @@ namespace AllInPoker
     using System.Collections.Generic;
     using System.Windows.Forms;
 
+    using AllInPoker.Tournament;
+
     /// <summary>
     /// Single Tournament View with players, tables, etc.
     /// </summary>
