@@ -2,6 +2,7 @@
 namespace AllInPoker.Tournaments
 {
     using System.Collections.Generic;
+    using System.Drawing;
     using System.Windows.Forms;
 
     using AllInPoker.CreateViews;
@@ -58,7 +59,9 @@ namespace AllInPoker.Tournaments
                 {
                     Location = tournament,
                     PlayerCount = 12,
-                    Date = "18/11/17"
+                    Date = "18/11/17",
+                    BackColor = Color.FromArgb(240, 240, 240),
+                    ForeColor = Color.Gray
                 });
             }
         }
