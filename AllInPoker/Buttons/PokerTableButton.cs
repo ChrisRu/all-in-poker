@@ -8,7 +8,7 @@ namespace AllInPoker.Buttons
     /// <summary>
     /// Table Button inside the Tournament View
     /// </summary>
-    public class TournamentViewTableButton : Button
+    public class PokerTableButton : Button
     {
         public override string Text
         {
@@ -26,7 +26,7 @@ namespace AllInPoker.Buttons
         /// <summary>
         /// Initialize TournamentTableButton
         /// </summary>
-        public TournamentViewTableButton()
+        public PokerTableButton()
         {
             this.Width = 140;
             this.Height = 70;

@@ -49,7 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buttons\TournamentViewTableButton.cs">
+    <Compile Include="Buttons\MasterclassButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Buttons\PokerTableButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\TournamentView.cs">
@@ -58,17 +61,17 @@
     <Compile Include="Views\TournamentView.Designer.cs">
       <DependentUpon>TournamentView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\CreateUserView.cs">
+    <Compile Include="Popups\CreateUserPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popups\CreateUserView.Designer.cs">
-      <DependentUpon>CreateUserView.cs</DependentUpon>
+    <Compile Include="Popups\CreateUserPopup.Designer.cs">
+      <DependentUpon>CreateUserPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\CreateTournamentView.cs">
+    <Compile Include="Popups\CreateTournamentPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popups\CreateTournamentView.Designer.cs">
-      <DependentUpon>CreateTournamentView.cs</DependentUpon>
+    <Compile Include="Popups\CreateTournamentPopup.Designer.cs">
+      <DependentUpon>CreateTournamentPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TournamentsView.cs">
       <SubType>Form</SubType>
@@ -78,17 +81,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Buttons\TournamentsViewButton.cs">
+    <Compile Include="Buttons\TournamentButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Views\TournamentView.resx">
       <DependentUpon>TournamentView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\CreateUserView.resx">
-      <DependentUpon>CreateUserView.cs</DependentUpon>
+    <EmbeddedResource Include="Popups\CreateUserPopup.resx">
+      <DependentUpon>CreateUserPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\CreateTournamentView.resx">
-      <DependentUpon>CreateTournamentView.cs</DependentUpon>
+    <EmbeddedResource Include="Popups\CreateTournamentPopup.resx">
+      <DependentUpon>CreateTournamentPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TournamentsView.resx">
       <DependentUpon>TournamentsView.cs</DependentUpon>

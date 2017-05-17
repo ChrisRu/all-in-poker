@@ -15,8 +15,8 @@ namespace AllInPoker.Views
     {
         public List<string> Tournaments { get; set; }
 
-        public CreateTournamentView CreateTournamentView { get; set; }
-        public CreateUserView CreateUserView { get; set; }
+        public CreateTournamentPopup CreateTournamentView { get; set; }
+        public CreateUserPopup CreateUserView { get; set; }
 
         /// <summary>
         /// Initialize TournamentsView
@@ -25,8 +25,8 @@ namespace AllInPoker.Views
         {
             this.InitializeComponent();
 
-            this.CreateTournamentView = new CreateTournamentView();
-            this.CreateUserView = new CreateUserView();
+            this.CreateTournamentView = new CreateTournamentPopup();
+            this.CreateUserView = new CreateUserPopup();
 
             this.Tournaments = new List<string>
             {
@@ -46,7 +46,7 @@ namespace AllInPoker.Views
             {
                 string tournament = this.Tournaments[i];
 
-                TournamentsViewButton button = new TournamentsViewButton
+                TournamentButton button = new TournamentButton
                 {
                     Place = tournament,
                     PlayerCount = 16,

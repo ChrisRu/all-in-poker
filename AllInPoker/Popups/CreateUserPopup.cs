@@ -7,12 +7,12 @@ namespace AllInPoker.Popups
     /// <summary>
     /// Create User PopUp to add a new User
     /// </summary>
-    public partial class CreateUserView : Form
+    public partial class CreateUserPopup : Form
     {
         /// <summary>
         /// Initialize CreateUserComponent
         /// </summary>
-        public CreateUserView()
+        public CreateUserPopup()
         {
             this.InitializeComponent();
         }

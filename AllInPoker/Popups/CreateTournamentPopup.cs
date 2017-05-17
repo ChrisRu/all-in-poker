@@ -7,12 +7,12 @@ namespace AllInPoker.Popups
     /// <summary>
     /// Create Tournament PopUp to create a new Tournament
     /// </summary>
-    public partial class CreateTournamentView : Form
+    public partial class CreateTournamentPopup : Form
     {
         /// <summary>
         /// Initialize CreateTournamentComponent
         /// </summary>
-        public CreateTournamentView()
+        public CreateTournamentPopup()
         {
             this.InitializeComponent();
         }

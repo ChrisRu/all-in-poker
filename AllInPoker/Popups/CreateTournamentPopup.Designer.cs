@@ -1,6 +1,6 @@
 ﻿namespace AllInPoker.Popups
 {
-    partial class CreateTournamentView
+    partial class CreateTournamentPopup
     {
         /// <summary>
         /// Required designer variable.

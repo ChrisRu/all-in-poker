@@ -49,7 +49,7 @@ namespace AllInPoker.Views
 
             for (int i = 0; i < this.TableCount; i++)
             {
-                this.pnlTable.Controls.Add(new TournamentViewTableButton());
+                this.pnlTable.Controls.Add(new PokerTableButton());
             }
         }
 
