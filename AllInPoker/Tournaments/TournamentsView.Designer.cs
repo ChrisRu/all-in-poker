@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.newTournamentButton = new System.Windows.Forms.Button();
             this.newUserButton = new System.Windows.Forms.Button();
-            this.pnlActiveTournaments = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnUpcomingTournaments = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlTournaments = new System.Windows.Forms.Panel();
+            this.pnlMasterclasses = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -43,19 +43,19 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 25);
+            this.label1.Size = new System.Drawing.Size(107, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Actieve Toernooien";
+            this.label1.Text = "Toernooien";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 191);
+            this.label2.Location = new System.Drawing.Point(12, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 25);
+            this.label2.Size = new System.Drawing.Size(130, 25);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Aankomende Toernooien";
+            this.label2.Text = "Masterclasses";
             // 
             // newTournamentButton
             // 
@@ -91,21 +91,31 @@
             this.newUserButton.UseVisualStyleBackColor = false;
             this.newUserButton.Click += new System.EventHandler(this.NewUserButtonClick);
             // 
-            // pnlActiveTournaments
+            // pnlTournaments
             // 
-            this.pnlActiveTournaments.AutoSize = true;
-            this.pnlActiveTournaments.Location = new System.Drawing.Point(17, 91);
-            this.pnlActiveTournaments.Name = "pnlActiveTournaments";
-            this.pnlActiveTournaments.Size = new System.Drawing.Size(755, 75);
-            this.pnlActiveTournaments.TabIndex = 6;
+            this.pnlTournaments.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTournaments.AutoScroll = true;
+            this.pnlTournaments.Location = new System.Drawing.Point(17, 93);
+            this.pnlTournaments.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pnlTournaments.MinimumSize = new System.Drawing.Size(100, 100);
+            this.pnlTournaments.Name = "pnlTournaments";
+            this.pnlTournaments.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pnlTournaments.Size = new System.Drawing.Size(755, 100);
+            this.pnlTournaments.TabIndex = 8;
             // 
-            // pnUpcomingTournaments
+            // pnlMasterclasses
             // 
-            this.pnUpcomingTournaments.AutoSize = true;
-            this.pnUpcomingTournaments.Location = new System.Drawing.Point(17, 228);
-            this.pnUpcomingTournaments.Name = "pnUpcomingTournaments";
-            this.pnUpcomingTournaments.Size = new System.Drawing.Size(755, 75);
-            this.pnUpcomingTournaments.TabIndex = 7;
+            this.pnlMasterclasses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMasterclasses.AutoScroll = true;
+            this.pnlMasterclasses.Location = new System.Drawing.Point(17, 264);
+            this.pnlMasterclasses.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.pnlMasterclasses.MinimumSize = new System.Drawing.Size(100, 100);
+            this.pnlMasterclasses.Name = "pnlMasterclasses";
+            this.pnlMasterclasses.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.pnlMasterclasses.Size = new System.Drawing.Size(755, 100);
+            this.pnlMasterclasses.TabIndex = 9;
             // 
             // TournamentsView
             // 
@@ -113,9 +123,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(784, 338);
-            this.Controls.Add(this.pnUpcomingTournaments);
-            this.Controls.Add(this.pnlActiveTournaments);
+            this.ClientSize = new System.Drawing.Size(784, 380);
+            this.Controls.Add(this.pnlMasterclasses);
+            this.Controls.Add(this.pnlTournaments);
             this.Controls.Add(this.newUserButton);
             this.Controls.Add(this.newTournamentButton);
             this.Controls.Add(this.label2);
@@ -135,8 +145,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button newTournamentButton;
         private System.Windows.Forms.Button newUserButton;
-        private System.Windows.Forms.FlowLayoutPanel pnlActiveTournaments;
-        private System.Windows.Forms.FlowLayoutPanel pnUpcomingTournaments;
+        private System.Windows.Forms.Panel pnlTournaments;
+        private System.Windows.Forms.Panel pnlMasterclasses;
     }
 }
 

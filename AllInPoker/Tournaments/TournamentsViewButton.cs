@@ -17,7 +17,7 @@ namespace AllInPoker.Tournaments
             set { base.Text = value; }
         }
 
-        public new string Location { get; set; }
+        public string Place { get; set; }
         public int PlayerCount { get; set; }
         public string Date { get; set; }
 
@@ -39,7 +39,7 @@ namespace AllInPoker.Tournaments
             this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
 
-            this.Click += (sender, args) => new TournamentView(this.Location).ShowDialog();
+            this.Click += (sender, args) => new TournamentView(this.Place).ShowDialog();
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace AllInPoker.Tournaments
                 using (Brush brush = new SolidBrush(ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Center;
-                    pEvent.Graphics.DrawString(this.Location, this.BigFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.Place, this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
                     pEvent.Graphics.DrawString(this.Date, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;

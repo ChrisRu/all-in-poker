@@ -12,8 +12,7 @@ namespace AllInPoker.Tournaments
     /// </summary>
     public partial class TournamentsView : Form
     {
-        public List<string> ActiveTournaments { get; set; }
-        public List<string> UpcomingTournaments { get; set; }
+        public List<string> Tournaments { get; set; }
 
         public CreateTournamentView CreateTournamentView { get; set; }
         public CreateUserView CreateUserView { get; set; }
@@ -28,41 +27,46 @@ namespace AllInPoker.Tournaments
             this.CreateTournamentView = new CreateTournamentView();
             this.CreateUserView = new CreateUserView();
 
-            this.ActiveTournaments = new List<string>
+            this.Tournaments = new List<string>
             {
+                "Rotterdam",
+                "Pijnacker",
+                "Zoetermeer",
+                "Rijswijk",
+                "Amsterdorp",
+                "Rotterdam",
                 "Pijnacker",
                 "Zoetermeer",
                 "Rijswijk",
                 "Amsterdorp"
             };
 
-            this.UpcomingTournaments = new List<string>
+            for (int i = 0; i < this.Tournaments.Count; i++)
             {
-                "Rotterdam",
-                "Den Haag",
-                "Gouda"
-            };
+                string tournament = this.Tournaments[i];
 
-            foreach (string tournament in this.ActiveTournaments)
-            {
-                this.pnlActiveTournaments.Controls?.Add(new TournamentsViewButton
+                TournamentsViewButton button = new TournamentsViewButton
                 {
-                    Location = tournament,
+                    Place = tournament,
                     PlayerCount = 16,
-                    Date = "02/05/17"
-                });
-            }
+                    Date = "02/05/17",
+                    Location = new Point(i * 150, 0)
+                };
 
-            foreach (string tournament in this.UpcomingTournaments)
-            {
-                this.pnUpcomingTournaments.Controls?.Add(new TournamentsViewButton
+                // If tournament has finished
+                if (tournament.Contains("Pijn"))
                 {
-                    Location = tournament,
-                    PlayerCount = 12,
-                    Date = "18/11/17",
-                    BackColor = Color.FromArgb(240, 240, 240),
-                    ForeColor = Color.Gray
-                });
+                    button.BackColor = Color.FromArgb(240, 240, 240);
+                    button.ForeColor = Color.Gray;
+                }
+
+                // If tournament is coming up
+                if (tournament.Contains("otter"))
+                {
+                    button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
+                }
+
+                this.pnlTournaments.Controls?.Add(button);
             }
         }
 
