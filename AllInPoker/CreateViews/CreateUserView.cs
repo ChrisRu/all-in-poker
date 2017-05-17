@@ -45,6 +45,8 @@ namespace AllInPoker.CreateViews
             this.txtPhone.ResetText();
             this.txtEmail.ResetText();
             this.txtIban.ResetText();
+            this.rdoProfessional.Checked = false;
+            this.rdoSpeler.Checked = true;
         }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace AllInPoker.CreateViews
             string phone = this.txtPhone.Text;
             string email = this.txtEmail.Text;
             string iban = this.txtIban.Text;
+            bool professional = this.rdoProfessional.Checked;
 
             this.ResetFields();
             this.Hide();
