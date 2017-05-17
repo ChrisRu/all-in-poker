@@ -48,9 +48,9 @@ namespace AllInPoker.Views
 
                 TournamentButton button = new TournamentButton
                 {
-                    Place = tournament,
-                    PlayerCount = 16,
-                    Date = "02/05/17",
+                    TournamentLocation = tournament,
+                    TournamentPlayerCount = 16,
+                    TournamentDate = "02/05/17",
                     Location = new Point(i * 150, 0)
                 };
 

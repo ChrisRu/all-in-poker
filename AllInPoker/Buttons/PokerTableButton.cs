@@ -16,9 +16,7 @@ namespace AllInPoker.Buttons
             set { base.Text = value; }
         }
 
-        public new string Location { get; set; }
-        public int PlayerCount { get; set; }
-        public string Date { get; set; }
+        public int TablePlayerCount { get; set; }
 
         private Font RegularFont { get; }
         private Font BigFont { get; }

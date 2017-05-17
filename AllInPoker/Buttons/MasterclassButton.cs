@@ -17,9 +17,9 @@ namespace AllInPoker.Buttons
             set { base.Text = value; }
         }
 
-        public string Place { get; set; }
-        public int PlayerCount { get; set; }
-        public string Date { get; set; }
+        public string MasterclassTitle { get; set; }
+        public int MasterclassPlayerCount { get; set; }
+        public string MasterclassDate { get; set; }
 
         private Font RegularFont { get; }
         private Font BigFont { get; }
@@ -39,7 +39,7 @@ namespace AllInPoker.Buttons
             this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
 
-            this.Click += (sender, args) => new TournamentView(this.Place).ShowDialog();
+            this.Click += (sender, args) => new TournamentView(this.MasterclassTitle).ShowDialog();
         }
 
         /// <summary>
@@ -60,11 +60,11 @@ namespace AllInPoker.Buttons
                 using (Brush brush = new SolidBrush(ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Center;
-                    pEvent.Graphics.DrawString(this.Place, this.BigFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.MasterclassTitle, this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.Date, this.RegularFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.MasterclassDate, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.PlayerCount + " spelers", this.RegularFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.MasterclassPlayerCount + " spelers", this.RegularFont, brush, rect, sf);
                 }
             }
         }
