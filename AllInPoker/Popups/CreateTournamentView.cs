@@ -1,5 +1,5 @@
 ﻿
-namespace AllInPoker.CreateViews
+namespace AllInPoker.Popups
 {
     using System;
     using System.Windows.Forms;

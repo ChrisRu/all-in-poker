@@ -1,4 +1,4 @@
-﻿namespace AllInPoker.CreateViews
+﻿namespace AllInPoker.Popups
 {
     partial class CreateUserView
     {

@@ -1,4 +1,4 @@
-﻿namespace AllInPoker.Tournaments
+﻿namespace AllInPoker.Views
 {
     partial class TournamentsView
     {

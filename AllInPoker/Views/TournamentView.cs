@@ -1,10 +1,11 @@
 ﻿
-namespace AllInPoker.Tournament
+namespace AllInPoker.Views
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Windows.Forms;
+
+    using AllInPoker.Buttons;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.
