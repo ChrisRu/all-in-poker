@@ -20,6 +20,7 @@ namespace AllInPoker.Buttons
         public string MasterclassTitle { get; set; }
         public string MasterclassTutor { get; set; }
         public int MasterclassPlayerCount { get; set; }
+        public int MasterclassMaxPlayerCount { get; set; }
         public string MasterclassDate { get; set; }
 
         private Font RegularFont { get; }
@@ -67,7 +68,7 @@ namespace AllInPoker.Buttons
                     sf.LineAlignment = StringAlignment.Far;
                     pEvent.Graphics.DrawString(this.MasterclassDate, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.MasterclassPlayerCount + " spelers", this.RegularFont, brush, rect, sf);
+                    pEvent.Graphics.DrawString(this.MasterclassPlayerCount + "/" + this.MasterclassMaxPlayerCount + " deelnemers", this.RegularFont, brush, rect, sf);
                 }
             }
         }

@@ -86,10 +86,24 @@ namespace AllInPoker.Views
                 {
                     MasterclassTitle = masterclass,
                     MasterclassTutor = "Barry Badpak",
-                    MasterclassPlayerCount = 16,
+                    MasterclassPlayerCount = 8,
+                    MasterclassMaxPlayerCount = 12,
                     MasterclassDate = "02/05/17",
                     Location = new Point(i * 260, 0)
                 };
+
+                // If tournament has finished
+                if (masterclass.Contains("lus"))
+                {
+                    button.BackColor = Color.FromArgb(240, 240, 240);
+                    button.ForeColor = Color.Gray;
+                }
+
+                // If tournament is coming up
+                if (masterclass.Contains("old"))
+                {
+                    button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
+                }
 
                 this.pnlMasterclasses.Controls?.Add(button);
             }
