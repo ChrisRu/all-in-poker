@@ -14,6 +14,7 @@ namespace AllInPoker.Views
     public partial class TournamentsView : Form
     {
         public List<string> Tournaments { get; set; }
+        public List<string> Masterclasses { get; set; }
 
         public CreateTournamentPopup CreateTournamentView { get; set; }
         public CreateUserPopup CreateUserView { get; set; }
@@ -42,6 +43,13 @@ namespace AllInPoker.Views
                 "Amsterdorp"
             };
 
+            this.Masterclasses = new List<string>
+            {
+                "Folden en Callen, wie zijn dat?",
+                "What is bluff? Baby don't hurt me...",
+                "Royal Flush your toilet, viezerik."
+            };
+
             for (int i = 0; i < this.Tournaments.Count; i++)
             {
                 string tournament = this.Tournaments[i];
@@ -68,6 +76,22 @@ namespace AllInPoker.Views
                 }
 
                 this.pnlTournaments.Controls?.Add(button);
+            }
+
+            for (int i = 0; i < this.Masterclasses.Count; i++)
+            {
+                string masterclass = this.Masterclasses[i];
+
+                MasterclassButton button = new MasterclassButton
+                {
+                    MasterclassTitle = masterclass,
+                    MasterclassTutor = "Barry Badpak",
+                    MasterclassPlayerCount = 16,
+                    MasterclassDate = "02/05/17",
+                    Location = new Point(i * 260, 0)
+                };
+
+                this.pnlMasterclasses.Controls?.Add(button);
             }
         }
 

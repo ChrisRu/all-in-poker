@@ -18,6 +18,7 @@ namespace AllInPoker.Buttons
         }
 
         public string MasterclassTitle { get; set; }
+        public string MasterclassTutor { get; set; }
         public int MasterclassPlayerCount { get; set; }
         public string MasterclassDate { get; set; }
 
@@ -29,13 +30,13 @@ namespace AllInPoker.Buttons
         /// </summary>
         public MasterclassButton()
         {
-            this.Width = 140;
+            this.Width = 250;
             this.Height = 70;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderColor = Color.FromArgb(200, 200, 200);
             this.BackColor = Color.FromArgb(255, 255, 255);
             this.RegularFont = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
-            this.BigFont = new Font("Microsoft Sans Serif", 11, FontStyle.Bold);
+            this.BigFont = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
             this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
 
@@ -59,8 +60,10 @@ namespace AllInPoker.Buttons
             {
                 using (Brush brush = new SolidBrush(ForeColor))
                 {
-                    sf.LineAlignment = StringAlignment.Center;
+                    sf.LineAlignment = StringAlignment.Near;
                     pEvent.Graphics.DrawString(this.MasterclassTitle, this.BigFont, brush, rect, sf);
+                    sf.LineAlignment = StringAlignment.Center;
+                    pEvent.Graphics.DrawString("door " + this.MasterclassTutor, this.RegularFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
                     pEvent.Graphics.DrawString(this.MasterclassDate, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
