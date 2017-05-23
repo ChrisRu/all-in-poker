@@ -38,6 +38,7 @@ namespace AllInPoker.Popups
             this.rdoFemale.Checked = false;
             this.rdoMale.Checked = true;
             this.txtFirstName.ResetText();
+            this.txtMiddelName.ResetText();
             this.txtSurName.ResetText();
             this.txtAddress.ResetText();
             this.txtCity.ResetText();
