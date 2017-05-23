@@ -35,9 +35,13 @@ namespace AllInPoker.Popups
         /// </summary>
         private void ResetFields()
         {
-            this.locationTextBox.ResetText();
-            this.datePicker.ResetText();
-            this.descriptionTextBox.ResetText();
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.ResetText();
+                }
+            }
         }
 
         /// <summary>

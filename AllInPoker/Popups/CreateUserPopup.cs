@@ -2,6 +2,8 @@
 namespace AllInPoker.Popups
 {
     using System;
+    using System.Collections;
+    using System.Linq;
     using System.Windows.Forms;
 
     /// <summary>
@@ -35,17 +37,16 @@ namespace AllInPoker.Popups
         /// </summary>
         private void ResetFields()
         {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    control.ResetText();
+                }
+            }
+
             this.rdoFemale.Checked = false;
             this.rdoMale.Checked = true;
-            this.txtFirstName.ResetText();
-            this.txtMiddleName.ResetText();
-            this.txtSurName.ResetText();
-            this.txtAddress.ResetText();
-            this.txtCity.ResetText();
-            this.txtPostalCode.ResetText();
-            this.txtPhone.ResetText();
-            this.txtEmail.ResetText();
-            this.txtIban.ResetText();
             this.rdoProfessional.Checked = false;
             this.rdoSpeler.Checked = true;
         }
