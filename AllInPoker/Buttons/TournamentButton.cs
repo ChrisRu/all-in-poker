@@ -39,7 +39,7 @@ namespace AllInPoker.Buttons
             this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
 
-            this.Click += (sender, args) => new TournamentView(this.TournamentLocation).ShowDialog();
+            this.Click += (sender, args) => new ActiveTournamentView(this.TournamentLocation).ShowDialog();
         }
 
         /// <summary>

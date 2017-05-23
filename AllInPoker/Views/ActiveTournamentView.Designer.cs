@@ -1,6 +1,6 @@
 ﻿namespace AllInPoker.Views
 {
-    partial class TournamentView
+    partial class ActiveTournamentView
     {
         /// <summary>
         /// Required designer variable.

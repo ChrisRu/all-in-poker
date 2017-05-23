@@ -55,11 +55,17 @@
     <Compile Include="Buttons\PokerTableButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\TournamentView.cs">
+    <Compile Include="Views\UpcomingTournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\TournamentView.Designer.cs">
-      <DependentUpon>TournamentView.cs</DependentUpon>
+    <Compile Include="Views\UpcomingTournamentView.Designer.cs">
+      <DependentUpon>UpcomingTournamentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActiveTournamentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ActiveTournamentView.Designer.cs">
+      <DependentUpon>ActiveTournamentView.cs</DependentUpon>
     </Compile>
     <Compile Include="Popups\CreateUserPopup.cs">
       <SubType>Form</SubType>
@@ -84,8 +90,11 @@
     <Compile Include="Buttons\TournamentButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Views\TournamentView.resx">
-      <DependentUpon>TournamentView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UpcomingTournamentView.resx">
+      <DependentUpon>UpcomingTournamentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ActiveTournamentView.resx">
+      <DependentUpon>ActiveTournamentView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\CreateUserPopup.resx">
       <DependentUpon>CreateUserPopup.cs</DependentUpon>

@@ -5,12 +5,10 @@ namespace AllInPoker.Views
     using System.Collections.Generic;
     using System.Windows.Forms;
 
-    using AllInPoker.Buttons;
-
     /// <summary>
     /// Single Tournament View with players, tables, etc.
     /// </summary>
-    public partial class TournamentView : Form
+    public partial class UpcomingTournamentView : Form
     {
         private string TournamentId { get; set; }
 
@@ -23,7 +21,7 @@ namespace AllInPoker.Views
         /// Initialize TournamentView
         /// </summary>
         /// <param name="id">MySQL Tournament ID</param>
-        public TournamentView(string id)
+        public UpcomingTournamentView(string id)
         {
             this.TournamentId = id;
 
@@ -41,15 +39,11 @@ namespace AllInPoker.Views
             this.lblTitle.Text = "Toernooi " + this.Location;
             this.lblDate.Text = this.Date;
 
-            this.lstPlayer.Columns.Add("Name");
+            this.lstTournamentPlayers.Columns.Add("Name");
             foreach (string player in this.Players)
             {
-                this.lstPlayer.Items.Add(player);
-            }
-
-            for (int i = 0; i < this.TableCount; i++)
-            {
-                this.pnlTable.Controls.Add(new PokerTableButton());
+                this.lstTournamentPlayers.Items.Add(player);
+                this.lstAllPlayers.Items.Add(player + "_");
             }
         }
 
@@ -62,44 +56,38 @@ namespace AllInPoker.Views
         }
 
         /// <summary>
-        /// Remove Selected Players
+        /// Move Items from tournament players to all players
         /// </summary>
-        /// <param name="sender">The ListView</param>
-        /// <param name="e">Event Arguments Remove Player Button Click Event</param>
-        private void RemovePlayerButtonClick(object sender, EventArgs e)
+        private void btnShiftRight_Click(object sender, EventArgs e)
         {
-            if (this.lstPlayer.SelectedItems.Count == 0)
+            foreach (ListViewItem item in this.lstTournamentPlayers.SelectedItems)
             {
-                MessageBox.Show("Geen spelers geselecteerd om te verwijderen uit het toernooi.");
-                return;
+                this.lstTournamentPlayers.Items.Remove(item);
+                this.lstAllPlayers.Items.Add(item);
             }
+            this.UnselectAll();
+        }
 
-            int selectedCount = this.lstPlayer.SelectedItems.Count;
-            string players = string.Empty;
-            for (int i = selectedCount; i-- > 0;)
+        /// <summary>
+        /// Move Items from all players to tournament players
+        /// </summary>
+        private void btnShiftLeft_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in this.lstAllPlayers.SelectedItems)
             {
-                players += this.lstPlayer.SelectedItems[i].Text;
-                
-                if (i == 1)
-                {
-                    players += " en ";
-                }
-                else if (i > 1)
-                {
-                    players += ", ";
-                }
-
-                this.lstPlayer.Items.Remove(this.lstPlayer.SelectedItems[i]);
+                this.lstAllPlayers.Items.Remove(item);
+                this.lstTournamentPlayers.Items.Add(item);
             }
+            this.UnselectAll();
+        }
 
-            if (selectedCount <= 1)
-            {
-                MessageBox.Show(players + " is verwijderd uit het toernooi.");
-            }
-            else
-            {
-                MessageBox.Show(players + " zijn verwijderd uit het toernooi.");
-            }       
+        /// <summary>
+        /// Unselect all ListView items
+        /// </summary>
+        private void UnselectAll()
+        {
+            this.lstTournamentPlayers.SelectedIndices.Clear();
+            this.lstAllPlayers.SelectedIndices.Clear();
         }
     }
 }
