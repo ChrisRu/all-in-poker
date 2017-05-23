@@ -53,7 +53,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdoSpeler = new System.Windows.Forms.RadioButton();
             this.rdoProfessional = new System.Windows.Forms.RadioButton();
-            this.txtMiddelName = new System.Windows.Forms.TextBox();
+            this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
             this.genderGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -307,13 +307,13 @@
             this.rdoProfessional.Text = "Professional";
             this.rdoProfessional.UseVisualStyleBackColor = true;
             // 
-            // txtMiddelName
+            // txtMiddleName
             // 
-            this.txtMiddelName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMiddelName.Location = new System.Drawing.Point(138, 152);
-            this.txtMiddelName.Name = "txtMiddelName";
-            this.txtMiddelName.Size = new System.Drawing.Size(312, 20);
-            this.txtMiddelName.TabIndex = 4;
+            this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMiddleName.Location = new System.Drawing.Point(138, 152);
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.Size = new System.Drawing.Size(312, 20);
+            this.txtMiddleName.TabIndex = 4;
             // 
             // lblMiddleName
             // 
@@ -331,7 +331,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 537);
             this.Controls.Add(this.lblMiddleName);
-            this.Controls.Add(this.txtMiddelName);
+            this.Controls.Add(this.txtMiddleName);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtIban);
@@ -395,7 +395,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdoProfessional;
         private System.Windows.Forms.RadioButton rdoSpeler;
-        private System.Windows.Forms.TextBox txtMiddelName;
+        private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.Label lblMiddleName;
     }
 }
