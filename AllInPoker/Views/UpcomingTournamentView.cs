@@ -32,7 +32,7 @@ namespace AllInPoker.Views
 
             // Temporary variables
             this.Location = id;
-            this.AllPlayers = new List<string> { "Truus", "Joris", "Kees", "Klaas", "Leo" , "Luk", "Corneel", "Karel", "Riet", "Piet" };
+            this.AllPlayers = new List<string> { "Truus", "Joris", "Kees", "Klaas", "Leo", "Luk", "Corneel", "Karel", "Riet", "Piet" };
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.FilteredPlayers = this.Players;
             this.Date = "2017-04-11";
@@ -69,6 +69,7 @@ namespace AllInPoker.Views
                 this.AllPlayers.Remove(item.Text);
                 this.Players.Add(item.Text);
             }
+
             this.UnselectAll();
         }
 
@@ -77,13 +78,14 @@ namespace AllInPoker.Views
         /// </summary>
         private void BtnShiftLeftClick(object sender, EventArgs e)
         {
-            foreach(ListViewItem item in this.lstAllPlayers.SelectedItems)
+            foreach (ListViewItem item in this.lstAllPlayers.SelectedItems)
             {
                 this.lstAllPlayers.Items.Remove(item);
                 this.lstTournamentPlayers.Items.Add(item);
                 this.AllPlayers.Add(item.Text);
                 this.Players.Remove(item.Text);
             }
+
             this.UnselectAll();
         }
 
@@ -98,6 +100,9 @@ namespace AllInPoker.Views
 
         private void ReloadPlayers()
         {
+            this.lstTournamentPlayers.Clear();
+            this.lstAllPlayers.Clear();
+
             foreach (string player in this.Players)
             {
                 this.lstTournamentPlayers.Items.Add(player);
@@ -115,13 +120,6 @@ namespace AllInPoker.Views
 
             if (text == string.Empty)
             {
-                // Un highlight items
-                foreach (ListViewItem item in list.Items)
-                {
-                    list.Items.Clear();
-                }
-
-                // Re add all players
                 this.ReloadPlayers();
 
                 return;
