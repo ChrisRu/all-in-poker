@@ -3,7 +3,6 @@ namespace AllInPoker.Views
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
     using System.Windows.Forms;
 
     /// <summary>
@@ -98,6 +97,9 @@ namespace AllInPoker.Views
             this.lstAllPlayers.SelectedIndices.Clear();
         }
 
+        /// <summary>
+        /// Reload all lists with current players
+        /// </summary>
         private void ReloadPlayers()
         {
             this.lstTournamentPlayers.Clear();
@@ -114,7 +116,12 @@ namespace AllInPoker.Views
             }
         }
 
-        private void searchPlayer(ListView list, string text)
+        /// <summary>
+        /// Search Player in list and remove items that are not in text
+        /// </summary>
+        /// <param name="list">List containing items</param>
+        /// <param name="text">Text to search in list items</param>
+        private void SearchPlayer(ListView list, string text)
         {
             text = text.ToLower();
 
@@ -140,10 +147,16 @@ namespace AllInPoker.Views
             }
         }
 
-        private void txtSearchTournamentPlayers_TextChanged(object sender, EventArgs e)
-            => this.searchPlayer(this.lstTournamentPlayers, this.txtSearchTournamentPlayers.Text);
+        /// <summary>
+        /// Fire search method for search tournament players textbox
+        /// </summary>
+        private void txtSearchTournamentPlayersTextChanged(object sender, EventArgs e)
+            => this.SearchPlayer(this.lstTournamentPlayers, this.txtSearchTournamentPlayers.Text);
 
+        /// <summary>
+        /// Fire search method for search all players textbox
+        /// </summary>
         private void txtSearchAllPlayersTextChanged(object sender, EventArgs e)
-            => this.searchPlayer(this.lstAllPlayers, this.txtSearchAllPlayers.Text);
+            => this.SearchPlayer(this.lstAllPlayers, this.txtSearchAllPlayers.Text);
     }
 }

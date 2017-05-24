@@ -165,7 +165,7 @@
             this.txtSearchTournamentPlayers.Name = "txtSearchTournamentPlayers";
             this.txtSearchTournamentPlayers.Size = new System.Drawing.Size(184, 20);
             this.txtSearchTournamentPlayers.TabIndex = 20;
-            this.txtSearchTournamentPlayers.TextChanged += new System.EventHandler(this.txtSearchTournamentPlayers_TextChanged);
+            this.txtSearchTournamentPlayers.TextChanged += new System.EventHandler(this.txtSearchTournamentPlayersTextChanged);
             // 
             // UpcomingTournamentView
             // 
