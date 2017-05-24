@@ -14,6 +14,7 @@ namespace AllInPoker.Views
         private string TournamentId { get; set; }
 
         private new string Location { get; set; }
+        private List<string> AllPlayers { get; set; }
         private List<string> Players { get; set; }
         private List<string> FilteredPlayers { get; set; }
         private int TableCount { get; set; }
@@ -31,6 +32,7 @@ namespace AllInPoker.Views
 
             // Temporary variables
             this.Location = id;
+            this.AllPlayers = new List<string> { "Truus", "Joris", "Kees", "Klaas", "Leo" , "Luk", "Corneel", "Karel", "Riet", "Piet" };
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.FilteredPlayers = this.Players;
             this.Date = "2017-04-11";
@@ -43,10 +45,15 @@ namespace AllInPoker.Views
             this.datePicker.Value = DateTime.Parse(this.Date);
 
             this.lstTournamentPlayers.Columns.Add("Name");
+            this.lstAllPlayers.Columns.Add("Name");
             foreach (string player in this.Players)
             {
                 this.lstTournamentPlayers.Items.Add(player);
-                this.lstAllPlayers.Items.Add(player + "_");
+            }
+
+            foreach (string player in this.AllPlayers)
+            {
+                this.lstAllPlayers.Items.Add(player);
             }
         }
 
@@ -67,6 +74,7 @@ namespace AllInPoker.Views
             {
                 this.lstTournamentPlayers.Items.Remove(item);
                 this.lstAllPlayers.Items.Add(item);
+                this.AllPlayers.Remove(item.Text);
                 this.Players.Add(item.Text);
             }
             this.UnselectAll();
@@ -81,6 +89,7 @@ namespace AllInPoker.Views
             {
                 this.lstAllPlayers.Items.Remove(item);
                 this.lstTournamentPlayers.Items.Add(item);
+                this.AllPlayers.Add(item.Text);
                 this.Players.Remove(item.Text);
             }
             this.UnselectAll();
@@ -95,39 +104,46 @@ namespace AllInPoker.Views
             this.lstAllPlayers.SelectedIndices.Clear();
         }
 
-        private void txtSearchPlayerTextChanged(object sender, EventArgs e)
+        private void searchPlayer(ListView list, string text)
         {
-            if (this.txtSearchPlayer.Text == string.Empty)
+            text = text.ToLower();
+
+            if (text == string.Empty)
             {
                 // Un highlight items
-                foreach (ListViewItem item in this.lstAllPlayers.Items)
+                foreach (ListViewItem item in list.Items)
                 {
-                    this.lstAllPlayers.Items.Clear();
+                    list.Items.Clear();
                 }
 
                 // Re add all players
                 foreach (string player in this.Players)
                 {
-                    this.lstAllPlayers.Items.Add(player + "_");
+                    list.Items.Add(player + "_");
                 }
 
                 return;
             }
 
-            for (int i = this.lstAllPlayers.Items.Count; i-- > 0;)
+            for (int i = list.Items.Count; i-- > 0;)
             {
-                ListViewItem item = this.lstAllPlayers.Items[i];
-                if (!item.Text.ToLower().Contains(this.txtSearchPlayer.Text.ToLower()))
+                ListViewItem item = list.Items[i];
+                if (!item.Text.ToLower().Contains(text))
                 {
-                    this.lstAllPlayers.Items.Remove(item);
+                    list.Items.Remove(item);
                 }
             }
 
-            if (this.lstAllPlayers.Items.Count == 1)
+            if (list.Items.Count == 1)
             {
-                this.lstAllPlayers.Focus();
-                this.lstAllPlayers.Items[0].Selected = true;
+                list.Items[0].Selected = true;
             }
         }
+
+        private void txtSearchTournamentPlayers_TextChanged(object sender, EventArgs e)
+            => this.searchPlayer(this.lstTournamentPlayers, this.txtSearchTournamentPlayers.Text);
+
+        private void txtSearchAllPlayersTextChanged(object sender, EventArgs e)
+            => this.searchPlayer(this.lstAllPlayers, this.txtSearchAllPlayers.Text);
     }
 }
