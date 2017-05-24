@@ -33,14 +33,14 @@ namespace AllInPoker.Views
             this.Location = id;
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.FilteredPlayers = this.Players;
-            this.Date = "15/04/2017";
+            this.Date = "2017-04-11";
             this.TableCount = 4;
 
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
             this.txtTitle.Text = "Toernooi " + this.Location;
-            this.datePicker.Text = this.Date;
+            this.datePicker.Value = DateTime.Parse(this.Date);
 
             this.lstTournamentPlayers.Columns.Add("Name");
             foreach (string player in this.Players)
