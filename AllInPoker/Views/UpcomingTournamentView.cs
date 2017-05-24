@@ -46,15 +46,7 @@ namespace AllInPoker.Views
 
             this.lstTournamentPlayers.Columns.Add("Name");
             this.lstAllPlayers.Columns.Add("Name");
-            foreach (string player in this.Players)
-            {
-                this.lstTournamentPlayers.Items.Add(player);
-            }
-
-            foreach (string player in this.AllPlayers)
-            {
-                this.lstAllPlayers.Items.Add(player);
-            }
+            this.ReloadPlayers();
         }
 
         /// <summary>
@@ -104,6 +96,19 @@ namespace AllInPoker.Views
             this.lstAllPlayers.SelectedIndices.Clear();
         }
 
+        private void ReloadPlayers()
+        {
+            foreach (string player in this.Players)
+            {
+                this.lstTournamentPlayers.Items.Add(player);
+            }
+
+            foreach (string player in this.AllPlayers)
+            {
+                this.lstAllPlayers.Items.Add(player);
+            }
+        }
+
         private void searchPlayer(ListView list, string text)
         {
             text = text.ToLower();
@@ -117,10 +122,7 @@ namespace AllInPoker.Views
                 }
 
                 // Re add all players
-                foreach (string player in this.Players)
-                {
-                    list.Items.Add(player + "_");
-                }
+                this.ReloadPlayers();
 
                 return;
             }
