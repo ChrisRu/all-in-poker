@@ -14,7 +14,7 @@
         public List<string> Tournaments { get; set; }
         public List<string> Masterclasses { get; set; }
 
-        public CreateTournamentPopup CreateTournamentView { get; set; }
+        public CreateEventPopup CreateTournamentView { get; set; }
         public CreateUserPopup CreateUserView { get; set; }
 
         /// <summary>
@@ -24,7 +24,7 @@
         {
             this.InitializeComponent();
 
-            this.CreateTournamentView = new CreateTournamentPopup();
+            this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
 
             this.Tournaments = new List<string>
@@ -112,7 +112,7 @@
         /// </summary>
         /// <param name="sender">The Tournaments View</param>
         /// <param name="e">Event Arguments for the New Tournament Event</param>
-        private void NewTournamentButtonClick(object sender, System.EventArgs e)
+        private void NewEventButtonClick(object sender, System.EventArgs e)
         {
             this.CreateTournamentView.ShowDialog();
         }

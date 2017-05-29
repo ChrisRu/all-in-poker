@@ -6,12 +6,12 @@
     /// <summary>
     /// Create Tournament PopUp to create a new Tournament
     /// </summary>
-    public partial class CreateTournamentPopup : Form
+    public partial class CreateEventPopup : Form
     {
         /// <summary>
         /// Initialize CreateTournamentComponent
         /// </summary>
-        public CreateTournamentPopup()
+        public CreateEventPopup()
         {
             this.InitializeComponent();
         }
@@ -50,9 +50,15 @@
         /// <param name="e">Event Arguments from the Create Tournament Event</param>
         private void CreateTournamentButtonClick(object sender, EventArgs e)
         {
-            string location = this.locationTextBox.Text;
             string date = this.datePicker.Text;
-            string description = this.descriptionTextBox.Text;
+            string city = this.txtCity.Text;
+            string address = this.txtAdress.Text;
+            string cost = this.txtCost.Text;
+
+            decimal minAge = this.numMinAge.Value;
+            decimal maxAge = this.numMaxAge.Value;
+            decimal minPlayers = this.numMinPlayers.Value;
+            decimal maxPlayers = this.numMaxPlayers.Value;
 
             this.ResetFields();
             this.Hide();

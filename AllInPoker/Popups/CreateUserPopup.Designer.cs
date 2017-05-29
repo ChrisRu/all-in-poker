@@ -51,10 +51,12 @@
             this.txtIban = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoSpeler = new System.Windows.Forms.RadioButton();
             this.rdoProfessional = new System.Windows.Forms.RadioButton();
+            this.rdoSpeler = new System.Windows.Forms.RadioButton();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.lblMiddleName = new System.Windows.Forms.Label();
+            this.txtNationality = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.genderGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +97,7 @@
             this.createTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTournamentButton.ForeColor = System.Drawing.Color.White;
-            this.createTournamentButton.Location = new System.Drawing.Point(301, 487);
+            this.createTournamentButton.Location = new System.Drawing.Point(301, 530);
             this.createTournamentButton.Name = "createTournamentButton";
             this.createTournamentButton.Size = new System.Drawing.Size(149, 39);
             this.createTournamentButton.TabIndex = 14;
@@ -260,7 +262,7 @@
             // txtIban
             // 
             this.txtIban.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIban.Location = new System.Drawing.Point(138, 420);
+            this.txtIban.Location = new System.Drawing.Point(139, 457);
             this.txtIban.Name = "txtIban";
             this.txtIban.Size = new System.Drawing.Size(312, 20);
             this.txtIban.TabIndex = 11;
@@ -269,7 +271,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 420);
+            this.label10.Location = new System.Drawing.Point(14, 457);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 16);
             this.label10.TabIndex = 23;
@@ -279,11 +281,21 @@
             // 
             this.groupBox1.Controls.Add(this.rdoProfessional);
             this.groupBox1.Controls.Add(this.rdoSpeler);
-            this.groupBox1.Location = new System.Drawing.Point(138, 447);
+            this.groupBox1.Location = new System.Drawing.Point(138, 483);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 34);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            // 
+            // rdoProfessional
+            // 
+            this.rdoProfessional.AutoSize = true;
+            this.rdoProfessional.Location = new System.Drawing.Point(67, 11);
+            this.rdoProfessional.Name = "rdoProfessional";
+            this.rdoProfessional.Size = new System.Drawing.Size(82, 17);
+            this.rdoProfessional.TabIndex = 13;
+            this.rdoProfessional.Text = "Professional";
+            this.rdoProfessional.UseVisualStyleBackColor = true;
             // 
             // rdoSpeler
             // 
@@ -296,16 +308,6 @@
             this.rdoSpeler.TabStop = true;
             this.rdoSpeler.Text = "Speler";
             this.rdoSpeler.UseVisualStyleBackColor = true;
-            // 
-            // rdoProfessional
-            // 
-            this.rdoProfessional.AutoSize = true;
-            this.rdoProfessional.Location = new System.Drawing.Point(67, 11);
-            this.rdoProfessional.Name = "rdoProfessional";
-            this.rdoProfessional.Size = new System.Drawing.Size(82, 17);
-            this.rdoProfessional.TabIndex = 13;
-            this.rdoProfessional.Text = "Professional";
-            this.rdoProfessional.UseVisualStyleBackColor = true;
             // 
             // txtMiddleName
             // 
@@ -325,11 +327,31 @@
             this.lblMiddleName.TabIndex = 26;
             this.lblMiddleName.Text = "Tussenvoegsel";
             // 
-            // CreateUserView
+            // txtNationality
+            // 
+            this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNationality.Location = new System.Drawing.Point(138, 420);
+            this.txtNationality.Name = "txtNationality";
+            this.txtNationality.Size = new System.Drawing.Size(312, 20);
+            this.txtNationality.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 16);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Nationaliteit";
+            // 
+            // CreateUserPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 537);
+            this.ClientSize = new System.Drawing.Size(459, 581);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtNationality);
             this.Controls.Add(this.lblMiddleName);
             this.Controls.Add(this.txtMiddleName);
             this.Controls.Add(this.groupBox1);
@@ -356,7 +378,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CreateUserView";
+            this.Name = "CreateUserPopup";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All In Poker - Maak Speler";
@@ -397,5 +419,7 @@
         private System.Windows.Forms.RadioButton rdoSpeler;
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.TextBox txtNationality;
+        private System.Windows.Forms.Label label11;
     }
 }

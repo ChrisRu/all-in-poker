@@ -11,8 +11,8 @@
     {
         public override string Text
         {
-            get { return string.Empty; }
-            set { base.Text = value; }
+            get => string.Empty;
+            set => base.Text = value;
         }
 
         public int TablePlayerCount { get; set; }
@@ -30,11 +30,11 @@
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Margin = new Padding(0, 0, 35, 35);
-            this.BackColor = Color.FromArgb(126, 86, 51);
             this.RegularFont = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             this.BigFont = new Font("Microsoft Sans Serif", 11, FontStyle.Bold);
-            this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
+            this.BackColor = Color.FromArgb(126, 86, 51);
+            this.Cursor = Cursors.Hand;
 
             this.Click += (sender, args) => MessageBox.Show("Tafel Aangeklikt.");
         }
@@ -47,7 +47,7 @@
         {
             base.OnPaint(e);
 
-            GraphicsPath graphPath = this.GetRoundPath(new Rectangle(0, 0, this.Width, this.Height), 35);
+            GraphicsPath graphPath = GetRoundPath(new Rectangle(0, 0, this.Width, this.Height), 35);
 
             this.Region = new Region(graphPath);
             using (Pen pen = new Pen(this.BackColor, 1f))
@@ -64,7 +64,7 @@
         /// <param name="bounds">Rectangle with size of button</param>
         /// <param name="radius">Radius of rounded rectangle</param>
         /// <returns>Rounded Rectangle Path</returns>
-        private GraphicsPath GetRoundPath(Rectangle bounds, int radius)
+        private static GraphicsPath GetRoundPath(Rectangle bounds, int radius)
         {
             int diameter = radius * 2;
             Size size = new Size(diameter, diameter);

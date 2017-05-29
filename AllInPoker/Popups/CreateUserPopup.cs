@@ -64,6 +64,7 @@
             string phone = this.txtPhone.Text;
             string email = this.txtEmail.Text;
             string iban = this.txtIban.Text;
+            string nationaliteit = this.txtNationality.Text;
             bool professional = this.rdoProfessional.Checked;
 
             this.ResetFields();

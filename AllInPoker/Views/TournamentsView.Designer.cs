@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TournamentsView));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.newTournamentButton = new System.Windows.Forms.Button();
+            this.newEventButton = new System.Windows.Forms.Button();
             this.newUserButton = new System.Windows.Forms.Button();
             this.pnlTournaments = new System.Windows.Forms.Panel();
             this.pnlMasterclasses = new System.Windows.Forms.Panel();
@@ -60,22 +60,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Masterclasses";
             // 
-            // newTournamentButton
+            // newEventButton
             // 
-            this.newTournamentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newTournamentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.newTournamentButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newTournamentButton.FlatAppearance.BorderSize = 0;
-            this.newTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newTournamentButton.ForeColor = System.Drawing.Color.White;
-            this.newTournamentButton.Location = new System.Drawing.Point(623, 12);
-            this.newTournamentButton.Name = "newTournamentButton";
-            this.newTournamentButton.Size = new System.Drawing.Size(149, 39);
-            this.newTournamentButton.TabIndex = 2;
-            this.newTournamentButton.Text = "+ Nieuw Toernooi";
-            this.newTournamentButton.UseVisualStyleBackColor = false;
-            this.newTournamentButton.Click += new System.EventHandler(this.NewTournamentButtonClick);
+            this.newEventButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.newEventButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.newEventButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newEventButton.FlatAppearance.BorderSize = 0;
+            this.newEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newEventButton.ForeColor = System.Drawing.Color.White;
+            this.newEventButton.Location = new System.Drawing.Point(596, 12);
+            this.newEventButton.Name = "newEventButton";
+            this.newEventButton.Size = new System.Drawing.Size(176, 39);
+            this.newEventButton.TabIndex = 2;
+            this.newEventButton.Text = "+ Nieuw Evenement";
+            this.newEventButton.UseVisualStyleBackColor = false;
+            this.newEventButton.Click += new System.EventHandler(this.NewEventButtonClick);
             // 
             // newUserButton
             // 
@@ -86,7 +86,7 @@
             this.newUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newUserButton.ForeColor = System.Drawing.Color.Black;
-            this.newUserButton.Location = new System.Drawing.Point(462, 12);
+            this.newUserButton.Location = new System.Drawing.Point(441, 12);
             this.newUserButton.Name = "newUserButton";
             this.newUserButton.Size = new System.Drawing.Size(149, 39);
             this.newUserButton.TabIndex = 5;
@@ -152,7 +152,7 @@
             this.Controls.Add(this.pnlMasterclasses);
             this.Controls.Add(this.pnlTournaments);
             this.Controls.Add(this.newUserButton);
-            this.Controls.Add(this.newTournamentButton);
+            this.Controls.Add(this.newEventButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -169,7 +169,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button newTournamentButton;
+        private System.Windows.Forms.Button newEventButton;
         private System.Windows.Forms.Button newUserButton;
         private System.Windows.Forms.Panel pnlTournaments;
         private System.Windows.Forms.Panel pnlMasterclasses;

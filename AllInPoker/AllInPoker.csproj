@@ -73,11 +73,11 @@
     <Compile Include="Popups\CreateUserPopup.Designer.cs">
       <DependentUpon>CreateUserPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Popups\CreateTournamentPopup.cs">
+    <Compile Include="Popups\CreateEventPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Popups\CreateTournamentPopup.Designer.cs">
-      <DependentUpon>CreateTournamentPopup.cs</DependentUpon>
+    <Compile Include="Popups\CreateEventPopup.Designer.cs">
+      <DependentUpon>CreateEventPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\TournamentsView.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="Popups\CreateUserPopup.resx">
       <DependentUpon>CreateUserPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Popups\CreateTournamentPopup.resx">
-      <DependentUpon>CreateTournamentPopup.cs</DependentUpon>
+    <EmbeddedResource Include="Popups\CreateEventPopup.resx">
+      <DependentUpon>CreateEventPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TournamentsView.resx">
       <DependentUpon>TournamentsView.cs</DependentUpon>

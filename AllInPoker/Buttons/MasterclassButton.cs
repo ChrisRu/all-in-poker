@@ -11,8 +11,8 @@
     {
         public override string Text
         {
-            get { return string.Empty; }
-            set { base.Text = value; }
+            get => string.Empty;
+            set => base.Text = value;
         }
 
         public string MasterclassTitle { get; set; }
@@ -33,11 +33,11 @@
             this.Height = 70;
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderColor = Color.FromArgb(200, 200, 200);
-            this.BackColor = Color.FromArgb(255, 255, 255);
             this.RegularFont = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
             this.BigFont = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-            this.Cursor = Cursors.Hand;
             this.UseVisualStyleBackColor = false;
+            this.Cursor = Cursors.Hand;
+            this.BackColor = Color.White;
 
             this.Click += (sender, args) => new UpcomingTournamentView(this.MasterclassTitle).ShowDialog();
         }
@@ -49,7 +49,7 @@
         protected override void OnPaint(PaintEventArgs pEvent)
         {
             base.OnPaint(pEvent);
-            Rectangle rect = ClientRectangle;
+            Rectangle rect = this.ClientRectangle;
             rect.Inflate(-5, -5);
             using (StringFormat sf = new StringFormat()
             {
@@ -57,7 +57,7 @@
                 LineAlignment = StringAlignment.Far
             })
             {
-                using (Brush brush = new SolidBrush(ForeColor))
+                using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Near;
                     pEvent.Graphics.DrawString(this.MasterclassTitle, this.BigFont, brush, rect, sf);
