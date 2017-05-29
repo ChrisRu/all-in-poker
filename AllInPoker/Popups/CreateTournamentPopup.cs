@@ -1,5 +1,4 @@
-﻿
-namespace AllInPoker.Popups
+﻿namespace AllInPoker.Popups
 {
     using System;
     using System.Windows.Forms;

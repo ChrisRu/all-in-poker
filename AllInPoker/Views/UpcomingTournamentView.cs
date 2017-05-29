@@ -1,5 +1,4 @@
-﻿
-namespace AllInPoker.Views
+﻿namespace AllInPoker.Views
 {
     using System;
     using System.Collections.Generic;

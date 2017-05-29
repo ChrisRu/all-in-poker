@@ -1,5 +1,4 @@
-﻿
-namespace AllInPoker.Buttons
+﻿namespace AllInPoker.Buttons
 {
     using System.Drawing;
     using System.Drawing.Drawing2D;
@@ -47,7 +46,7 @@ namespace AllInPoker.Buttons
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            
+
             GraphicsPath graphPath = this.GetRoundPath(new Rectangle(0, 0, this.Width, this.Height), 35);
 
             this.Region = new Region(graphPath);

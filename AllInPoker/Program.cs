@@ -1,10 +1,8 @@
-﻿
-namespace AllInPoker
+﻿namespace AllInPoker
 {
+    using AllInPoker.Views;
     using System;
     using System.Windows.Forms;
-
-    using AllInPoker.Views;
 
     /// <summary>
     /// Main Program, starts the application

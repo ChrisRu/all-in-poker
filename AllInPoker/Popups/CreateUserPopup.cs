@@ -1,9 +1,6 @@
-﻿
-namespace AllInPoker.Popups
+﻿namespace AllInPoker.Popups
 {
     using System;
-    using System.Collections;
-    using System.Linq;
     using System.Windows.Forms;
 
     /// <summary>

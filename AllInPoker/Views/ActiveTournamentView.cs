@@ -1,11 +1,9 @@
-﻿
-namespace AllInPoker.Views
+﻿namespace AllInPoker.Views
 {
+    using AllInPoker.Buttons;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Buttons;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.
@@ -79,7 +77,7 @@ namespace AllInPoker.Views
             for (int i = selectedCount; i-- > 0;)
             {
                 players += this.lstPlayer.SelectedItems[i].Text;
-                
+
                 if (i == 1)
                 {
                     players += " en ";
@@ -99,7 +97,7 @@ namespace AllInPoker.Views
             else
             {
                 MessageBox.Show(players + " zijn verwijderd uit het toernooi.");
-            }       
+            }
         }
     }
 }
