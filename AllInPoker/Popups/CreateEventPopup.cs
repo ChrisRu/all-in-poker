@@ -60,6 +60,8 @@
             decimal minPlayers = this.numMinPlayers.Value;
             decimal maxPlayers = this.numMaxPlayers.Value;
 
+            bool isTournament = this.rdoToernooi.Checked;
+
             this.ResetFields();
             this.Hide();
 
