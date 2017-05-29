@@ -18,6 +18,7 @@
         public int TablePlayerCount { get; set; }
 
         private Font RegularFont { get; }
+
         private Font BigFont { get; }
 
         /// <summary>

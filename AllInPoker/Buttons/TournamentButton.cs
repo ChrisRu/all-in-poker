@@ -1,8 +1,9 @@
 ﻿namespace AllInPoker.Buttons
 {
-    using AllInPoker.Views;
     using System.Drawing;
     using System.Windows.Forms;
+
+    using AllInPoker.Views;
 
     /// <summary>
     /// Tournament Button inside the Main Tournaments View
@@ -16,10 +17,13 @@
         }
 
         public string TournamentLocation { get; set; }
+
         public int TournamentPlayerCount { get; set; }
+
         public string TournamentDate { get; set; }
 
         private Font RegularFont { get; }
+
         private Font BigFont { get; }
 
         /// <summary>

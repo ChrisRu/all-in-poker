@@ -12,10 +12,15 @@
         private string TournamentId { get; set; }
 
         private new string Location { get; set; }
+
         private List<string> AllPlayers { get; set; }
+
         private List<string> Players { get; set; }
+
         private List<string> FilteredPlayers { get; set; }
+
         private int TableCount { get; set; }
+
         private string Date { get; set; }
 
         /// <summary>

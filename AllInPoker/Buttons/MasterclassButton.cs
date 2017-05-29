@@ -1,8 +1,9 @@
 ﻿namespace AllInPoker.Buttons
 {
-    using AllInPoker.Views;
     using System.Drawing;
     using System.Windows.Forms;
+
+    using AllInPoker.Views;
 
     /// <summary>
     /// Tournament Button inside the Main Tournaments View
@@ -16,12 +17,17 @@
         }
 
         public string MasterclassTitle { get; set; }
+
         public string MasterclassTutor { get; set; }
+
         public int MasterclassPlayerCount { get; set; }
+
         public int MasterclassMaxPlayerCount { get; set; }
+
         public string MasterclassDate { get; set; }
 
         private Font RegularFont { get; }
+
         private Font BigFont { get; }
 
         /// <summary>

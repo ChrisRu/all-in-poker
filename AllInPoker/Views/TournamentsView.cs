@@ -1,10 +1,11 @@
 ﻿namespace AllInPoker.Views
 {
-    using AllInPoker.Buttons;
-    using AllInPoker.Popups;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Windows.Forms;
+
+    using AllInPoker.Buttons;
+    using AllInPoker.Popups;
 
     /// <summary>
     /// Main OverView of all active tournaments
@@ -12,9 +13,11 @@
     public partial class TournamentsView : Form
     {
         public List<string> Tournaments { get; set; }
+
         public List<string> Masterclasses { get; set; }
 
         public CreateEventPopup CreateTournamentView { get; set; }
+
         public CreateUserPopup CreateUserView { get; set; }
 
         /// <summary>
