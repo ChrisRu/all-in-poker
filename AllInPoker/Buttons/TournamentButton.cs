@@ -47,10 +47,10 @@
         /// <summary>
         /// Override default paint to custom button with custom text
         /// </summary>
-        /// <param name="pEvent">Paint Event Arguments</param>
-        protected override void OnPaint(PaintEventArgs pEvent)
+        /// <param name="paintEventArgs">Paint Event Arguments</param>
+        protected override void OnPaint(PaintEventArgs paintEventArgs)
         {
-            base.OnPaint(pEvent);
+            base.OnPaint(paintEventArgs);
             Rectangle rect = this.ClientRectangle;
             rect.Inflate(-5, -5);
             using (StringFormat sf = new StringFormat()
@@ -62,11 +62,11 @@
                 using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Center;
-                    pEvent.Graphics.DrawString(this.TournamentLocation, this.BigFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.TournamentLocation, this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.TournamentDate, this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.TournamentDate, this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    pEvent.Graphics.DrawString(this.TournamentPlayerCount + " spelers", this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.TournamentPlayerCount + " spelers", this.RegularFont, brush, rect, sf);
                 }
             }
         }

@@ -43,10 +43,10 @@
         /// <summary>
         /// Override default paint to custom button with rounded rectangle
         /// </summary>
-        /// <param name="e">Paint Event Arguments</param>
-        protected override void OnPaint(PaintEventArgs e)
+        /// <param name="paintEventArgs">Paint Event Arguments</param>
+        protected override void OnPaint(PaintEventArgs paintEventArgs)
         {
-            base.OnPaint(e);
+            base.OnPaint(paintEventArgs);
 
             GraphicsPath graphPath = GetRoundPath(new Rectangle(0, 0, this.Width, this.Height), 35);
 
@@ -54,8 +54,8 @@
             using (Pen pen = new Pen(this.BackColor, 1f))
             {
                 pen.Alignment = PenAlignment.Outset;
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                e.Graphics.DrawPath(pen, graphPath);
+                paintEventArgs.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                paintEventArgs.Graphics.DrawPath(pen, graphPath);
             }
         }
 
