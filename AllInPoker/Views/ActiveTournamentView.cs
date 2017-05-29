@@ -38,13 +38,6 @@
             this.Text = "All In Poker - Toernooi " + this.Location;
             this.lblTitle.Text = "Toernooi " + this.Location;
             this.lblDate.Text = this.Date;
-
-            this.lstPlayer.Columns.Add("Name");
-            foreach (string player in this.Players)
-            {
-                this.lstPlayer.Items.Add(player);
-            }
-
             for (int i = 0; i < this.TableCount; i++)
             {
                 this.pnlTable.Controls.Add(new PokerTableButton());
@@ -57,47 +50,6 @@
         private void GetData()
         {
             // TODO: MySQL Request here
-        }
-
-        /// <summary>
-        /// Remove Selected Players
-        /// </summary>
-        /// <param name="sender">The ListView</param>
-        /// <param name="e">Event Arguments Remove Player Button Click Event</param>
-        private void RemovePlayerButtonClick(object sender, EventArgs e)
-        {
-            if (this.lstPlayer.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Geen spelers geselecteerd om te verwijderen uit het toernooi.");
-                return;
-            }
-
-            int selectedCount = this.lstPlayer.SelectedItems.Count;
-            string players = string.Empty;
-            for (int i = selectedCount; i-- > 0;)
-            {
-                players += this.lstPlayer.SelectedItems[i].Text;
-
-                if (i == 1)
-                {
-                    players += " en ";
-                }
-                else if (i > 1)
-                {
-                    players += ", ";
-                }
-
-                this.lstPlayer.Items.Remove(this.lstPlayer.SelectedItems[i]);
-            }
-
-            if (selectedCount <= 1)
-            {
-                MessageBox.Show(players + " is verwijderd uit het toernooi.");
-            }
-            else
-            {
-                MessageBox.Show(players + " zijn verwijderd uit het toernooi.");
-            }
         }
     }
 }
