@@ -8,13 +8,13 @@
     public class PopupTest
     {
         [TestMethod]
-        public void TestActiveTournament1()
+        public void TestCreateEventPopup()
         {
             new CreateEventPopup();
         }
 
         [TestMethod]
-        public void TestTournamentsView()
+        public void TestCreateUserPopup()
         {
             new CreateUserPopup();
         }

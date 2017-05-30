@@ -8,7 +8,7 @@
     public class ViewTest
     {
         [TestMethod]
-        public void TestActiveTournament()
+        public void TestActiveTournamentView()
         {
             new ActiveTournamentView("id");
         }
