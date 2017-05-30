@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllInPoker", "AllInPoker\AllInPoker.csproj", "{1BC4D141-980D-42E0-85C0-448C552DDD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllInPokerTesting", "AllInPokerTesting\AllInPokerTesting.csproj", "{8D2ECF41-E6F9-4EA3-B0AF-A8218BB92122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1BC4D141-980D-42E0-85C0-448C552DDD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC4D141-980D-42E0-85C0-448C552DDD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC4D141-980D-42E0-85C0-448C552DDD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2ECF41-E6F9-4EA3-B0AF-A8218BB92122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2ECF41-E6F9-4EA3-B0AF-A8218BB92122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2ECF41-E6F9-4EA3-B0AF-A8218BB92122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2ECF41-E6F9-4EA3-B0AF-A8218BB92122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

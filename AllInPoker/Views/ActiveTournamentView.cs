@@ -31,7 +31,7 @@
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.TableCount = 4;
             this.Date = "15/04/2017";
-
+            
             // Initialize View Components
             this.InitializeComponent();
             this.lblTitle.Text = "Toernooi " + this.Location;
