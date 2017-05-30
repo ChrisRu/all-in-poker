@@ -31,15 +31,13 @@
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.TableCount = 4;
             this.Date = "15/04/2017";
+
+            // Initialize View Components
+            this.InitializeComponent();
             this.lblTitle.Text = "Toernooi " + this.Location;
             this.lblDate.Text = this.Date;
             this.Text = "All In Poker - Toernooi " + this.Location;
 
-            this.InitializeComponent();
-
-            // TODO: Add tables and user view to GUI
-
-            // Initialize View Components
             for (int i = 0; i < this.TableCount; i++)
             {
                 this.pnlTable.Controls.Add(new PokerTableButton());
