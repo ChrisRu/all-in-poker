@@ -38,30 +38,41 @@
             this.lblDate.Text = this.Date;
             this.Text = "All In Poker - Toernooi " + this.Location;
 
-            var tafel1 = new DataGridView();
-            tafel1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            tafel1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            tafel1.BackgroundColor = SystemColors.Control;
-            tafel1.BorderStyle = BorderStyle.None;
-            tafel1.RowHeadersVisible = false;
-            tafel1.AutoSize = true;
-            tafel1.ScrollBars = ScrollBars.None;
-            tafel1.ColumnHeadersVisible = true;
-            tafel1.Columns.Add("Naam", "Naam");
-            tafel1.Columns.Add("Tafel", "Tafel");
-            tafel1.Columns.Add("Seat", "Seat");
-
-            for (int i = 0; i < 5; i++)
+            for (int j = 0; j < 8; j++)
             {
-                var row = (DataGridViewRow)tafel1.Rows[0].Clone();
-                row.Cells[0].Value = "Henk";
-                row.Cells[1].Value = 1;
-                row.Cells[2].Value = 1;
-                tafel1.Rows.Add(row);
+                var table = new DataGridView
+                                 {
+                                     AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
+                                     AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells,
+                                     BackgroundColor = SystemColors.Control,
+                                     BorderStyle = BorderStyle.None,
+                                     RowHeadersVisible = false,
+                                     AutoSize = true,
+                                     ScrollBars = ScrollBars.None,
+                                     ColumnHeadersVisible = true
+                                 };
+                table.Columns.Add("Naam", "Naam");
+                table.Columns.Add("Tafel", "Tafel");
+                table.Columns.Add("Seat", "Seat");
+
+                for (int i = 0; i < 5; i++)
+                {
+                    DataGridViewRow row = (DataGridViewRow)table.Rows[0].Clone();
+
+                    // Name
+                    row.Cells[0].Value = "Henk";
+
+                    // Table
+                    row.Cells[1].Value = j;
+
+                    // Seat
+                    row.Cells[2].Value = i + 1;
+
+                    table.Rows.Add(row);
+                }
+
+                this.pnlTables.Controls.Add(table);
             }
-
-            this.pnlTables.Controls.Add(tafel1);
-
         }
 
         /// <summary>
