@@ -1,9 +1,9 @@
 ﻿namespace AllInPoker.Views
 {
     using System.Collections.Generic;
+    using System.Data;
+    using System.Drawing;
     using System.Windows.Forms;
-
-    using AllInPoker.Buttons;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.
@@ -38,10 +38,30 @@
             this.lblDate.Text = this.Date;
             this.Text = "All In Poker - Toernooi " + this.Location;
 
-            for (int i = 0; i < this.TableCount; i++)
+            var tafel1 = new DataGridView();
+            tafel1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            tafel1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            tafel1.BackgroundColor = SystemColors.Control;
+            tafel1.BorderStyle = BorderStyle.None;
+            tafel1.RowHeadersVisible = false;
+            tafel1.AutoSize = true;
+            tafel1.ScrollBars = ScrollBars.None;
+            tafel1.ColumnHeadersVisible = true;
+            tafel1.Columns.Add("Naam", "Naam");
+            tafel1.Columns.Add("Tafel", "Tafel");
+            tafel1.Columns.Add("Seat", "Seat");
+
+            for (int i = 0; i < 5; i++)
             {
-                this.pnlTable.Controls.Add(new PokerTableButton());
+                var row = (DataGridViewRow)tafel1.Rows[0].Clone();
+                row.Cells[0].Value = "Henk";
+                row.Cells[1].Value = 1;
+                row.Cells[2].Value = 1;
+                tafel1.Rows.Add(row);
             }
+
+            this.pnlTables.Controls.Add(tafel1);
+
         }
 
         /// <summary>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstTournamentPlayers = new System.Windows.Forms.ListView();
             this.lstAllPlayers = new System.Windows.Forms.ListView();
             this.saveTournamentButton = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearchTournamentPlayers = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstTournamentPlayers
@@ -47,9 +50,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lstTournamentPlayers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstTournamentPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstTournamentPlayers.Location = new System.Drawing.Point(217, 114);
+            this.lstTournamentPlayers.Location = new System.Drawing.Point(289, 140);
+            this.lstTournamentPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstTournamentPlayers.Name = "lstTournamentPlayers";
-            this.lstTournamentPlayers.Size = new System.Drawing.Size(184, 303);
+            this.lstTournamentPlayers.Size = new System.Drawing.Size(245, 372);
             this.lstTournamentPlayers.TabIndex = 5;
             this.lstTournamentPlayers.UseCompatibleStateImageBehavior = false;
             this.lstTournamentPlayers.View = System.Windows.Forms.View.List;
@@ -60,9 +64,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lstAllPlayers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstAllPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAllPlayers.Location = new System.Drawing.Point(451, 114);
+            this.lstAllPlayers.Location = new System.Drawing.Point(601, 140);
+            this.lstAllPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstAllPlayers.Name = "lstAllPlayers";
-            this.lstAllPlayers.Size = new System.Drawing.Size(184, 303);
+            this.lstAllPlayers.Size = new System.Drawing.Size(245, 372);
             this.lstAllPlayers.TabIndex = 9;
             this.lstAllPlayers.UseCompatibleStateImageBehavior = false;
             this.lstAllPlayers.View = System.Windows.Forms.View.List;
@@ -75,9 +80,10 @@
             this.saveTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveTournamentButton.ForeColor = System.Drawing.Color.White;
-            this.saveTournamentButton.Location = new System.Drawing.Point(777, 378);
+            this.saveTournamentButton.Location = new System.Drawing.Point(1036, 465);
+            this.saveTournamentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveTournamentButton.Name = "saveTournamentButton";
-            this.saveTournamentButton.Size = new System.Drawing.Size(149, 39);
+            this.saveTournamentButton.Size = new System.Drawing.Size(199, 48);
             this.saveTournamentButton.TabIndex = 10;
             this.saveTournamentButton.Text = "Opslaan";
             this.saveTournamentButton.UseVisualStyleBackColor = false;
@@ -91,9 +97,10 @@
             this.btnShiftRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShiftRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShiftRight.ForeColor = System.Drawing.Color.Black;
-            this.btnShiftRight.Location = new System.Drawing.Point(407, 87);
+            this.btnShiftRight.Location = new System.Drawing.Point(543, 107);
+            this.btnShiftRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShiftRight.Name = "btnShiftRight";
-            this.btnShiftRight.Size = new System.Drawing.Size(38, 38);
+            this.btnShiftRight.Size = new System.Drawing.Size(51, 47);
             this.btnShiftRight.TabIndex = 13;
             this.btnShiftRight.Text = ">";
             this.btnShiftRight.UseVisualStyleBackColor = false;
@@ -108,9 +115,10 @@
             this.btnShiftLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShiftLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShiftLeft.ForeColor = System.Drawing.Color.Black;
-            this.btnShiftLeft.Location = new System.Drawing.Point(407, 131);
+            this.btnShiftLeft.Location = new System.Drawing.Point(543, 161);
+            this.btnShiftLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShiftLeft.Name = "btnShiftLeft";
-            this.btnShiftLeft.Size = new System.Drawing.Size(38, 38);
+            this.btnShiftLeft.Size = new System.Drawing.Size(51, 47);
             this.btnShiftLeft.TabIndex = 14;
             this.btnShiftLeft.Text = "<";
             this.btnShiftLeft.UseVisualStyleBackColor = false;
@@ -118,33 +126,37 @@
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(17, 87);
+            this.datePicker.Location = new System.Drawing.Point(23, 107);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(184, 20);
+            this.datePicker.Size = new System.Drawing.Size(244, 22);
             this.datePicker.TabIndex = 15;
             // 
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(17, 55);
+            this.txtTitle.Location = new System.Drawing.Point(23, 68);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(184, 26);
+            this.txtTitle.Size = new System.Drawing.Size(244, 30);
             this.txtTitle.TabIndex = 16;
             // 
             // txtSearchAllPlayers
             // 
-            this.txtSearchAllPlayers.Location = new System.Drawing.Point(451, 87);
+            this.txtSearchAllPlayers.Location = new System.Drawing.Point(601, 107);
+            this.txtSearchAllPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchAllPlayers.Name = "txtSearchAllPlayers";
-            this.txtSearchAllPlayers.Size = new System.Drawing.Size(184, 20);
+            this.txtSearchAllPlayers.Size = new System.Drawing.Size(244, 22);
             this.txtSearchAllPlayers.TabIndex = 17;
             this.txtSearchAllPlayers.TextChanged += new System.EventHandler(this.txtSearchAllPlayersTextChanged);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 55);
+            this.label1.Location = new System.Drawing.Point(289, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 26);
+            this.label1.Size = new System.Drawing.Size(245, 32);
             this.label1.TabIndex = 18;
             this.label1.Text = "Toernooi Spelers";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,26 +164,28 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(451, 55);
+            this.label2.Location = new System.Drawing.Point(601, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 26);
+            this.label2.Size = new System.Drawing.Size(245, 32);
             this.label2.TabIndex = 19;
             this.label2.Text = "Alle Spelers";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSearchTournamentPlayers
             // 
-            this.txtSearchTournamentPlayers.Location = new System.Drawing.Point(217, 87);
+            this.txtSearchTournamentPlayers.Location = new System.Drawing.Point(289, 107);
+            this.txtSearchTournamentPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchTournamentPlayers.Name = "txtSearchTournamentPlayers";
-            this.txtSearchTournamentPlayers.Size = new System.Drawing.Size(184, 20);
+            this.txtSearchTournamentPlayers.Size = new System.Drawing.Size(244, 22);
             this.txtSearchTournamentPlayers.TabIndex = 20;
             this.txtSearchTournamentPlayers.TextChanged += new System.EventHandler(this.txtSearchTournamentPlayersTextChanged);
             // 
             // UpcomingTournamentView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 429);
+            this.ClientSize = new System.Drawing.Size(1251, 528);
             this.Controls.Add(this.txtSearchTournamentPlayers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -184,12 +198,14 @@
             this.Controls.Add(this.lstAllPlayers);
             this.Controls.Add(this.lstTournamentPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UpcomingTournamentView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All In Poker - Toernooi";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +223,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchTournamentPlayers;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
