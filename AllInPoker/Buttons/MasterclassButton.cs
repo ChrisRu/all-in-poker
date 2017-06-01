@@ -12,8 +12,14 @@
     {
         public override string Text
         {
-            get => string.Empty;
-            set => base.Text = value;
+            get
+            {
+                return string.Empty;
+            }
+            set
+            {
+                base.Text = value;
+            }
         }
 
         public string MasterclassTitle { get; set; }
