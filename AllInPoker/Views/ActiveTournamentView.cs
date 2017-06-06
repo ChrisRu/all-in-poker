@@ -5,6 +5,8 @@
     using System.Drawing;
     using System.Windows.Forms;
 
+    using AllInPoker.Controllers;
+
     /// <summary>
     /// Single Tournament View with players, tables, etc.
     /// </summary>
@@ -49,7 +51,8 @@
                                      RowHeadersVisible = false,
                                      AutoSize = true,
                                      ScrollBars = ScrollBars.None,
-                                     ColumnHeadersVisible = true
+                                     ColumnHeadersVisible = true,
+                                     ReadOnly = true
                                  };
                 table.Columns.Add("Naam", "Naam");
                 table.Columns.Add("Tafel", "Tafel");
@@ -57,22 +60,22 @@
 
                 for (int i = 0; i < 5; i++)
                 {
-                    DataGridViewRow row = (DataGridViewRow)table.Rows[0].Clone();
+                    int rowIndex = table.Rows.Add();
 
                     // Name
-                    row.Cells[0].Value = "Henk";
+                    table.Rows[rowIndex].Cells[0].Value = "Henk";
 
                     // Table
-                    row.Cells[1].Value = j;
+                    table.Rows[rowIndex].Cells[1].Value = j + 1;
 
                     // Seat
-                    row.Cells[2].Value = i + 1;
-
-                    table.Rows.Add(row);
+                    table.Rows[rowIndex].Cells[2].Value = i + 1;
                 }
 
                 this.pnlTables.Controls.Add(table);
             }
+
+            this.GetData();
         }
 
         /// <summary>
@@ -81,6 +84,8 @@
         private void GetData()
         {
             // TODO: MySQL Request here
+            TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
+            controller.GetTournaments();
         }
     }
 }
