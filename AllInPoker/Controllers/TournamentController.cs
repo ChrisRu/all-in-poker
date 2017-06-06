@@ -29,8 +29,8 @@
                 {
                     int id = reader.GetInt32("id");
                     DateTime date = reader.GetDateTime("date");
-                    decimal cost = reader.IsDBNull(reader.GetOrdinal("cost")) ? (decimal)0.00 : reader.GetDecimal("cost");
-                    short minPlayers = reader.IsDBNull(reader.GetOrdinal("min_players")) ? (short)-1 : reader.GetInt16("min_players");
+                    decimal cost = reader.IsDBNull(reader.GetOrdinal("cost")) ? 0 : reader.GetDecimal("cost");
+                    short minPlayers = reader.IsDBNull(reader.GetOrdinal("min_players")) ? (short)0 : reader.GetInt16("min_players");
                     /*
                     short minAge = reader.GetInt16("min_age");
                     short maxAge = reader.GetInt16("max_age");
