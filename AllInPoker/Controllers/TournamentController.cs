@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.Windows.Forms;
 
     using MySql.Data.MySqlClient;
@@ -14,6 +13,10 @@
         {
         }
 
+        /// <summary>
+        /// Get all tournaments in a list
+        /// </summary>
+        /// <returns>List with TournamentItems</returns>
         public List<TournamentItem> GetTournaments()
         {
             List<TournamentItem> tournaments = new List<TournamentItem>();
@@ -28,33 +31,20 @@
 
                 while (reader.Read())
                 {
-                    int id = reader.GetInt32("id");
-                    DateTime date = reader.GetDateTime("date");
-                    decimal cost = reader.IsDBNull(reader.GetOrdinal("cost")) ? 0 : reader.GetDecimal("cost");
-                    short minPlayers = reader.IsDBNull(reader.GetOrdinal("min_players")) ? (short)0 : reader.GetInt16("min_players");
-                    short minAge = reader.IsDBNull(reader.GetOrdinal("min_age")) ? (short)0 : reader.GetInt16("min_age");
-                    short maxAge = reader.IsDBNull(reader.GetOrdinal("max_age")) ? (short)0 : reader.GetInt16("max_age");
-                    int locationId = reader.IsDBNull(reader.GetOrdinal("location_id")) ? 0 : reader.GetInt32("location_id");
-                    int employeeId = reader.IsDBNull(reader.GetOrdinal("employee_id")) ? 0 : reader.GetInt32("employee_id");
-                    int winner = reader.IsDBNull(reader.GetOrdinal("winner")) ? 0 : reader.GetInt32("winner");
-                    short round = reader.IsDBNull(reader.GetOrdinal("round")) ? (short)0 : reader.GetInt16("round");
-
-                    TournamentItem tournament =
-                        new TournamentItem
-                            {
-                                Id = id,
-                                Date = date,
-                                Cost = cost,
-                                MinPlayers = minPlayers,
-                                MinAge = minAge,
-                                MaxAge = maxAge,
-                                LocationId = locationId,
-                                EmployeeId = employeeId,
-                                WinnerId = winner,
-                                Round = round
-                            };
-                    tournaments.Add(tournament);
+                    tournaments.Add(new TournamentItem
+                                        {
+                                            Id = reader.GetInt32("id"),
+                                            Date = reader.GetDateTime("date").ToLocalTime(),
+                                            //// Time = reader.GetDateTime("time").ToLocalTime(),
+                                            Cost = reader.GetDecimal("cost"),
+                                            MinPlayers = reader.GetInt32("min_players"),
+                                            MinAge = reader.GetInt32("min_age"),
+                                            MaxAge = reader.GetInt32("max_age"),
+                                            LocationId = reader.GetInt32("location_id"),
+                                            WinnerId = reader.IsDBNull(reader.GetOrdinal("winner_id")) ? -1 : reader.GetInt32("winner_id")
+                                        });
                 }
+
             }
             catch (Exception e)
             {
@@ -66,7 +56,45 @@
                 this.Connection.Close();
             }
 
+            foreach (TournamentItem tournament in tournaments)
+            {
+                tournament.CityName = this.GetCityName(tournament.LocationId);
+            }
+
             return tournaments;
+        }
+
+        /// <summary>
+        /// Fetch City Name based on location id
+        /// </summary>
+        /// <param name="locationId">ID in event_location table</param>
+        /// <returns>City Name</returns>
+        private string GetCityName(int locationId)
+        {
+            try
+            {
+                this.Connection.Open();
+
+                string query = $@"SELECT city FROM event_location where id = {locationId}";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    return reader.GetString("city");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching city failed", e);
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return "-";
         }
     }
 }

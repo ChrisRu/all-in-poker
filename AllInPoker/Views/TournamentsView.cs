@@ -37,26 +37,24 @@
             {
                 TournamentButton button = new TournamentButton
                 {
-                    TournamentLocation = tournaments[i].LocationId.ToString(),
+                    TournamentLocation = tournaments[i].CityName,
                     TournamentPlayerCount = tournaments[i].MinPlayers,
-                    TournamentDate = tournaments[i].Date.ToString(CultureInfo.InvariantCulture),
+                    TournamentDate = tournaments[i].Date.ToString(),
                     Location = new Point(i * 150, 0)
                 };
 
-                /*
                 // If tournament has finished
-                if (tournament.Contains("Pijn"))
+                if (tournaments[i].CityName.Contains("n"))
                 {
                     button.BackColor = Color.FromArgb(240, 240, 240);
                     button.ForeColor = Color.Gray;
                 }
 
                 // If tournament is coming up
-                if (tournament.Contains("otter"))
+                if (tournaments[i].CityName.Contains("o"))
                 {
                     button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
                 }
-                */
 
                 this.pnlTournaments.Controls?.Add(button);
             }
