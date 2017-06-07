@@ -2,9 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Globalization;
     using System.Windows.Forms;
 
     using AllInPoker.Buttons;
+    using AllInPoker.Controllers;
     using AllInPoker.Popups;
 
     /// <summary>
@@ -30,19 +32,8 @@
             this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
 
-            this.Tournaments = new List<string>
-            {
-                "Rotterdam",
-                "Pijnacker",
-                "Zoetermeer",
-                "Rijswijk",
-                "Amsterdorp",
-                "Rotterdam",
-                "Pijnacker",
-                "Zoetermeer",
-                "Rijswijk",
-                "Amsterdorp"
-            };
+            TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
+            List<TournamentItem> tournaments = controller.GetTournaments();
 
             this.Masterclasses = new List<string>
             {
@@ -51,18 +42,16 @@
                 "Royal Flush your toilet, viezerik."
             };
 
-            for (int i = 0; i < this.Tournaments.Count; i++)
+            for (int i = 0; i < tournaments.Count; i++)
             {
-                string tournament = this.Tournaments[i];
-
                 TournamentButton button = new TournamentButton
                 {
-                    TournamentLocation = tournament,
-                    TournamentPlayerCount = 16,
-                    TournamentDate = "02/05/17",
+                    TournamentLocation = tournaments[i].LocationId.ToString(),
+                    TournamentPlayerCount = tournaments[i].MinPlayers,
+                    TournamentDate = tournaments[i].Date.ToString(CultureInfo.InvariantCulture),
                     Location = new Point(i * 150, 0)
                 };
-
+                /*
                 // If tournament has finished
                 if (tournament.Contains("Pijn"))
                 {
@@ -75,6 +64,7 @@
                 {
                     button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
                 }
+                */
 
                 this.pnlTournaments.Controls?.Add(button);
             }

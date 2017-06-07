@@ -84,8 +84,6 @@
         private void GetData()
         {
             // TODO: MySQL Request here
-            TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
-            controller.GetTournaments();
         }
     }
 }

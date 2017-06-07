@@ -1,10 +1,10 @@
-﻿namespace AllInPoker
+﻿namespace AllInPoker.Controllers
 {
     using MySql.Data.MySqlClient;
 
     public class DatabaseController
     {
-        protected MySqlConnection Connection;
+        protected MySqlConnection Connection { get; set; }
 
         /// <summary>
         /// Create DatabaseController

@@ -14,9 +14,10 @@
         {
         }
 
-        public void GetTournaments()
+        public List<TournamentItem> GetTournaments()
         {
-            // List<Tournament> tournaments = new List<Tournament>();
+            List<TournamentItem> tournaments = new List<TournamentItem>();
+
             try
             {
                 this.Connection.Open();
@@ -31,18 +32,28 @@
                     DateTime date = reader.GetDateTime("date");
                     decimal cost = reader.IsDBNull(reader.GetOrdinal("cost")) ? 0 : reader.GetDecimal("cost");
                     short minPlayers = reader.IsDBNull(reader.GetOrdinal("min_players")) ? (short)0 : reader.GetInt16("min_players");
-                    /*
-                    short minAge = reader.GetInt16("min_age");
-                    short maxAge = reader.GetInt16("max_age");
-                    int locationId = reader.GetInt32("location_id");
-                    int employeeId = reader.GetInt32("employee_id");
-                    int winner = reader.GetInt32("winner");
-                    short round = reader.GetInt16("round");
-                    */
+                    short minAge = reader.IsDBNull(reader.GetOrdinal("min_age")) ? (short)0 : reader.GetInt16("min_age");
+                    short maxAge = reader.IsDBNull(reader.GetOrdinal("max_age")) ? (short)0 : reader.GetInt16("max_age");
+                    int locationId = reader.IsDBNull(reader.GetOrdinal("location_id")) ? 0 : reader.GetInt32("location_id");
+                    int employeeId = reader.IsDBNull(reader.GetOrdinal("employee_id")) ? 0 : reader.GetInt32("employee_id");
+                    int winner = reader.IsDBNull(reader.GetOrdinal("winner")) ? 0 : reader.GetInt32("winner");
+                    short round = reader.IsDBNull(reader.GetOrdinal("round")) ? (short)0 : reader.GetInt16("round");
 
-                    // Tournament tournament = new Tournament { ID = id, Date = date, Cost = cost, MinPlayers = MinPlayers }
-                    // tournaments.Add(tournament);
-                    MessageBox.Show(cost.ToString(CultureInfo.InvariantCulture));
+                    TournamentItem tournament =
+                        new TournamentItem
+                            {
+                                Id = id,
+                                Date = date,
+                                Cost = cost,
+                                MinPlayers = minPlayers,
+                                MinAge = minAge,
+                                MaxAge = maxAge,
+                                LocationId = locationId,
+                                EmployeeId = employeeId,
+                                WinnerId = winner,
+                                Round = round
+                            };
+                    tournaments.Add(tournament);
                 }
             }
             catch (Exception e)
@@ -55,7 +66,7 @@
                 this.Connection.Close();
             }
 
-            // return tournaments;
+            return tournaments;
         }
     }
 }

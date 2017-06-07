@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
+    <Compile Include="Controllers\TournamentItem.cs" />
     <Compile Include="Views\UpcomingTournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
