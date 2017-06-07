@@ -1,5 +1,6 @@
 ﻿namespace AllInPoker.Views
 {
+    using System;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Globalization;
@@ -39,19 +40,19 @@
                 {
                     TournamentLocation = tournaments[i].CityName,
                     TournamentPlayerCount = tournaments[i].MinPlayers,
-                    TournamentDate = tournaments[i].Date.ToString(),
+                    TournamentDate = tournaments[i].Date.ToString(CultureInfo.InvariantCulture),
                     Location = new Point(i * 150, 0)
                 };
 
                 // If tournament has finished
-                if (tournaments[i].CityName.Contains("n"))
+                if (tournaments[i].Date < DateTime.Now)
                 {
                     button.BackColor = Color.FromArgb(240, 240, 240);
                     button.ForeColor = Color.Gray;
                 }
 
                 // If tournament is coming up
-                if (tournaments[i].CityName.Contains("o"))
+                if (tournaments[i].Date == DateTime.Now)
                 {
                     button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
                 }

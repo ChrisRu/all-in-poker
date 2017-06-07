@@ -25,7 +25,7 @@
             {
                 this.Connection.Open();
 
-                string query = @"SELECT * FROM tournament";
+                string query = @"SELECT * FROM tournament ORDER BY date DESC";
                 MySqlCommand cmd = new MySqlCommand(query, this.Connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -56,10 +56,8 @@
                 this.Connection.Close();
             }
 
-            foreach (TournamentItem tournament in tournaments)
-            {
-                tournament.CityName = this.GetCityName(tournament.LocationId);
-            }
+            // Add City Name to tournament
+            tournaments.ForEach(tournament => tournament.CityName = this.GetCityName(tournament.LocationId));
 
             return tournaments;
         }
