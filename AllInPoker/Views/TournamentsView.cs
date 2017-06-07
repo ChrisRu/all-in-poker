@@ -14,8 +14,6 @@
     /// </summary>
     public partial class TournamentsView : Form
     {
-        public List<string> Tournaments { get; set; }
-
         public List<string> Masterclasses { get; set; }
 
         public CreateEventPopup CreateTournamentView { get; set; }
@@ -35,13 +33,6 @@
             TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
             List<TournamentItem> tournaments = controller.GetTournaments();
 
-            this.Masterclasses = new List<string>
-            {
-                "Folden en Callen, wie zijn dat?",
-                "What is bluff? Baby don't hurt me...",
-                "Royal Flush your toilet, viezerik."
-            };
-
             for (int i = 0; i < tournaments.Count; i++)
             {
                 TournamentButton button = new TournamentButton
@@ -51,6 +42,7 @@
                     TournamentDate = tournaments[i].Date.ToString(CultureInfo.InvariantCulture),
                     Location = new Point(i * 150, 0)
                 };
+
                 /*
                 // If tournament has finished
                 if (tournament.Contains("Pijn"))
@@ -68,6 +60,13 @@
 
                 this.pnlTournaments.Controls?.Add(button);
             }
+
+            this.Masterclasses = new List<string>
+                                     {
+                                         "Folden en Callen, wie zijn dat?",
+                                         "What is bluff? Baby don't hurt me...",
+                                         "Royal Flush your toilet, viezerik."
+                                     };
 
             for (int i = 0; i < this.Masterclasses.Count; i++)
             {

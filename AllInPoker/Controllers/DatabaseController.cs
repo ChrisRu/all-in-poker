@@ -15,7 +15,7 @@
         /// <param name="password">Login Password</param>
         public DatabaseController(string server, string database, string uid, string password)
         {
-            this.Connection = new MySqlConnection($"Server={server};Database={database};Uid={uid}; Pwd={password}");
+            this.Connection = new MySqlConnection($"Server={server};Database={database};Uid={uid};Pwd={password}");
         }
     }
 }
