@@ -95,7 +95,7 @@ CREATE TABLE tournament_table (
     FOREIGN KEY(tournament_id)              REFERENCES tournament(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE tournament_table_players (
+CREATE TABLE tournament_table_player (
     table_id            int                 NOT NULL,
     player_id           int                 NOT NULL,
     position            int                 NOT NULL,
