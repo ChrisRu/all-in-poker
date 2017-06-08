@@ -41,8 +41,8 @@ CREATE TABLE player (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE professional (
-    id                 int                  NOT NULL,
-    nationality        varchar(40)          NOT NULL,
+    id                  int                 NOT NULL,
+    nationality         varchar(40)         NOT NULL,
 
     PRIMARY KEY(id),
     FOREIGN KEY(id)                         REFERENCES person(id) ON DELETE CASCADE
