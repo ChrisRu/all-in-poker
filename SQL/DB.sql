@@ -31,7 +31,7 @@ CREATE TABLE player (
     postal_code         varchar(6)          NOT NULL,
     city                varchar(50)         NOT NULL,
     street              varchar(50)         NOT NULL,
-    house_number        int                 NOT NULL,
+    house_number        varchar(8)          NOT NULL,
     money_won           decimal(5,2)        NOT NULL DEFAULT 0.00,
     rating              int                 NULL,
     iban_number         varchar(30)         NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE event_location (
     postal_code         varchar(6)          NOT NULL,
     city                varchar(30)         NOT NULL,
     street              varchar(30)         NOT NULL,
-    house_number        int                 NOT NULL,
+    house_number        varchar(8)          NOT NULL,
 
     PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

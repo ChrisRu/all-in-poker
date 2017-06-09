@@ -10,160 +10,160 @@ insert into person (first_name, last_name, gender, birth_date) values ('Kevina',
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'testasdb@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, middle_name, last_name, gender, birth_date) values ('Crysta', 'van der', 'Gronous', 'm', STR_TO_DATE('21/09/1980','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Ruby', 'Lapidus', 'm', STR_TO_DATE('21/09/1950','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31615345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Marylynne', 'Topping', 'm', STR_TO_DATE('21/09/1970','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Denys', 'Wernham', 'm', STR_TO_DATE('21/09/1940','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Filippa', 'Gier', 'm', STR_TO_DATE('21/09/1999','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Weber', 'Fancy', 'm', STR_TO_DATE('21/09/1992','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Valeria', 'Ropp', 'm', STR_TO_DATE('21/09/1990','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Romy', 'Buckerfield', 'v', STR_TO_DATE('21/09/1995','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Norry', 'Flower', 'v', STR_TO_DATE('21/09/1997','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Deck', 'Wais', 'm', STR_TO_DATE('21/09/1990','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Erik', 'Romaynes', 'm', STR_TO_DATE('21/09/2000','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Cyrus', 'Shillum', 'm', STR_TO_DATE('21/09/1990','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Merrie', 'Westberg', 'v', STR_TO_DATE('21/09/1996','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Mallory', 'Stachini', 'm', STR_TO_DATE('21/09/1991','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Berty', 'Wennington', 'm', STR_TO_DATE('21/09/1980','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Marcus', 'Threadkell', 'm', STR_TO_DATE('21/09/1965','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Alexandro', 'Yerlett', 'm', STR_TO_DATE('21/09/1990','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Piggy', 'Creelman', 'm', STR_TO_DATE('21/09/2005','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Trista', 'Reeken', 'v', STR_TO_DATE('21/09/1960','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Pamelina', 'Bissatt', 'm', STR_TO_DATE('21/09/1980','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Mildred', 'Bumpass', 'm', STR_TO_DATE('21/09/1991','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Vannie', 'Burness', 'v', STR_TO_DATE('21/09/2003','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Ardys', 'Eustace', 'm', STR_TO_DATE('21/09/1997','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Lindsey', 'Botha', 'm', STR_TO_DATE('21/09/2001','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Bendite', 'Pegden', 'v', STR_TO_DATE('21/09/1982','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Les', 'Moorhead', 'm', STR_TO_DATE('21/09/1971','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Galven', 'Dilkes', 'm', STR_TO_DATE('21/09/1931','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'testtest@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Kerry', 'McOnie', 'v', STR_TO_DATE('21/09/1941','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Cindie', 'Mudd', 'v', STR_TO_DATE('21/09/1999','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'tes35t@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Emiline', 'Bicknell', 'm', STR_TO_DATE('21/09/1961','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
 insert into person_email(id, email_address) values (LAST_INSERT_ID(), 'test@testmail.com');
-insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', 10, 'NDL102494910', 1000);
+insert into player(id, postal_code, city, street, house_number, iban_number, rating) values (LAST_INSERT_ID(), '2671GP', 'Zoetermeer', 'Straatnaamlaan', '10', 'NDL102494910', 1000);
 
 insert into person (first_name, last_name, gender, birth_date) values ('Richardo', 'Foskett', 'm', STR_TO_DATE('21/09/1971','%d/%m/%Y'));
 insert into person_phone(id, phone_number) values (LAST_INSERT_ID(), '+31612345678');
@@ -205,46 +205,46 @@ insert into professional(id, nationality) values (LAST_INSERT_ID(), 'Duits');
 --
 --
 
-insert into event_location (max_players, postal_code, city, street, house_number) values (20, '1820AF', '‘Izrā', 'Truax', '3');
-insert into event_location (max_players, postal_code, city, street, house_number) values (10, '1234AB', 'Arroyito', 'Waywood', '32');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '1820AF', 'Pasadena', 'Crest Line', '0643');
-insert into event_location (max_players, postal_code, city, street, house_number) values (60, '1234AB', 'Zhangxiong', 'Morningstar', '970');
-insert into event_location (max_players, postal_code, city, street, house_number) values (12, '1234AB', 'Nacka', 'Porter', '1');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '2671GP', 'Särkisalo', 'Maple', '8574');
-insert into event_location (max_players, postal_code, city, street, house_number) values (64, '2671GP', 'Jintao', 'Meadow Ridge', '37269');
-insert into event_location (max_players, postal_code, city, street, house_number) values (30, '2671GP', 'Paris 11', 'Westridge', '173');
-insert into event_location (max_players, postal_code, city, street, house_number) values (20, '1820AF', 'Yilongyong', 'Kipling', '4');
-insert into event_location (max_players, postal_code, city, street, house_number) values (12, '1234AB', 'Lykóvrysi', 'Nancy', '02');
-insert into event_location (max_players, postal_code, city, street, house_number) values (60, '1920HD', 'Tianxin', 'Vera', '421');
-insert into event_location (max_players, postal_code, city, street, house_number) values (20, '2671GP', 'Shahrak', 'Oakridge', '46');
-insert into event_location (max_players, postal_code, city, street, house_number) values (15, '2671GP', 'Kárystos', 'Ilene', '2');
-insert into event_location (max_players, postal_code, city, street, house_number) values (10, '1920HD', 'Kota Kinabalu', 'Columbus', '2593');
-insert into event_location (max_players, postal_code, city, street, house_number) values (48, '2671GP', 'Buea', 'Oakridge', '8');
-insert into event_location (max_players, postal_code, city, street, house_number) values (48, '1920HD', 'Prestea', 'Anniversary', '866');
-insert into event_location (max_players, postal_code, city, street, house_number) values (30, '1820AF', 'Potolo', 'Kensington', '4');
-insert into event_location (max_players, postal_code, city, street, house_number) values (15, '1920HD', 'Wierzbica', 'Columbus', '7158');
-insert into event_location (max_players, postal_code, city, street, house_number) values (64, '1234AB', 'Bantawora', 'Surrey', '5');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '1820AF', 'San Fernando del Valle', 'Arrowood', '5');
-insert into event_location (max_players, postal_code, city, street, house_number) values (36, '1820AF', 'Tbilisskaya', 'Namekagon', '98126');
-insert into event_location (max_players, postal_code, city, street, house_number) values (40, '1920HD', 'San Pablo', 'Swallow', '52641');
-insert into event_location (max_players, postal_code, city, street, house_number) values (64, '1920HD', 'Jiangdianzi', 'Prairieview', '41678');
-insert into event_location (max_players, postal_code, city, street, house_number) values (50, '1234AB', 'Västerås', 'Boyd', '2');
-insert into event_location (max_players, postal_code, city, street, house_number) values (50, '1920HD', 'Sandakan', 'Dovetail', '0');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '1820AF', 'Cergy-Pontoise', 'Corben', '7590');
-insert into event_location (max_players, postal_code, city, street, house_number) values (20, '2671GP', 'Lahan Sai', 'Hanson', '7');
-insert into event_location (max_players, postal_code, city, street, house_number) values (20, '1820AF', 'Desa Wetan Ciakar', 'Eggendart', '555');
-insert into event_location (max_players, postal_code, city, street, house_number) values (10, '1920HD', 'Lopandino', 'Waxwing', '20072');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '1920HD', 'Kurmanayevka', 'Pierstorff', '4918');
-insert into event_location (max_players, postal_code, city, street, house_number) values (60, '1820AF', 'Mayskiy', '1st', '112');
-insert into event_location (max_players, postal_code, city, street, house_number) values (60, '1920HD', 'Nishishinminato', 'Schiller', '71556');
-insert into event_location (max_players, postal_code, city, street, house_number) values (40, '1820AF', 'Goúvai', 'Paget', '38');
-insert into event_location (max_players, postal_code, city, street, house_number) values (10, '1234AB', 'Hisor', 'Village', '6');
-insert into event_location (max_players, postal_code, city, street, house_number) values (64, '1920HD', 'Xialiao', 'American Ash', '8218');
-insert into event_location (max_players, postal_code, city, street, house_number) values (50, '1820AF', 'San Antonio', 'Southridge', '75248');
-insert into event_location (max_players, postal_code, city, street, house_number) values (36, '1920HD', 'Huitán', 'Hooker', '9');
-insert into event_location (max_players, postal_code, city, street, house_number) values (52, '1234AB', 'Ayna', 'Meadow Vale', '73919');
-insert into event_location (max_players, postal_code, city, street, house_number) values (25, '1820AF', 'Jitian', 'Continental', '12696');
-insert into event_location (max_players, postal_code, city, street, house_number) values (52, '2671GP', 'Kỳ Anh', 'Village', '71');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('20', '1820AF', '‘Izrā', 'Truax', '3');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('10', '1234AB', 'Arroyito', 'Waywood', '32');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '1820AF', 'Pasadena', 'Crest Line', '0643');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('60', '1234AB', 'Zhangxiong', 'Morningstar', '970');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('12', '1234AB', 'Nacka', 'Porter', '1');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '2671GP', 'Särkisalo', 'Maple', '8574');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('64', '2671GP', 'Jintao', 'Meadow Ridge', '37269');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('30', '2671GP', 'Paris 11', 'Westridge', '173');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('20', '1820AF', 'Yilongyong', 'Kipling', '4');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('12', '1234AB', 'Lykóvrysi', 'Nancy', '02');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('60', '1920HD', 'Tianxin', 'Vera', '421');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('20', '2671GP', 'Shahrak', 'Oakridge', '46');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('15', '2671GP', 'Kárystos', 'Ilene', '2');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('10', '1920HD', 'Kota Kinabalu', 'Columbus', '2593');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('48', '2671GP', 'Buea', 'Oakridge', '8');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('48', '1920HD', 'Prestea', 'Anniversary', '866');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('30', '1820AF', 'Potolo', 'Kensington', '4');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('15', '1920HD', 'Wierzbica', 'Columbus', '7158');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('64', '1234AB', 'Bantawora', 'Surrey', '5');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '1820AF', 'San Fernando del Valle', 'Arrowood', '5');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('36', '1820AF', 'Tbilisskaya', 'Namekagon', '98126');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('40', '1920HD', 'San Pablo', 'Swallow', '52641');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('64', '1920HD', 'Jiangdianzi', 'Prairieview', '41678');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('50', '1234AB', 'Västerås', 'Boyd', '2');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('50', '1920HD', 'Sandakan', 'Dovetail', '0');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '1820AF', 'Cergy-Pontoise', 'Corben', '7590');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('20', '2671GP', 'Lahan Sai', 'Hanson', '7');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('20', '1820AF', 'Desa Wetan Ciakar', 'Eggendart', '555');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('10', '1920HD', 'Lopandino', 'Waxwing', '20072');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '1920HD', 'Kurmanayevka', 'Pierstorff', '4918');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('60', '1820AF', 'Mayskiy', '1st', '112');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('60', '1920HD', 'Nishishinminato', 'Schiller', '71556');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('40', '1820AF', 'Goúvai', 'Paget', '38');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('10', '1234AB', 'Hisor', 'Village', '6');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('64', '1920HD', 'Xialiao', 'American Ash', '8218');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('50', '1820AF', 'San Antonio', 'Southridge', '75248');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('36', '1920HD', 'Huitán', 'Hooker', '9');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('52', '1234AB', 'Ayna', 'Meadow Vale', '73919');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('25', '1820AF', 'Jitian', 'Continental', '12696');
+insert into event_location (max_players, postal_code, city, street, house_number) values ('52', '2671GP', 'Kỳ Anh', 'Village', '71');
 
 --
 --
