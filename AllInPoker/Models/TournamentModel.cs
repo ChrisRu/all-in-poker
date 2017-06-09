@@ -1,6 +1,7 @@
-﻿namespace AllInPoker.Controllers
+﻿namespace AllInPoker.Models
 {
     using System;
+    using System.Collections.Generic;
 
     public class TournamentItem
     {
@@ -25,5 +26,9 @@
         public int WinnerId { get; set; }
 
         public string CityName { get; set; }
+
+        public List<TournamentEntryModel> Entries { get; set; }
+
+        public List<TournamentTableModel> Tables { get; set; }
     }
 }

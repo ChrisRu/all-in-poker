@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Windows.Forms;
 
+    using AllInPoker.Models;
+
     using MySql.Data.MySqlClient;
 
     public class TournamentController : DatabaseController

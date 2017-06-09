@@ -8,6 +8,7 @@
 
     using AllInPoker.Buttons;
     using AllInPoker.Controllers;
+    using AllInPoker.Models;
     using AllInPoker.Popups;
 
     /// <summary>
