@@ -64,7 +64,16 @@
     </Compile>
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
-    <Compile Include="Controllers\TournamentItem.cs" />
+    <Compile Include="Models\EventLocationModel.cs" />
+    <Compile Include="Models\MasterclassEntryModel.cs" />
+    <Compile Include="Models\MasterclassModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\ProfessionalModel.cs" />
+    <Compile Include="Models\PlayerModel.cs" />
+    <Compile Include="Models\TournamentEntryModel.cs" />
+    <Compile Include="Models\TournamentModel.cs" />
+    <Compile Include="Models\TournamentTableModel.cs" />
+    <Compile Include="Models\TournamentTablePlayerModel.cs" />
     <Compile Include="Views\UpcomingTournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
