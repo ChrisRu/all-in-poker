@@ -82,65 +82,16 @@
                     new MySqlCommand(InsertString, this.Connection)
                     {
                         Parameters =
-                                {
-                                    new MySqlParameter(
-                                        "@date",
-                                        MySqlDbType.DateTime)
-                                        {
-                                            Value
-                                                = date
-                                        },
-                                    new MySqlParameter(
-                                        "@time",
-                                        MySqlDbType.Time)
-                                        {
-                                            Value
-                                                = date
-                                                    .ToLocalTime()
-                                        },
-                                    new MySqlParameter(
-                                        "@cost",
-                                        MySqlDbType.Decimal)
-                                        {
-                                            Value
-                                                = cost
-                                        },
-                                    new MySqlParameter(
-                                        "@min_players",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = minPlayers
-                                        },
-                                    new MySqlParameter(
-                                        "@min_age",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = minAge
-                                        },
-                                    new MySqlParameter(
-                                        "@location_id",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = maxAge
-                                        },
-                                    new MySqlParameter(
-                                        "@location_id",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = locationId
-                                        },
-                                    new MySqlParameter(
-                                        "@winner_id",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = winnerId
-                                        }
-                                }
+                        {
+                            new MySqlParameter("@date", MySqlDbType.DateTime) {Value = date},
+                            new MySqlParameter("@time", MySqlDbType.Time) {Value = date.ToLocalTime()},
+                            new MySqlParameter("@cost", MySqlDbType.Decimal) {Value = cost},
+                            new MySqlParameter("@min_players", MySqlDbType.Int32) {Value = minPlayers},
+                            new MySqlParameter("@min_age", MySqlDbType.Int32) {Value = minAge},
+                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = maxAge},
+                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = locationId},
+                            new MySqlParameter("@winner_id", MySqlDbType.Int32) {Value = winnerId}
+                        }
                     };
 
                 command.Prepare();
