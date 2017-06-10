@@ -76,12 +76,13 @@ CREATE TABLE tournament (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE tournament_entry (
+    reference_number    int                 NOT NULL AUTO_INCREMENT,
     player_id           int                 NOT NULL,
     tournament_id       int                 NOT NULL,
     date                date                NOT NULL,
     has_paid            boolean             NOT NULL DEFAULT false,
 
-    PRIMARY KEY(player_id, tournament_id),
+    PRIMARY KEY(reference_number),
     FOREIGN KEY(player_id)                  REFERENCES player(id) ON DELETE CASCADE,
     FOREIGN KEY(tournament_id)              REFERENCES tournament(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -120,12 +121,13 @@ CREATE TABLE masterclass (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE masterclass_entry (
+    reference_number    int                 NOT NULL AUTO_INCREMENT,
     player_id           int                 NOT NULL,
     masterclass_id      int                 NOT NULL,
     date                date                NOT NULL,
     has_paid            boolean             NOT NULL DEFAULT false,
 
-    PRIMARY KEY(player_id, masterclass_id),
+    PRIMARY KEY(reference_number),
     FOREIGN KEY(player_id)                  REFERENCES player(id) ON DELETE CASCADE,
     FOREIGN KEY(masterclass_id)             REFERENCES masterclass(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
