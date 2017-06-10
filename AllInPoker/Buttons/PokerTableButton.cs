@@ -15,6 +15,7 @@
             {
                 return string.Empty;
             }
+
             set
             {
                 base.Text = value;

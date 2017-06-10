@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class TournamentItem
+    public class TournamentModel
     {
         public int Id { get; set; }
 

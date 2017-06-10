@@ -33,7 +33,7 @@
             this.CreateUserView = new CreateUserPopup();
 
             TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
-            List<TournamentItem> tournaments = controller.GetTournaments();
+            List<TournamentModel> tournaments = controller.GetTournaments();
 
             for (int i = 0; i < tournaments.Count; i++)
             {

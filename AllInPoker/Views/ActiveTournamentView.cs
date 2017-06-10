@@ -1,11 +1,8 @@
 ﻿namespace AllInPoker.Views
 {
     using System.Collections.Generic;
-    using System.Data;
     using System.Drawing;
     using System.Windows.Forms;
-
-    using AllInPoker.Controllers;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.
@@ -33,7 +30,7 @@
             this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
             this.TableCount = 4;
             this.Date = "15/04/2017";
-            
+
             // Initialize View Components
             this.InitializeComponent();
             this.lblTitle.Text = "Toernooi " + this.Location;
@@ -43,17 +40,17 @@
             for (int j = 0; j < 8; j++)
             {
                 var table = new DataGridView
-                                 {
-                                     AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
-                                     AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells,
-                                     BackgroundColor = SystemColors.Control,
-                                     BorderStyle = BorderStyle.None,
-                                     RowHeadersVisible = false,
-                                     AutoSize = true,
-                                     ScrollBars = ScrollBars.None,
-                                     ColumnHeadersVisible = true,
-                                     ReadOnly = true
-                                 };
+                {
+                    AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
+                    AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells,
+                    BackgroundColor = SystemColors.Control,
+                    BorderStyle = BorderStyle.None,
+                    RowHeadersVisible = false,
+                    AutoSize = true,
+                    ScrollBars = ScrollBars.None,
+                    ColumnHeadersVisible = true,
+                    ReadOnly = true
+                };
                 table.Columns.Add("Naam", "Naam");
                 table.Columns.Add("Tafel", "Tafel");
                 table.Columns.Add("Seat", "Seat");

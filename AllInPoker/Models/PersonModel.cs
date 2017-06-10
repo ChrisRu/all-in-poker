@@ -27,8 +27,10 @@
             {
                 case 'm':
                     return "Man";
+
                 case 'v':
                     return "Vrouw";
+
                 default:
                     return "Niet bekend";
             }

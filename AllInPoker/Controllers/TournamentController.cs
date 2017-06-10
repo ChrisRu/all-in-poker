@@ -1,12 +1,10 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using AllInPoker.Models;
+    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-
-    using MySql.Data.MySqlClient;
 
     public class TournamentController : DatabaseController
     {
@@ -19,9 +17,9 @@
         /// Get all tournaments in a list
         /// </summary>
         /// <returns>List with TournamentItems</returns>
-        public List<TournamentItem> GetTournaments()
+        public List<TournamentModel> GetTournaments()
         {
-            List<TournamentItem> tournaments = new List<TournamentItem>();
+            List<TournamentModel> tournaments = new List<TournamentModel>();
 
             try
             {
@@ -33,25 +31,24 @@
 
                 while (reader.Read())
                 {
-                    tournaments.Add(new TournamentItem
-                                        {
-                                            Id = reader.GetInt32("id"),
-                                            Date = reader.GetDateTime("date").ToLocalTime(),
-                                            //// Time = reader.GetDateTime("time").ToLocalTime(),
-                                            Cost = reader.GetDecimal("cost"),
-                                            MinPlayers = reader.GetInt32("min_players"),
-                                            MinAge = reader.GetInt32("min_age"),
-                                            MaxAge = reader.GetInt32("max_age"),
-                                            LocationId = reader.GetInt32("location_id"),
-                                            WinnerId = reader.IsDBNull(reader.GetOrdinal("winner_id")) ? -1 : reader.GetInt32("winner_id")
-                                        });
+                    tournaments.Add(new TournamentModel
+                    {
+                        Id = reader.GetInt32("id"),
+                        Date = reader.GetDateTime("date").ToLocalTime(),
+                        //// Time = reader.GetDateTime("time").ToLocalTime(),
+                        Cost = reader.GetDecimal("cost"),
+                        MinPlayers = reader.GetInt32("min_players"),
+                        MinAge = reader.GetInt32("min_age"),
+                        MaxAge = reader.GetInt32("max_age"),
+                        LocationId = reader.GetInt32("location_id"),
+                        WinnerId = reader.IsDBNull(reader.GetOrdinal("winner_id")) ? -1 : reader.GetInt32("winner_id")
+                    });
                 }
-
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fetching tournaments failed", e);
-                MessageBox.Show(e.Message);
+                Console.WriteLine("Fetching tournaments failed. " + e.Message);
+                MessageBox.Show("Toernooien ophalen is mislukt.");
             }
             finally
             {
@@ -84,8 +81,8 @@
 
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                        {
-                            Parameters =
+                    {
+                        Parameters =
                                 {
                                     new MySqlParameter(
                                         "@date",
@@ -111,41 +108,41 @@
                                         },
                                     new MySqlParameter(
                                         "@min_players",
-                                        MySqlDbType.Int64)
+                                        MySqlDbType.Int32)
                                         {
                                             Value
                                                 = minPlayers
                                         },
                                     new MySqlParameter(
                                         "@min_age",
-                                        MySqlDbType.Int64)
+                                        MySqlDbType.Int32)
                                         {
                                             Value
                                                 = minAge
                                         },
                                     new MySqlParameter(
                                         "@location_id",
-                                        MySqlDbType.Int64)
+                                        MySqlDbType.Int32)
                                         {
                                             Value
                                                 = maxAge
                                         },
                                     new MySqlParameter(
                                         "@location_id",
-                                        MySqlDbType.Int64)
+                                        MySqlDbType.Int32)
                                         {
                                             Value
                                                 = locationId
                                         },
                                     new MySqlParameter(
                                         "@winner_id",
-                                        MySqlDbType.Int64)
+                                        MySqlDbType.Int32)
                                         {
                                             Value
                                                 = winnerId
                                         }
                                 }
-                        };
+                    };
 
                 command.Prepare();
                 command.ExecuteNonQuery();
@@ -154,12 +151,93 @@
             catch (Exception e)
             {
                 trans?.Rollback();
-                MessageBox.Show("Toernooi toevoegen mislukt. ", e.Message);
+                Console.WriteLine("Adding tournament failed. " + e.Message);
+                MessageBox.Show("Toernooi toevoegen mislukt.");
             }
             finally
             {
                 this.Connection.Close();
             }
+        }
+
+        /// <summary>
+        /// Get all TournamentTables that are in a tournament
+        /// </summary>
+        /// <param name="tournamentId">ID of the tournament</param>
+        /// <returns>List of tournament tables</returns>
+        public List<TournamentTableModel> GetTournamentTables(int tournamentId)
+        {
+            List<TournamentTableModel> tables = new List<TournamentTableModel>();
+
+            try
+            {
+                this.Connection.Open();
+
+                string query = $@"SELECT * FROM tournament_table WHERE tournament_table.id = {tournamentId}";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    tables.Add(new TournamentTableModel
+                    {
+                        Id = reader.GetInt32("id"),
+                        TournamentId = reader.GetInt32("tournament_id"),
+                        Round = reader.GetInt32("round")
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching tournament tables failed. " + e.Message);
+                MessageBox.Show("Ophalen toernooi tafels is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return tables;
+        }
+
+        /// <summary>
+        /// Get all TournamentTablePlayers that are sitting on a table
+        /// </summary>
+        /// <param name="tableId">ID of the TournamentTableModel</param>
+        /// <returns>List of players on a tournament table</returns>
+        public List<TournamentTablePlayerModel> GetTournamentTablePlayers(int tableId)
+        {
+            List<TournamentTablePlayerModel> players = new List<TournamentTablePlayerModel>();
+
+            try
+            {
+                this.Connection.Open();
+
+                string query = $@"SELECT * FROM tournament_table_player WHERE table_id = {tableId}";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    players.Add(new TournamentTablePlayerModel
+                    {
+                        TableId = reader.GetInt32("table_id"),
+                        PlayerId = reader.GetInt32("player_id"),
+                        Position = reader.GetInt32("position")
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching tournament table players failed. " + e.Message);
+                MessageBox.Show("Ophalen spelers van toernooi tafel is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return players;
         }
 
         /// <summary>
@@ -184,8 +262,8 @@
             }
             catch (Exception e)
             {
-                Console.WriteLine("Fetching city failed", e);
-                MessageBox.Show(e.Message);
+                Console.WriteLine("Fetching city failed. " + e.Message);
+                MessageBox.Show("Ophalen locatie van toernooi is mislukt.");
             }
             finally
             {

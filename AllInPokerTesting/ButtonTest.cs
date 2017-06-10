@@ -1,10 +1,8 @@
 ﻿namespace AllInPokerTesting
 {
-    using System.Windows.Forms;
-
     using AllInPoker.Buttons;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Windows.Forms;
 
     [TestClass]
     public class ButtonTest
