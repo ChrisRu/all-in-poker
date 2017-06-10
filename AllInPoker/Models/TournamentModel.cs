@@ -25,7 +25,7 @@
 
         public int WinnerId { get; set; }
 
-        public string CityName { get; set; }
+        public EventLocationModel Location { get; set; }
 
         public List<TournamentEntryModel> Entries { get; set; }
 

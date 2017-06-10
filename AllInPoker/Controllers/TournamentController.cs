@@ -1,10 +1,12 @@
 ﻿namespace AllInPoker.Controllers
 {
-    using AllInPoker.Models;
-    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
+
+    using AllInPoker.Models;
+
+    using MySql.Data.MySqlClient;
 
     public class TournamentController : DatabaseController
     {
@@ -54,9 +56,6 @@
             {
                 this.Connection.Close();
             }
-
-            // Add City Name to tournament
-            tournaments.ForEach(tournament => tournament.CityName = this.GetCityName(tournament.LocationId));
 
             return tournaments;
         }
@@ -238,39 +237,6 @@
             }
 
             return players;
-        }
-
-        /// <summary>
-        /// Fetch City Name based on location id
-        /// </summary>
-        /// <param name="locationId">ID in event_location table</param>
-        /// <returns>City Name</returns>
-        public string GetCityName(int locationId)
-        {
-            try
-            {
-                this.Connection.Open();
-
-                string query = $@"SELECT city FROM event_location where id = {locationId}";
-                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    return reader.GetString("city");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Fetching city failed. " + e.Message);
-                MessageBox.Show("Ophalen locatie van toernooi is mislukt.");
-            }
-            finally
-            {
-                this.Connection.Close();
-            }
-
-            return "-";
         }
     }
 }
