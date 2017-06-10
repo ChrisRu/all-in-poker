@@ -63,6 +63,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\DatabaseController.cs" />
+    <Compile Include="Controllers\EventLocationController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
     <Compile Include="Models\EventLocationModel.cs" />
     <Compile Include="Models\MasterclassEntryModel.cs" />
