@@ -19,8 +19,10 @@
 
         public int ProfessionalId { get; set; }
 
+        public ProfessionalModel Professional { get; set; }
+
         public List<MasterclassEntryModel> Entries { get; set; }
 
-        public string CityName { get; set; }
+        public EventLocationModel Location { get; set; }
     }
 }

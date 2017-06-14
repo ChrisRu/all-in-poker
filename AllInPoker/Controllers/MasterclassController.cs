@@ -14,7 +14,7 @@
         /// Get all Masterclasss in a list
         /// </summary>
         /// <returns>List with MasterclassItems</returns>
-        public List<MasterclassModel> GetMasterclasss()
+        public List<MasterclassModel> GetMasterclasses()
         {
             List<MasterclassModel> masterclasses = new List<MasterclassModel>();
             EventLocationController eventLocationController = new EventLocationController();
@@ -34,7 +34,9 @@
                         Id = reader.GetInt32("id"),
                         Date = reader.GetDateTime("date").ToLocalTime(),
                         MinPlayers = reader.GetInt32("min_players"),
-                        LocationId = reader.GetInt32("location_id")
+                        MinRating = reader.GetInt32("min_rating"),
+                        LocationId = reader.GetInt32("location_id"),
+                        ProfessionalId = reader.GetInt32("professional_id")
                     });
                 }
             }
@@ -46,6 +48,12 @@
             finally
             {
                 this.Connection.Close();
+            }
+
+            foreach (MasterclassModel masterclass in masterclasses)
+            {
+                masterclass.Location = eventLocationController.GetEventLocation(masterclass.Id);
+
             }
 
             return masterclasses;
@@ -60,6 +68,7 @@
             int locationId,
             int winnerId)
         {
+            /*
             MySqlTransaction trans = null;
 
             try
@@ -98,7 +107,7 @@
             finally
             {
                 this.Connection.Close();
-            }
+            }*/
         }
     }
 }

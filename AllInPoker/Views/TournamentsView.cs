@@ -16,8 +16,6 @@
     /// </summary>
     public partial class TournamentsView : Form
     {
-        public List<string> Masterclasses { get; set; }
-
         public CreateEventPopup CreateTournamentView { get; set; }
 
         public CreateUserPopup CreateUserView { get; set; }
@@ -32,16 +30,15 @@
             this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
 
-            TournamentController controller = new TournamentController();
-            List<TournamentModel> tournaments = controller.GetTournaments();
+            TournamentController tournamentController = new TournamentController();
+            List<TournamentModel> tournaments = tournamentController.GetTournaments();
+            MasterclassController masterclassController = new MasterclassController();
+            List<MasterclassModel> masterclasses = masterclassController.GetMasterclasses();
 
             for (int i = 0; i < tournaments.Count; i++)
             {
-                TournamentButton button = new TournamentButton
-                {
-                    Tournament = tournaments[i],
-                    Location = new Point(i * 150, 0)
-                };
+                TournamentButton button =
+                    new TournamentButton { Tournament = tournaments[i], Location = new Point(i * 150, 0) };
 
                 // If tournament has finished
                 if (tournaments[i].Date < DateTime.Now)
@@ -59,42 +56,29 @@
                 this.pnlTournaments.Controls?.Add(button);
             }
 
-            this.Masterclasses = new List<string>
-                                     {
-                                         "Folden en Callen, wie zijn dat?",
-                                         "What is bluff? Baby don't hurt me...",
-                                         "Royal Flush your toilet, viezerik."
-                                     };
-            /*
-            for (int i = 0; i < this.Masterclasses.Count; i++)
+            for (int i = 0; i < masterclasses.Count; i++)
             {
-                string masterclass = this.Masterclasses[i];
-
                 MasterclassButton button = new MasterclassButton
                 {
-                    MasterclassTitle = masterclass,
-                    MasterclassTutor = "Barry Badpak",
-                    MasterclassPlayerCount = 8,
-                    MasterclassMaxPlayerCount = 12,
-                    MasterclassDate = "02/05/17",
+                    Masterclass = masterclasses[i],
                     Location = new Point(i * 260, 0)
                 };
 
                 // If tournament has finished
-                if (masterclass.Contains("lus"))
+                if (masterclasses[i].Date < DateTime.Now)
                 {
                     button.BackColor = Color.FromArgb(240, 240, 240);
                     button.ForeColor = Color.Gray;
                 }
 
                 // If tournament is coming up
-                if (masterclass.Contains("old"))
+                if (masterclasses[i].Date == DateTime.Now)
                 {
                     button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
                 }
 
                 this.pnlMasterclasses.Controls?.Add(button);
-            }*/
+            }
         }
 
         /// <summary>

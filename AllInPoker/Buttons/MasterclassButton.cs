@@ -3,6 +3,7 @@
     using System.Drawing;
     using System.Windows.Forms;
 
+    using AllInPoker.Models;
     using AllInPoker.Views;
 
     /// <summary>
@@ -23,15 +24,20 @@
             }
         }
 
-        public string MasterclassTitle { get; set; }
+        private MasterclassModel _masterclass;
 
-        public string MasterclassTutor { get; set; }
-
-        public int MasterclassPlayerCount { get; set; }
-
-        public int MasterclassMaxPlayerCount { get; set; }
-
-        public string MasterclassDate { get; set; }
+        public MasterclassModel Masterclass
+        {
+            get
+            {
+                return this._masterclass;
+            }
+            set
+            {
+                this._masterclass = value;
+                // this.Click += (sender, args) => new UpcomingTournamentView(this.Masterclass).ShowDialog();
+            }
+        }
 
         private Font RegularFont { get; }
 
@@ -51,8 +57,6 @@
             this.UseVisualStyleBackColor = false;
             this.Cursor = Cursors.Hand;
             this.BackColor = Color.White;
-
-            // this.Click += (sender, args) => new UpcomingTournamentView(this.MasterclassTitle).ShowDialog();
         }
 
         /// <summary>
@@ -73,7 +77,7 @@
                 using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Near;
-                    paintEventArgs.Graphics.DrawString(this.MasterclassTitle, this.BigFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Masterclass.Professional.Fullname(), this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Center;
                     paintEventArgs.Graphics.DrawString("door " + this.MasterclassTutor, this.RegularFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
