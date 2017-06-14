@@ -10,11 +10,6 @@
 
     public class TournamentController : DatabaseController
     {
-        public TournamentController(string server, string database, string uid, string password)
-            : base(server, database, uid, password)
-        {
-        }
-
         /// <summary>
         /// Get all tournaments in a list
         /// </summary>
@@ -22,6 +17,7 @@
         public List<TournamentModel> GetTournaments()
         {
             List<TournamentModel> tournaments = new List<TournamentModel>();
+            EventLocationController eventLocationController = new EventLocationController();
 
             try
             {
@@ -37,7 +33,6 @@
                     {
                         Id = reader.GetInt32("id"),
                         Date = reader.GetDateTime("date").ToLocalTime(),
-                        //// Time = reader.GetDateTime("time").ToLocalTime(),
                         Cost = reader.GetDecimal("cost"),
                         MinPlayers = reader.GetInt32("min_players"),
                         MinAge = reader.GetInt32("min_age"),
@@ -55,6 +50,16 @@
             finally
             {
                 this.Connection.Close();
+            }
+
+            foreach (TournamentModel tournament in tournaments)
+            {
+                tournament.Location = eventLocationController.GetEventLocation(tournament.Id);
+                tournament.Tables = this.GetTournamentTables(tournament.Id);
+                foreach (TournamentTableModel table in tournament.Tables)
+                {
+                    table.Players = this.GetTournamentTablePlayers(table.Id);
+                }
             }
 
             return tournaments;

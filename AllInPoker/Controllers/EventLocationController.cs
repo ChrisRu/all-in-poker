@@ -10,11 +10,6 @@
 
     public class EventLocationController : DatabaseController
     {
-        public EventLocationController(string server, string database, string uid, string password)
-            : base(server, database, uid, password)
-        {
-        }
-
         public List<EventLocationModel> GetEventLocations()
         {
             List<EventLocationModel> locations = new List<EventLocationModel>();

@@ -32,16 +32,14 @@
             this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
 
-            TournamentController controller = new TournamentController("localhost", "allin_poker", "root", "root");
+            TournamentController controller = new TournamentController();
             List<TournamentModel> tournaments = controller.GetTournaments();
 
             for (int i = 0; i < tournaments.Count; i++)
             {
                 TournamentButton button = new TournamentButton
                 {
-                    TournamentLocation = tournaments[i].CityName,
-                    TournamentPlayerCount = tournaments[i].MinPlayers,
-                    TournamentDate = tournaments[i].Date.ToString(CultureInfo.InvariantCulture),
+                    Tournament = tournaments[i],
                     Location = new Point(i * 150, 0)
                 };
 
@@ -67,7 +65,7 @@
                                          "What is bluff? Baby don't hurt me...",
                                          "Royal Flush your toilet, viezerik."
                                      };
-
+            /*
             for (int i = 0; i < this.Masterclasses.Count; i++)
             {
                 string masterclass = this.Masterclasses[i];
@@ -96,7 +94,7 @@
                 }
 
                 this.pnlMasterclasses.Controls?.Add(button);
-            }
+            }*/
         }
 
         /// <summary>

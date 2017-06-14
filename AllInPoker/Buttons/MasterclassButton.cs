@@ -52,7 +52,7 @@
             this.Cursor = Cursors.Hand;
             this.BackColor = Color.White;
 
-            this.Click += (sender, args) => new UpcomingTournamentView(this.MasterclassTitle).ShowDialog();
+            // this.Click += (sender, args) => new UpcomingTournamentView(this.MasterclassTitle).ShowDialog();
         }
 
         /// <summary>

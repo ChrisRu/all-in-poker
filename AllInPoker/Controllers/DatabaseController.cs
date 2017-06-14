@@ -9,13 +9,13 @@
         /// <summary>
         /// Create DatabaseController
         /// </summary>
-        /// <param name="server">Server IP or URL</param>
-        /// <param name="database">Database Name</param>
-        /// <param name="uid">Login UID</param>
-        /// <param name="password">Login Password</param>
-        public DatabaseController(string server, string database, string uid, string password)
+        public DatabaseController()
         {
-            this.Connection = new MySqlConnection($"Server={server};Database={database};Uid={uid};Pwd={password}");
+            const string Server = "localhost";
+            const string Database = "allin_poker";
+            const string Uid = "root";
+            const string Password = "root";
+            this.Connection = new MySqlConnection($"Server={Server};Database={Database};Uid={Uid};Pwd={Password}");
         }
     }
 }

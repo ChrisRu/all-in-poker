@@ -1,8 +1,10 @@
 ﻿namespace AllInPoker.Buttons
 {
+    using System;
     using System.Drawing;
     using System.Windows.Forms;
 
+    using AllInPoker.Models;
     using AllInPoker.Views;
 
     /// <summary>
@@ -23,11 +25,26 @@
             }
         }
 
-        public string TournamentLocation { get; set; }
-
-        public int TournamentPlayerCount { get; set; }
-
-        public string TournamentDate { get; set; }
+        private TournamentModel _tournament;
+        public TournamentModel Tournament
+        {
+            get
+            {
+                return this._tournament;
+            }
+            set
+            {
+                this._tournament = value;
+                if (this.Tournament.Date <= DateTime.Now)
+                {
+                    this.Click += (sender, args) => new ActiveTournamentView(this.Tournament).ShowDialog();
+                }
+                else
+                {
+                    this.Click += (sender, args) => new UpcomingTournamentView(this.Tournament).ShowDialog();
+                }
+            }
+        }
 
         private Font RegularFont { get; }
 
@@ -48,7 +65,7 @@
             this.Cursor = Cursors.Hand;
             this.BackColor = Color.FromArgb(255, 255, 255);
 
-            this.Click += (sender, args) => new ActiveTournamentView(this.TournamentLocation).ShowDialog();
+            
         }
 
         /// <summary>
@@ -69,11 +86,11 @@
                 using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Center;
-                    paintEventArgs.Graphics.DrawString(this.TournamentLocation, this.BigFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Tournament.Location.City, this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
-                    paintEventArgs.Graphics.DrawString(this.TournamentDate, this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Tournament.Date.ToShortDateString(), this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    paintEventArgs.Graphics.DrawString(this.TournamentPlayerCount + " spelers", this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Tournament.MinPlayers + " spelers", this.RegularFont, brush, rect, sf);
                 }
             }
         }

@@ -4,48 +4,30 @@
     using System.Collections.Generic;
     using System.Windows.Forms;
 
+    using AllInPoker.Models;
+
     /// <summary>
     /// Single Tournament View with players, tables, etc.
     /// </summary>
     public partial class UpcomingTournamentView : Form
     {
-        private string TournamentId { get; set; }
-
-        private new string Location { get; set; }
-
-        private List<string> AllPlayers { get; set; }
-
-        private List<string> Players { get; set; }
-
-        private List<string> FilteredPlayers { get; set; }
-
-        private int TableCount { get; set; }
-
-        private string Date { get; set; }
+        private TournamentModel Tournament { get; set; }
 
         /// <summary>
         /// Initialize TournamentView
         /// </summary>
         /// <param name="id">MySQL Tournament ID</param>
-        public UpcomingTournamentView(string id)
+        public UpcomingTournamentView(TournamentModel tournament)
         {
-            this.TournamentId = id;
+            this.Tournament = tournament;
 
             // TODO: Add tables and user view to GUI
-
-            // Temporary variables
-            this.Location = id;
-            this.AllPlayers = new List<string> { "Truus", "Joris", "Kees", "Klaas", "Leo", "Luk", "Corneel", "Karel", "Riet", "Piet" };
-            this.Players = new List<string> { "Henk", "Aard", "Erik", "Joop", "Bob", "Marie" };
-            this.FilteredPlayers = this.Players;
-            this.Date = "2017-04-11";
-            this.TableCount = 4;
 
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Location;
             this.txtTitle.Text = "Toernooi " + this.Location;
-            this.datePicker.Value = DateTime.Parse(this.Date);
+            this.datePicker.Value = this.Tournament.Date;
 
             this.lstTournamentPlayers.Columns.Add("Name");
             this.lstAllPlayers.Columns.Add("Name");
@@ -69,8 +51,8 @@
             {
                 this.lstTournamentPlayers.Items.Remove(item);
                 this.lstAllPlayers.Items.Add(item);
-                this.AllPlayers.Remove(item.Text);
-                this.Players.Add(item.Text);
+                // this.AllPlayers.Remove(item.Text);
+                // this.Players.Add(item.Text);
             }
 
             this.UnselectAll();
@@ -85,8 +67,8 @@
             {
                 this.lstAllPlayers.Items.Remove(item);
                 this.lstTournamentPlayers.Items.Add(item);
-                this.AllPlayers.Add(item.Text);
-                this.Players.Remove(item.Text);
+                // this.AllPlayers.Add(item.Text);
+                // this.Players.Remove(item.Text);
             }
 
             this.UnselectAll();
@@ -108,16 +90,16 @@
         {
             this.lstTournamentPlayers.Clear();
             this.lstAllPlayers.Clear();
-
+            /*
             foreach (string player in this.Players)
             {
                 this.lstTournamentPlayers.Items.Add(player);
             }
-
+            
             foreach (string player in this.AllPlayers)
             {
                 this.lstAllPlayers.Items.Add(player);
-            }
+            }*/
         }
 
         /// <summary>
