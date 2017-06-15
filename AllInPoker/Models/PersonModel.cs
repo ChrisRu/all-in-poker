@@ -35,5 +35,10 @@
                     return "Niet bekend";
             }
         }
+
+        public string GetFullName()
+        {
+            return $"{this.FirstName} {this.MiddleName} {this.LastName}";
+        }
     }
 }

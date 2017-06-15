@@ -18,6 +18,7 @@
         {
             List<MasterclassModel> masterclasses = new List<MasterclassModel>();
             EventLocationController eventLocationController = new EventLocationController();
+            ProfessionalController professionalController = new ProfessionalController();
 
             try
             {
@@ -53,7 +54,8 @@
             foreach (MasterclassModel masterclass in masterclasses)
             {
                 masterclass.Location = eventLocationController.GetEventLocation(masterclass.Id);
-
+                masterclass.Professional = professionalController.GetProfessional(masterclass.ProfessionalId);
+                masterclass.Entries = this.GetMasterclassEntries(masterclass.Id);
             }
 
             return masterclasses;
@@ -108,6 +110,42 @@
             {
                 this.Connection.Close();
             }*/
+        }
+
+        public List<MasterclassEntryModel> GetMasterclassEntries(int masterclassId)
+        {
+            List<MasterclassEntryModel> entries = new List<MasterclassEntryModel>();
+
+            try
+            {
+                this.Connection.Open();
+
+                string query = $@"SELECT * FROM masterclass_entry WHERE masterclass_id = { masterclassId }";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    entries.Add(new MasterclassEntryModel
+                                   {
+                                        PlayerId = reader.GetInt32("player_id"),
+                                        MasterclassId = reader.GetInt32("masterclass_id"),
+                                        Date = reader.GetDateTime("date"),
+                                        HasPaid = reader.GetBoolean("has_paid")
+                                   });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching tournament tables failed. " + e.Message);
+                MessageBox.Show("Ophalen toernooi tafels is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return entries;
         }
     }
 }

@@ -65,6 +65,8 @@
     <Compile Include="Controllers\DatabaseController.cs" />
     <Compile Include="Controllers\EventLocationController.cs" />
     <Compile Include="Controllers\MasterclassController.cs" />
+    <Compile Include="Controllers\ProfessionalController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
     <Compile Include="Models\EventLocationModel.cs" />
     <Compile Include="Models\MasterclassEntryModel.cs" />

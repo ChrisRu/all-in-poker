@@ -77,13 +77,13 @@
                 using (Brush brush = new SolidBrush(this.ForeColor))
                 {
                     sf.LineAlignment = StringAlignment.Near;
-                    paintEventArgs.Graphics.DrawString(this.Masterclass.Professional.Fullname(), this.BigFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Masterclass.Professional.GetFullName(), this.BigFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Center;
-                    paintEventArgs.Graphics.DrawString("door " + this.MasterclassTutor, this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString("door " + this.Masterclass.Professional.GetFullName(), this.RegularFont, brush, rect, sf);
                     sf.LineAlignment = StringAlignment.Far;
-                    paintEventArgs.Graphics.DrawString(this.MasterclassDate, this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Masterclass.Date.ToShortDateString(), this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    paintEventArgs.Graphics.DrawString(this.MasterclassPlayerCount + "/" + this.MasterclassMaxPlayerCount + " deelnemers", this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Masterclass.Entries.Count + "/" + this.Masterclass.Location.MaxPlayers + " deelnemers", this.RegularFont, brush, rect, sf);
                 }
             }
         }
