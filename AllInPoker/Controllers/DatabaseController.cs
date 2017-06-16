@@ -1,8 +1,7 @@
 ﻿namespace AllInPoker.Controllers
 {
-    using System.Configuration;
-
     using MySql.Data.MySqlClient;
+    using System.Configuration;
 
     public class DatabaseController
     {

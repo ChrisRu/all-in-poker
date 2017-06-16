@@ -1,12 +1,10 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using AllInPoker.Models;
+    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-
-    using MySql.Data.MySqlClient;
 
     public class ProfessionalController : DatabaseController
     {
@@ -29,15 +27,15 @@
                 while (reader.Read())
                 {
                     professionals.Add(new ProfessionalModel
-                                    {
-                                        Id = reader.GetInt32("id"),
-                                        BirthDate = reader.GetDateTime("birth_date"),
-                                        FirstName = reader.GetString("first_name"),
-                                        MiddleName = reader.GetString("middle_name"),
-                                        LastName = reader.GetString("last_name"),
-                                        Gender = reader.GetChar("gender"),
-                                        Nationality = reader.GetString("nationality")
-                                    });
+                    {
+                        Id = reader.GetInt32("id"),
+                        BirthDate = reader.GetDateTime("birth_date"),
+                        FirstName = reader.GetString("first_name"),
+                        MiddleName = reader.GetString("middle_name"),
+                        LastName = reader.GetString("last_name"),
+                        Gender = reader.GetChar("gender"),
+                        Nationality = reader.GetString("nationality")
+                    });
                 }
             }
             catch (Exception e)
@@ -78,15 +76,15 @@
                 while (reader.Read())
                 {
                     professional = new ProfessionalModel
-                                          {
-                                              Id = reader.GetInt32("id"),
-                                              BirthDate = reader.GetDateTime("birth_date"),
-                                              FirstName = reader.GetString("first_name"),
-                                              MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
-                                              LastName = reader.GetString("last_name"),
-                                              Gender = reader.GetChar("gender"),
-                                              Nationality = reader.GetString("nationality")
-                                          };
+                    {
+                        Id = reader.GetInt32("id"),
+                        BirthDate = reader.GetDateTime("birth_date"),
+                        FirstName = reader.GetString("first_name"),
+                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
+                        LastName = reader.GetString("last_name"),
+                        Gender = reader.GetChar("gender"),
+                        Nationality = reader.GetString("nationality")
+                    };
                 }
             }
             catch (Exception e)
@@ -194,8 +192,8 @@
                     @"insert into person (first_name, middle_name, last_name, gender, birth_date) values (@first_name, @middle_name, @last_name, @gender, @birth_date);";
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                        {
-                            Parameters =
+                    {
+                        Parameters =
                                 {
                                     new MySqlParameter("@first_name", MySqlDbType.VarChar) { Value = professional.FirstName },
                                     new MySqlParameter("@birth_date", MySqlDbType.DateTime) { Value = professional.BirthDate },
@@ -203,7 +201,7 @@
                                     new MySqlParameter("@middle_name", MySqlDbType.VarChar) { Value = middleName },
                                     new MySqlParameter("@gender", MySqlDbType.VarChar) { Value = professional.Gender }
                                 }
-                        };
+                    };
 
                 command.Prepare();
                 command.ExecuteNonQuery();
@@ -240,12 +238,12 @@
                     @"insert into professional(id, nationality) value (LAST_INSERT_ID(), @nationality)";
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                        {
-                            Parameters =
+                    {
+                        Parameters =
                                 {
                                     new MySqlParameter("@nationality", MySqlDbType.VarChar) { Value = professional.Nationality }
                                 }
-                        };
+                    };
 
                 command.Prepare();
                 command.ExecuteNonQuery();

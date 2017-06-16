@@ -1,12 +1,10 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using AllInPoker.Models;
+    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-
-    using MySql.Data.MySqlClient;
 
     public class MasterclassController : DatabaseController
     {
@@ -127,13 +125,13 @@
                 while (reader.Read())
                 {
                     entries.Add(new MasterclassEntryModel
-                                   {
-                                        ReferenceNumber = reader.GetInt32("reference_number"),
-                                        PlayerId = reader.GetInt32("player_id"),
-                                        MasterclassId = reader.GetInt32("masterclass_id"),
-                                        Date = reader.GetDateTime("date"),
-                                        HasPaid = reader.GetBoolean("has_paid")
-                                   });
+                    {
+                        ReferenceNumber = reader.GetInt32("reference_number"),
+                        PlayerId = reader.GetInt32("player_id"),
+                        MasterclassId = reader.GetInt32("masterclass_id"),
+                        Date = reader.GetDateTime("date"),
+                        HasPaid = reader.GetBoolean("has_paid")
+                    });
                 }
             }
             catch (Exception e)

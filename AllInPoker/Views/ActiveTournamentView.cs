@@ -1,11 +1,8 @@
 ﻿namespace AllInPoker.Views
 {
-    using System.Collections.Generic;
+    using AllInPoker.Models;
     using System.Drawing;
     using System.Windows.Forms;
-
-    using AllInPoker.Controllers;
-    using AllInPoker.Models;
 
     /// <summary>
     /// Single Tournament View with players, tables, etc.

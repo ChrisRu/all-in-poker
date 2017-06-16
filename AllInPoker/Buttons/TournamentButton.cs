@@ -1,11 +1,10 @@
 ﻿namespace AllInPoker.Buttons
 {
+    using AllInPoker.Models;
+    using AllInPoker.Views;
     using System;
     using System.Drawing;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-    using AllInPoker.Views;
 
     /// <summary>
     /// Tournament Button inside the Main Tournaments View
@@ -26,6 +25,7 @@
         }
 
         private TournamentModel _tournament;
+
         public TournamentModel Tournament
         {
             get

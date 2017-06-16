@@ -1,12 +1,10 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using AllInPoker.Models;
+    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-
-    using MySql.Data.MySqlClient;
 
     public class EventLocationController : DatabaseController
     {
@@ -18,7 +16,7 @@
             {
                 this.Connection.Open();
 
-                string query = @"SELECT * FROM tournament ORDER BY date DESC";
+                string query = @"SELECT * FROM event_location ORDER BY city DESC";
                 MySqlCommand cmd = new MySqlCommand(query, this.Connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -100,51 +98,16 @@
                     @"insert into event_location (max_players, postal_code, city, street, house_number) values (@max_players, @postal_code, @city, @street, @house_number);";
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
+                    {
+                        Parameters =
                         {
-                            Parameters =
-                                {
-                                    new MySqlParameter(
-                                        "@max_players",
-                                        MySqlDbType.Int32)
-                                        {
-                                            Value
-                                                = location
-                                                    .MaxPlayers
-                                        },
-                                    new MySqlParameter(
-                                        "@postal_code",
-                                        MySqlDbType.VarChar)
-                                        {
-                                            Value
-                                                = location
-                                                    .PostalCode
-                                        },
-                                    new MySqlParameter(
-                                        "@city",
-                                        MySqlDbType.VarChar)
-                                        {
-                                            Value
-                                                = location
-                                                    .City
-                                        },
-                                    new MySqlParameter(
-                                        "@street",
-                                        MySqlDbType.VarChar)
-                                        {
-                                            Value
-                                                = location
-                                                    .Street
-                                        },
-                                    new MySqlParameter(
-                                        "@house_number",
-                                        MySqlDbType.VarChar)
-                                        {
-                                            Value
-                                                = location
-                                                    .HouseNumber
-                                        }
-                                }
-                        };
+                            new MySqlParameter("@max_players", MySqlDbType.Int32) { Value = location.MaxPlayers },
+                            new MySqlParameter("@postal_code", MySqlDbType.VarChar) { Value = location.PostalCode },
+                            new MySqlParameter("@city", MySqlDbType.VarChar) { Value = location.City },
+                            new MySqlParameter("@street", MySqlDbType.VarChar) { Value = location.Street },
+                            new MySqlParameter("@house_number", MySqlDbType.VarChar) { Value = location.HouseNumber }
+                        }
+                    };
 
                 command.Prepare();
                 command.ExecuteNonQuery();

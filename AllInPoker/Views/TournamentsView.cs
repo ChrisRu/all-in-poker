@@ -1,14 +1,15 @@
 ﻿namespace AllInPoker.Views
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Drawing;
-    using System.Windows.Forms;
-
     using AllInPoker.Buttons;
     using AllInPoker.Controllers;
     using AllInPoker.Models;
     using AllInPoker.Popups;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Linq;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Main OverView of all active tournaments
@@ -33,6 +34,8 @@
             this.CreateLocationView = new CreateLocationPopup();
 
             UpcomingTournamentView.UpdateTournament += this.ReloadData;
+            CreateEventPopup.UpdateEvent += this.ReloadData;
+            CreateUserPopup.UpdateUser += this.ReloadData;
 
             this.ReloadData();
         }
@@ -63,6 +66,8 @@
             List<TournamentModel> tournaments = tournamentController.GetTournaments();
             MasterclassController masterclassController = new MasterclassController();
             List<MasterclassModel> masterclasses = masterclassController.GetMasterclasses();
+            PlayerController playerController = new PlayerController();
+            List<PlayerModel> players = playerController.GetPlayers();
 
             this.pnlTournaments.Controls.Clear();
 
@@ -79,7 +84,7 @@
                 }
 
                 // If tournament is coming up
-                if (tournaments[i].Date == DateTime.Now)
+                if (tournaments[i].Date.ToShortDateString() == DateTime.Now.ToShortDateString())
                 {
                     button.FlatAppearance.BorderColor = Color.FromArgb(33, 150, 243);
                 }
@@ -91,11 +96,8 @@
 
             for (int i = 0; i < masterclasses.Count; i++)
             {
-                MasterclassButton button = new MasterclassButton
-                {
-                    Masterclass = masterclasses[i],
-                    Location = new Point(i * 260, 0)
-                };
+                MasterclassButton button =
+                    new MasterclassButton { Masterclass = masterclasses[i], Location = new Point(i * 260, 0) };
 
                 // If tournament has finished
                 if (masterclasses[i].Date < DateTime.Now)
@@ -112,6 +114,13 @@
 
                 this.pnlMasterclasses.Controls?.Add(button);
             }
+
+            this.dgPlayers.DataSource = players.OrderBy(player => player.FirstName).ToList();
+            this.dgPlayers.Columns[7].Visible = false;
+            this.dgPlayers.Columns[8].DisplayIndex = 0;
+            this.dgPlayers.Columns[9].DisplayIndex = 1;
+            this.dgPlayers.Columns[10].DisplayIndex = 2;
+            this.dgPlayers.Columns[11].DisplayIndex = 3;
         }
 
         private void newLocationButton_Click(object sender, EventArgs e)

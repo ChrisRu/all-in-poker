@@ -1,17 +1,20 @@
 ﻿namespace AllInPoker.Popups
 {
+    using AllInPoker.Controllers;
+    using AllInPoker.Models;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
 
-    using AllInPoker.Controllers;
-    using AllInPoker.Models;
+    public delegate void UpdateUser();
 
     /// <summary>
     /// Create User PopUp to add a new User
     /// </summary>
     public partial class CreateUserPopup : Form
     {
+        public static event UpdateUser UpdateUser;
+
         /// <summary>
         /// Initialize CreateUserComponent
         /// </summary>
@@ -79,37 +82,38 @@
             {
                 success = new PlayerController().CreatePlayer(
                     new PlayerModel
-                        {
-                            Gender = male ? 'm' : 'e',
-                            FirstName = firstname,
-                            MiddleName = middlename,
-                            LastName = lastname,
-                            Street = adress,
-                            City = city,
-                            HouseNumber = housenumber,
-                            PostalCode = postal,
-                            Emails = new List<string> { email },
-                            PhoneNumbers = new List<string> { phone },
-                            IbanNumber = iban,
-                        });
+                    {
+                        Gender = male ? 'm' : 'e',
+                        FirstName = firstname,
+                        MiddleName = middlename,
+                        LastName = lastname,
+                        Street = adress,
+                        City = city,
+                        HouseNumber = housenumber,
+                        PostalCode = postal,
+                        Emails = new List<string> { email },
+                        PhoneNumbers = new List<string> { phone },
+                        IbanNumber = iban,
+                    });
             }
             else
             {
                 success = new ProfessionalController().CreateProfessional(
                     new ProfessionalModel
-                        {
-                            Gender = male ? 'm' : 'e',
-                            FirstName = firstname,
-                            MiddleName = middlename,
-                            LastName = lastname,
-                            Emails = new List<string> { email },
-                            PhoneNumbers = new List<string> { phone },
-                            Nationality = nationality
-                        });
+                    {
+                        Gender = male ? 'm' : 'e',
+                        FirstName = firstname,
+                        MiddleName = middlename,
+                        LastName = lastname,
+                        Emails = new List<string> { email },
+                        PhoneNumbers = new List<string> { phone },
+                        Nationality = nationality
+                    });
             }
 
             if (success)
             {
+                UpdateUser?.Invoke();
                 this.ResetFields();
                 this.Hide();
             }

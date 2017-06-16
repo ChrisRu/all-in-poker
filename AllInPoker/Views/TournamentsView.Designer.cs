@@ -35,9 +35,9 @@
             this.newUserButton = new System.Windows.Forms.Button();
             this.pnlTournaments = new System.Windows.Forms.Panel();
             this.pnlMasterclasses = new System.Windows.Forms.Panel();
+            this.newLocationButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dgPlayers = new System.Windows.Forms.DataGridView();
-            this.newLocationButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlayers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,26 +121,6 @@
             this.pnlMasterclasses.Size = new System.Drawing.Size(755, 100);
             this.pnlMasterclasses.TabIndex = 9;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 395);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Spelers";
-            // 
-            // dgPlayers
-            // 
-            this.dgPlayers.AllowUserToDeleteRows = false;
-            this.dgPlayers.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPlayers.Location = new System.Drawing.Point(17, 436);
-            this.dgPlayers.Name = "dgPlayers";
-            this.dgPlayers.Size = new System.Drawing.Size(755, 314);
-            this.dgPlayers.TabIndex = 11;
-            // 
             // newLocationButton
             // 
             this.newLocationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -158,13 +138,33 @@
             this.newLocationButton.UseVisualStyleBackColor = false;
             this.newLocationButton.Click += new System.EventHandler(this.newLocationButton_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 395);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Spelers";
+            // 
+            // dgPlayers
+            // 
+            this.dgPlayers.AllowUserToDeleteRows = false;
+            this.dgPlayers.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPlayers.Location = new System.Drawing.Point(17, 436);
+            this.dgPlayers.Name = "dgPlayers";
+            this.dgPlayers.Size = new System.Drawing.Size(755, 187);
+            this.dgPlayers.TabIndex = 11;
+            // 
             // TournamentsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(784, 762);
+            this.ClientSize = new System.Drawing.Size(784, 640);
             this.Controls.Add(this.newLocationButton);
             this.Controls.Add(this.dgPlayers);
             this.Controls.Add(this.label3);
@@ -192,9 +192,9 @@
         private System.Windows.Forms.Button newUserButton;
         private System.Windows.Forms.Panel pnlTournaments;
         private System.Windows.Forms.Panel pnlMasterclasses;
+        private System.Windows.Forms.Button newLocationButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgPlayers;
-        private System.Windows.Forms.Button newLocationButton;
     }
 }
 

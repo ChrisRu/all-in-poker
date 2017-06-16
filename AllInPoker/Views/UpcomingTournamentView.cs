@@ -1,12 +1,11 @@
 ﻿namespace AllInPoker.Views
 {
+    using AllInPoker.Controllers;
+    using AllInPoker.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Forms;
-
-    using AllInPoker.Controllers;
-    using AllInPoker.Models;
 
     public delegate void UpdateTournament();
 

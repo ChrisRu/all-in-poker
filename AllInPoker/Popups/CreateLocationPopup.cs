@@ -1,11 +1,9 @@
 ﻿namespace AllInPoker.Popups
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Windows.Forms;
-
     using AllInPoker.Controllers;
     using AllInPoker.Models;
+    using System;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Create User PopUp to add a new User
@@ -62,14 +60,13 @@
 
             bool success = new EventLocationController().CreateEventLocation(
                 new EventLocationModel
-                    {
-                        Street = street,
-                        City = city,
-                        HouseNumber = housenumber,
-                        PostalCode = postal,
-                        MaxPlayers = maxPlayers
-                    });
-            
+                {
+                    Street = street,
+                    City = city,
+                    HouseNumber = housenumber,
+                    PostalCode = postal,
+                    MaxPlayers = maxPlayers
+                });
 
             if (success)
             {

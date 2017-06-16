@@ -1,12 +1,10 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using AllInPoker.Models;
+    using MySql.Data.MySqlClient;
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
-
-    using AllInPoker.Models;
-
-    using MySql.Data.MySqlClient;
 
     public class PlayerController : DatabaseController
     {
@@ -29,20 +27,20 @@
                 while (reader.Read())
                 {
                     players.Add(new PlayerModel
-                                    {
-                                        Id = reader.GetInt32("id"),
-                                        BirthDate = reader.GetDateTime("birth_date"),
-                                        City = reader.GetString("city"),
-                                        FirstName = reader.GetString("first_name"),
-                                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
-                                        LastName = reader.GetString("last_name"),
-                                        Gender = reader.GetChar("gender"),
-                                        HouseNumber = reader.GetString("house_number"),
-                                        IbanNumber = reader.GetString("iban_number"),
-                                        PostalCode = reader.GetString("postal_code"),
-                                        MoneyWon = reader.GetDecimal("money_won"),
-                                        Rating = reader["rating"] == DBNull.Value ? 0 : reader.GetInt32("rating")
-                                    });
+                    {
+                        Id = reader.GetInt32("id"),
+                        BirthDate = reader.GetDateTime("birth_date"),
+                        City = reader.GetString("city"),
+                        FirstName = reader.GetString("first_name"),
+                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
+                        LastName = reader.GetString("last_name"),
+                        Gender = reader.GetChar("gender"),
+                        HouseNumber = reader.GetString("house_number"),
+                        IbanNumber = reader.GetString("iban_number"),
+                        PostalCode = reader.GetString("postal_code"),
+                        MoneyWon = reader.GetDecimal("money_won"),
+                        Rating = reader["rating"] == DBNull.Value ? 0 : reader.GetInt32("rating")
+                    });
                 }
             }
             catch (Exception e)
@@ -83,20 +81,20 @@
                 while (reader.Read())
                 {
                     player = new PlayerModel
-                                    {
-                                        Id = reader.GetInt32("id"),
-                                        BirthDate = reader.GetDateTime("birth_date"),
-                                        City = reader.GetString("city"),
-                                        FirstName = reader.GetString("first_name"),
-                                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
-                                        LastName = reader.GetString("last_name"),
-                                        Gender = reader.GetChar("gender"),
-                                        HouseNumber = reader.GetString("house_number"),
-                                        IbanNumber = reader.GetString("iban_number"),
-                                        PostalCode = reader.GetString("postal_code"),
-                                        MoneyWon = reader.GetDecimal("money_won"),
-                                        Rating = reader.GetInt32("rating")
-                                    };
+                    {
+                        Id = reader.GetInt32("id"),
+                        BirthDate = reader.GetDateTime("birth_date"),
+                        City = reader.GetString("city"),
+                        FirstName = reader.GetString("first_name"),
+                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
+                        LastName = reader.GetString("last_name"),
+                        Gender = reader.GetChar("gender"),
+                        HouseNumber = reader.GetString("house_number"),
+                        IbanNumber = reader.GetString("iban_number"),
+                        PostalCode = reader.GetString("postal_code"),
+                        MoneyWon = reader.GetDecimal("money_won"),
+                        Rating = reader.GetInt32("rating")
+                    };
                 }
             }
             catch (Exception e)
@@ -180,8 +178,8 @@
                     @"insert into player(id, postal_code, city, street, house_number, iban_number, rating) value (LAST_INSERT_ID(), @postal_code, @city, @street, @house_number, @iban_number, @rating)";
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                        {
-                            Parameters =
+                    {
+                        Parameters =
                                 {
                                     new MySqlParameter("@postal_code", MySqlDbType.VarChar) { Value = player.PostalCode },
                                     new MySqlParameter("@city", MySqlDbType.VarChar) { Value = player.City },
@@ -190,7 +188,7 @@
                                     new MySqlParameter("@iban_number", MySqlDbType.VarChar) { Value = player.IbanNumber },
                                     new MySqlParameter("@rating", MySqlDbType.Int32) { Value = player.Rating }
                                 }
-                        };
+                    };
 
                 command.Prepare();
                 command.ExecuteNonQuery();
