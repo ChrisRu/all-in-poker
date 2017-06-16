@@ -78,8 +78,6 @@
 
                 PlayerModel player = this.tempAllPlayers.Find(allPlayer => allPlayer.GetFullName() == item.Text);
 
-                MessageBox.Show(player.GetFullName());
-
                 this.tempTournamentPlayers.Add(player);
                 this.tempAllPlayers.Remove(player);
             }
