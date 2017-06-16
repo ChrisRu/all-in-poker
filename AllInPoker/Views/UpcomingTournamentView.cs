@@ -8,11 +8,15 @@
     using AllInPoker.Controllers;
     using AllInPoker.Models;
 
+    public delegate void UpdateTournament();
+
     /// <summary>
     /// Single Tournament View with players, tables, etc.
     /// </summary>
     public partial class UpcomingTournamentView : Form
     {
+        public static event UpdateTournament UpdateTournament;
+
         private TournamentModel Tournament { get; set; }
 
         private List<PlayerModel> TournamentPlayers { get; set; }
@@ -196,6 +200,8 @@
             {
                 tournamentController.RemoveTournamentEntry(change, this.Tournament.Id);
             }
+
+            UpdateTournament?.Invoke();
         }
     }
 }

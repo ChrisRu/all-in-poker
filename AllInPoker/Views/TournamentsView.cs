@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Drawing;
-    using System.Globalization;
     using System.Windows.Forms;
 
     using AllInPoker.Buttons;
@@ -30,10 +29,39 @@
             this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
 
+            UpcomingTournamentView.UpdateTournament += this.ReloadData;
+
+            this.ReloadData();
+        }
+
+        /// <summary>
+        /// On New Tournament Button click, show Create Tournament View
+        /// </summary>
+        /// <param name="sender">The Tournaments View</param>
+        /// <param name="e">Event Arguments for the New Tournament Event</param>
+        private void NewEventButtonClick(object sender, System.EventArgs e)
+        {
+            this.CreateTournamentView.ShowDialog();
+        }
+
+        /// <summary>
+        /// On New User Button click, show Create User View
+        /// </summary>
+        /// <param name="sender">The Tournaments View</param>
+        /// <param name="e">Event Arguments for the New User Event</param>
+        private void NewUserButtonClick(object sender, System.EventArgs e)
+        {
+            this.CreateUserView.ShowDialog();
+        }
+
+        private void ReloadData()
+        {
             TournamentController tournamentController = new TournamentController();
             List<TournamentModel> tournaments = tournamentController.GetTournaments();
             MasterclassController masterclassController = new MasterclassController();
             List<MasterclassModel> masterclasses = masterclassController.GetMasterclasses();
+
+            this.pnlTournaments.Controls.Clear();
 
             for (int i = 0; i < tournaments.Count; i++)
             {
@@ -55,6 +83,8 @@
 
                 this.pnlTournaments.Controls?.Add(button);
             }
+
+            this.pnlMasterclasses.Controls.Clear();
 
             for (int i = 0; i < masterclasses.Count; i++)
             {
@@ -79,26 +109,6 @@
 
                 this.pnlMasterclasses.Controls?.Add(button);
             }
-        }
-
-        /// <summary>
-        /// On New Tournament Button click, show Create Tournament View
-        /// </summary>
-        /// <param name="sender">The Tournaments View</param>
-        /// <param name="e">Event Arguments for the New Tournament Event</param>
-        private void NewEventButtonClick(object sender, System.EventArgs e)
-        {
-            this.CreateTournamentView.ShowDialog();
-        }
-
-        /// <summary>
-        /// On New User Button click, show Create User View
-        /// </summary>
-        /// <param name="sender">The Tournaments View</param>
-        /// <param name="e">Event Arguments for the New User Event</param>
-        private void NewUserButtonClick(object sender, System.EventArgs e)
-        {
-            this.CreateUserView.ShowDialog();
         }
     }
 }
