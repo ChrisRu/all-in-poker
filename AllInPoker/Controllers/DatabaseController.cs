@@ -1,5 +1,7 @@
 ﻿namespace AllInPoker.Controllers
 {
+    using System.Configuration;
+
     using MySql.Data.MySqlClient;
 
     public class DatabaseController
@@ -11,11 +13,11 @@
         /// </summary>
         public DatabaseController()
         {
-            const string Server = "localhost";
-            const string Database = "allin_poker";
-            const string Uid = "root";
-            const string Password = "root";
-            this.Connection = new MySqlConnection($"Server={Server};Database={Database};Uid={Uid};Pwd={Password}");
+            string server = ConfigurationManager.AppSettings["server"];
+            string database = ConfigurationManager.AppSettings["database"];
+            string uid = ConfigurationManager.AppSettings["uid"];
+            string password = ConfigurationManager.AppSettings["password"];
+            this.Connection = new MySqlConnection($"Server={server};Database={database};Uid={uid};Pwd={password}");
         }
     }
 }

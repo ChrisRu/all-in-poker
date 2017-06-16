@@ -10,7 +10,7 @@
         [TestMethod]
         public void TestActiveTournamentView()
         {
-            new ActiveTournamentView("id");
+            new ActiveTournamentView(null);
         }
 
         [TestMethod]
@@ -22,7 +22,7 @@
         [TestMethod]
         public void TestUpcomingTournamentView()
         {
-            new UpcomingTournamentView("id");
+            new UpcomingTournamentView(null);
         }
     }
 }

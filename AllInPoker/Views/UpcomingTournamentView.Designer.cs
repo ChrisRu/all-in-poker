@@ -53,6 +53,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lstTournamentPlayers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstTournamentPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstTournamentPlayers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstTournamentPlayers.Location = new System.Drawing.Point(217, 114);
             this.lstTournamentPlayers.Name = "lstTournamentPlayers";
             this.lstTournamentPlayers.Size = new System.Drawing.Size(184, 303);
@@ -66,6 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lstAllPlayers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstAllPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstAllPlayers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstAllPlayers.Location = new System.Drawing.Point(451, 114);
             this.lstAllPlayers.Name = "lstAllPlayers";
             this.lstAllPlayers.Size = new System.Drawing.Size(184, 303);

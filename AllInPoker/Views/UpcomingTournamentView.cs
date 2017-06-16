@@ -49,8 +49,8 @@
             this.TournamentPlayers = new List<PlayerModel>();
             this.AllPlayers = new List<PlayerModel>();
 
-            this.lstTournamentPlayers.Columns.Add("Name");
-            this.lstAllPlayers.Columns.Add("Name");
+            this.lstTournamentPlayers.Columns.Add(new ColumnHeader { Name = "Name", Text = "Name" });
+            this.lstAllPlayers.Columns.Add(new ColumnHeader { Name = "Name", Text = "Name" });
             this.ReloadPlayers(true);
         }
 
@@ -78,11 +78,9 @@
         /// </summary>
         private void BtnShiftLeftClick(object sender, EventArgs e)
         {
-            if (this.lstAllPlayers.SelectedItems.Count + this.tempTournamentPlayers.Count
-                > this.Tournament.Location.MaxPlayers)
+            if (this.lstAllPlayers.SelectedItems.Count + this.tempTournamentPlayers.Count > this.Tournament.Location.MaxPlayers)
             {
-                MessageBox.Show(
-                    "Er kunnen maximaal " + this.Tournament.Location.MaxPlayers + " spelers meedoen aan dit toernooi.");
+                MessageBox.Show("Er kunnen maximaal " + this.Tournament.Location.MaxPlayers + " spelers meedoen aan dit toernooi.");
                 return;
             }
 
@@ -189,13 +187,14 @@
         {
             TournamentController tournamentController = new TournamentController();
 
-            List<int> addchanges = this.tempTournamentPlayers.Select(player => player.Id).Where(player => this.TournamentPlayers.Select(tplayer => tplayer.Id).Contains(player)).ToList();
+            List<int> addchanges = this.tempTournamentPlayers.Select(player => player.Id).Where(id => this.TournamentPlayers.Select(tplayer => tplayer.Id).Contains(id)).ToList();
             foreach (int change in addchanges)
             {
+                MessageBox.Show(change + "");
                 tournamentController.AddTournamentEntry(change, this.Tournament.Id);
             }
 
-            List<int> removechanges = this.tempAllPlayers.Select(player => player.Id).Where(player => this.AllPlayers.Select(tplayer => tplayer.Id).Contains(player)).ToList();
+            List<int> removechanges = this.tempAllPlayers.Select(player => player.Id).Where(id => !this.AllPlayers.Select(tplayer => tplayer.Id).Contains(id)).ToList();
             foreach (int change in removechanges)
             {
                 tournamentController.RemoveTournamentEntry(change, this.Tournament.Id);
