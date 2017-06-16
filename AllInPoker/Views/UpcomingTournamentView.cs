@@ -36,8 +36,11 @@
             // Initialize View Components
             this.InitializeComponent();
             this.Text = "All In Poker - Toernooi " + this.Tournament.Location.City;
-            this.txtTitle.Text = this.Tournament.Location.City;
-            this.datePicker.Value = this.Tournament.Date;
+            this.lblCity.Text = this.Tournament.Location.City;
+            this.lblAddress.Text = this.Tournament.Location.Street + " " + this.Tournament.Location.HouseNumber;
+            this.lblPostal.Text = this.Tournament.Location.PostalCode;
+            this.lblPlayers.Text = this.Tournament.Entries.Count + "/" + this.Tournament.Location.MaxPlayers + " spelers";
+            this.lblCost.Text = "€" + this.Tournament.Cost;
 
             this.TournamentPlayers = new List<PlayerModel>();
             this.AllPlayers = new List<PlayerModel>();
@@ -71,6 +74,14 @@
         /// </summary>
         private void BtnShiftLeftClick(object sender, EventArgs e)
         {
+            if (this.lstAllPlayers.SelectedItems.Count + this.tempTournamentPlayers.Count
+                > this.Tournament.Location.MaxPlayers)
+            {
+                MessageBox.Show(
+                    "Er kunnen maximaal " + this.Tournament.Location.MaxPlayers + " spelers meedoen aan dit toernooi.");
+                return;
+            }
+
             foreach (ListViewItem item in this.lstAllPlayers.SelectedItems)
             {
                 this.lstAllPlayers.Items.Remove(item);
@@ -90,6 +101,7 @@
         /// </summary>
         private void UnselectAll()
         {
+            this.lblPlayers.Text = this.tempTournamentPlayers.Count + "/" + this.Tournament.Location.MaxPlayers + " spelers";
             this.lstTournamentPlayers.SelectedIndices.Clear();
             this.lstAllPlayers.SelectedIndices.Clear();
         }

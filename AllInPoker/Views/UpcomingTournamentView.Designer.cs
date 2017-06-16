@@ -34,13 +34,16 @@
             this.saveTournamentButton = new System.Windows.Forms.Button();
             this.btnShiftRight = new System.Windows.Forms.Button();
             this.btnShiftLeft = new System.Windows.Forms.Button();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtSearchAllPlayers = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSearchTournamentPlayers = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblPostal = new System.Windows.Forms.Label();
+            this.lblCost = new System.Windows.Forms.Label();
+            this.lblPlayers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,21 +123,6 @@
             this.btnShiftLeft.UseVisualStyleBackColor = false;
             this.btnShiftLeft.Click += new System.EventHandler(this.BtnShiftLeftClick);
             // 
-            // datePicker
-            // 
-            this.datePicker.Location = new System.Drawing.Point(17, 87);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(184, 20);
-            this.datePicker.TabIndex = 15;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(17, 55);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(184, 26);
-            this.txtTitle.TabIndex = 16;
-            // 
             // txtSearchAllPlayers
             // 
             this.txtSearchAllPlayers.Location = new System.Drawing.Point(451, 87);
@@ -171,17 +159,70 @@
             this.txtSearchTournamentPlayers.TabIndex = 20;
             this.txtSearchTournamentPlayers.TextChanged += new System.EventHandler(this.txtSearchTournamentPlayersTextChanged);
             // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(12, 58);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(61, 20);
+            this.lblCity.TabIndex = 21;
+            this.lblCity.Text = "Locatie";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(13, 87);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(52, 16);
+            this.lblAddress.TabIndex = 22;
+            this.lblAddress.Text = "Locatie";
+            // 
+            // lblPostal
+            // 
+            this.lblPostal.AutoSize = true;
+            this.lblPostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostal.Location = new System.Drawing.Point(13, 109);
+            this.lblPostal.Name = "lblPostal";
+            this.lblPostal.Size = new System.Drawing.Size(52, 16);
+            this.lblPostal.TabIndex = 23;
+            this.lblPostal.Text = "Locatie";
+            // 
+            // lblCost
+            // 
+            this.lblCost.AutoSize = true;
+            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.Location = new System.Drawing.Point(13, 131);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(52, 16);
+            this.lblCost.TabIndex = 24;
+            this.lblCost.Text = "Locatie";
+            // 
+            // lblPlayers
+            // 
+            this.lblPlayers.AutoSize = true;
+            this.lblPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayers.Location = new System.Drawing.Point(13, 153);
+            this.lblPlayers.Name = "lblPlayers";
+            this.lblPlayers.Size = new System.Drawing.Size(52, 16);
+            this.lblPlayers.TabIndex = 25;
+            this.lblPlayers.Text = "Locatie";
+            // 
             // UpcomingTournamentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 429);
+            this.Controls.Add(this.lblPlayers);
+            this.Controls.Add(this.lblCost);
+            this.Controls.Add(this.lblPostal);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblCity);
             this.Controls.Add(this.txtSearchTournamentPlayers);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearchAllPlayers);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.btnShiftLeft);
             this.Controls.Add(this.btnShiftRight);
             this.Controls.Add(this.saveTournamentButton);
@@ -206,12 +247,15 @@
         private System.Windows.Forms.Button saveTournamentButton;
         private System.Windows.Forms.Button btnShiftRight;
         private System.Windows.Forms.Button btnShiftLeft;
-        private System.Windows.Forms.DateTimePicker datePicker;
-        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtSearchAllPlayers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSearchTournamentPlayers;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblPostal;
+        private System.Windows.Forms.Label lblCost;
+        private System.Windows.Forms.Label lblPlayers;
     }
 }
