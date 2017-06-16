@@ -1,3 +1,5 @@
+USE allin_poker;
+
 --
 --
 ------------
@@ -339,7 +341,7 @@ insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (7, 2, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (17, 3, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 4, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 12, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 2, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (19, 3, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 2, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
 insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 1, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);

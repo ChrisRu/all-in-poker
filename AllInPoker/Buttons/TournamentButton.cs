@@ -64,8 +64,6 @@
             this.UseVisualStyleBackColor = false;
             this.Cursor = Cursors.Hand;
             this.BackColor = Color.FromArgb(255, 255, 255);
-
-            
         }
 
         /// <summary>
@@ -77,7 +75,7 @@
             base.OnPaint(paintEventArgs);
             Rectangle rect = this.ClientRectangle;
             rect.Inflate(-5, -5);
-            using (StringFormat sf = new StringFormat()
+            using (StringFormat sf = new StringFormat
             {
                 Alignment = StringAlignment.Near,
                 LineAlignment = StringAlignment.Far
