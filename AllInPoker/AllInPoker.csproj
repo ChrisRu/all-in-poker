@@ -79,6 +79,12 @@
     <Compile Include="Models\TournamentModel.cs" />
     <Compile Include="Models\TournamentTableModel.cs" />
     <Compile Include="Models\TournamentTablePlayerModel.cs" />
+    <Compile Include="Popups\CreateLocationPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\CreateLocationPopup.Designer.cs">
+      <DependentUpon>CreateLocationPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UpcomingTournamentView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Buttons\TournamentButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Popups\CreateLocationPopup.resx">
+      <DependentUpon>CreateLocationPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UpcomingTournamentView.resx">
       <DependentUpon>UpcomingTournamentView.cs</DependentUpon>
     </EmbeddedResource>

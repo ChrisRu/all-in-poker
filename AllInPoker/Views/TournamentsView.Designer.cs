@@ -37,6 +37,7 @@
             this.pnlMasterclasses = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dgPlayers = new System.Windows.Forms.DataGridView();
+            this.newLocationButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlayers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +70,9 @@
             this.newEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newEventButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newEventButton.ForeColor = System.Drawing.Color.White;
-            this.newEventButton.Location = new System.Drawing.Point(596, 12);
+            this.newEventButton.Location = new System.Drawing.Point(610, 12);
             this.newEventButton.Name = "newEventButton";
-            this.newEventButton.Size = new System.Drawing.Size(176, 39);
+            this.newEventButton.Size = new System.Drawing.Size(162, 39);
             this.newEventButton.TabIndex = 2;
             this.newEventButton.Text = "+ Nieuw Evenement";
             this.newEventButton.UseVisualStyleBackColor = false;
@@ -86,9 +87,9 @@
             this.newUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newUserButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newUserButton.ForeColor = System.Drawing.Color.Black;
-            this.newUserButton.Location = new System.Drawing.Point(441, 12);
+            this.newUserButton.Location = new System.Drawing.Point(466, 12);
             this.newUserButton.Name = "newUserButton";
-            this.newUserButton.Size = new System.Drawing.Size(149, 39);
+            this.newUserButton.Size = new System.Drawing.Size(138, 39);
             this.newUserButton.TabIndex = 5;
             this.newUserButton.Text = "+ Nieuwe Speler";
             this.newUserButton.UseVisualStyleBackColor = false;
@@ -140,6 +141,23 @@
             this.dgPlayers.Size = new System.Drawing.Size(755, 314);
             this.dgPlayers.TabIndex = 11;
             // 
+            // newLocationButton
+            // 
+            this.newLocationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.newLocationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.newLocationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newLocationButton.FlatAppearance.BorderSize = 0;
+            this.newLocationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newLocationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newLocationButton.ForeColor = System.Drawing.Color.White;
+            this.newLocationButton.Location = new System.Drawing.Point(317, 12);
+            this.newLocationButton.Name = "newLocationButton";
+            this.newLocationButton.Size = new System.Drawing.Size(143, 39);
+            this.newLocationButton.TabIndex = 12;
+            this.newLocationButton.Text = "+ Nieuwe Locatie";
+            this.newLocationButton.UseVisualStyleBackColor = false;
+            this.newLocationButton.Click += new System.EventHandler(this.newLocationButton_Click);
+            // 
             // TournamentsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +165,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(784, 762);
+            this.Controls.Add(this.newLocationButton);
             this.Controls.Add(this.dgPlayers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlMasterclasses);
@@ -175,6 +194,7 @@
         private System.Windows.Forms.Panel pnlMasterclasses;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgPlayers;
+        private System.Windows.Forms.Button newLocationButton;
     }
 }
 

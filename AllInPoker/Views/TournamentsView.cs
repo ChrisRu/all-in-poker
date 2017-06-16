@@ -19,6 +19,8 @@
 
         public CreateUserPopup CreateUserView { get; set; }
 
+        public CreateLocationPopup CreateLocationView { get; set; }
+
         /// <summary>
         /// Initialize TournamentsView
         /// </summary>
@@ -28,6 +30,7 @@
 
             this.CreateTournamentView = new CreateEventPopup();
             this.CreateUserView = new CreateUserPopup();
+            this.CreateLocationView = new CreateLocationPopup();
 
             UpcomingTournamentView.UpdateTournament += this.ReloadData;
 
@@ -109,6 +112,11 @@
 
                 this.pnlMasterclasses.Controls?.Add(button);
             }
+        }
+
+        private void newLocationButton_Click(object sender, EventArgs e)
+        {
+            this.CreateLocationView.ShowDialog();
         }
     }
 }

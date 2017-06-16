@@ -85,5 +85,85 @@
 
             return eventLocation;
         }
+
+        public bool CreateEventLocation(EventLocationModel location)
+        {
+            MySqlTransaction trans = null;
+            bool success;
+
+            try
+            {
+                this.Connection.Open();
+                trans = this.Connection.BeginTransaction();
+
+                const string InsertString =
+                    @"insert into event_location (max_players, postal_code, city, street, house_number) values (@max_players, @postal_code, @city, @street, @house_number);";
+                MySqlCommand command =
+                    new MySqlCommand(InsertString, this.Connection)
+                        {
+                            Parameters =
+                                {
+                                    new MySqlParameter(
+                                        "@max_players",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = location
+                                                    .MaxPlayers
+                                        },
+                                    new MySqlParameter(
+                                        "@postal_code",
+                                        MySqlDbType.VarChar)
+                                        {
+                                            Value
+                                                = location
+                                                    .PostalCode
+                                        },
+                                    new MySqlParameter(
+                                        "@city",
+                                        MySqlDbType.VarChar)
+                                        {
+                                            Value
+                                                = location
+                                                    .City
+                                        },
+                                    new MySqlParameter(
+                                        "@street",
+                                        MySqlDbType.VarChar)
+                                        {
+                                            Value
+                                                = location
+                                                    .Street
+                                        },
+                                    new MySqlParameter(
+                                        "@house_number",
+                                        MySqlDbType.VarChar)
+                                        {
+                                            Value
+                                                = location
+                                                    .HouseNumber
+                                        }
+                                }
+                        };
+
+                command.Prepare();
+                command.ExecuteNonQuery();
+                trans.Commit();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                success = false;
+                trans?.Rollback();
+                Console.WriteLine("Adding location failed. " + e.Message);
+                MessageBox.Show("Locatie toevoegen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return success;
+        }
     }
 }
