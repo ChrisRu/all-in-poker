@@ -1,11 +1,11 @@
 # Setup
 Create a MySQL database with the files in the `/SQL` directory.
 
-`DB.sql` creates all the empty tables.
+`DB.sql` creates the schema and all the empty tables.
 
 `MOCKDATA.sql` adds data to the tables to run tests with.
 
-The controller is initialized in `/AllInPoker/Views/TournamentsView.cs` for now. Here you can change the Login Info.
+To change the Login info of the database, go to the App.config file.
 
 | Login Info     |               |
 |----------------|---------------|
