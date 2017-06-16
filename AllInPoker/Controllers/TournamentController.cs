@@ -18,6 +18,7 @@
         {
             List<TournamentModel> tournaments = new List<TournamentModel>();
             EventLocationController eventLocationController = new EventLocationController();
+            PlayerController playerController = new PlayerController();
 
             try
             {
@@ -56,9 +57,14 @@
             {
                 tournament.Location = eventLocationController.GetEventLocation(tournament.Id);
                 tournament.Tables = this.GetTournamentTables(tournament.Id);
+                tournament.Entries = this.GetTournamentEntries(tournament.Id);
                 foreach (TournamentTableModel table in tournament.Tables)
                 {
                     table.Players = this.GetTournamentTablePlayers(table.Id);
+                }
+                foreach (TournamentEntryModel entry in tournament.Entries)
+                {
+                    entry.Player = playerController.GetPlayer(entry.PlayerId);
                 }
             }
 
@@ -153,6 +159,48 @@
             }
 
             return tables;
+        }
+
+        /// <summary>
+        /// Get all TournamentEntries of a tournament
+        /// </summary>
+        /// <param name="tournamentId">ID of the tournament</param>
+        /// <returns>List of tournament entries</returns>
+        public List<TournamentEntryModel> GetTournamentEntries(int tournamentId)
+        {
+            List<TournamentEntryModel> entries = new List<TournamentEntryModel>();
+
+            try
+            {
+                this.Connection.Open();
+
+                string query = $@"SELECT * FROM tournament_entry WHERE tournament_id = {tournamentId}";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    entries.Add(new TournamentEntryModel
+                    {
+                        ReferenceNumber = reader.GetInt32("reference_number"),
+                        PlayerId = reader.GetInt32("player_id"),
+                        TournamentId = reader.GetInt32("tournament_id"),
+                        HasPaid = reader.GetBoolean("has_paid"),
+                        Date = reader.GetDateTime("date")
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching tournament entries failed. " + e.Message);
+                MessageBox.Show("Ophalen toernooi aanmeldingen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            return entries;
         }
 
         /// <summary>

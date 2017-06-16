@@ -90,7 +90,7 @@
                     sf.LineAlignment = StringAlignment.Far;
                     paintEventArgs.Graphics.DrawString(this.Tournament.Date.ToShortDateString(), this.RegularFont, brush, rect, sf);
                     sf.Alignment = StringAlignment.Far;
-                    paintEventArgs.Graphics.DrawString(this.Tournament.MinPlayers + " spelers", this.RegularFont, brush, rect, sf);
+                    paintEventArgs.Graphics.DrawString(this.Tournament.Entries.Count + "/" + this.Tournament.Location.MaxPlayers + " 웃", this.RegularFont, brush, rect, sf);
                 }
             }
         }

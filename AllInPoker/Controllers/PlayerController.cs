@@ -22,7 +22,7 @@
             {
                 this.Connection.Open();
 
-                string query = @"SELECT * FROM player ORDER BY last_name DESC";
+                string query = @"SELECT * FROM player JOIN person ON player.id = person.id ORDER BY last_name DESC";
                 MySqlCommand cmd = new MySqlCommand(query, this.Connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -34,14 +34,14 @@
                                         BirthDate = reader.GetDateTime("birth_date"),
                                         City = reader.GetString("city"),
                                         FirstName = reader.GetString("first_name"),
-                                        MiddleName = reader.GetString("middle_name"),
+                                        MiddleName = reader["middle_name"] == DBNull.Value ? string.Empty : reader.GetString("middle_name"),
                                         LastName = reader.GetString("last_name"),
                                         Gender = reader.GetChar("gender"),
                                         HouseNumber = reader.GetString("house_number"),
                                         IbanNumber = reader.GetString("iban_number"),
                                         PostalCode = reader.GetString("postal_code"),
                                         MoneyWon = reader.GetDecimal("money_won"),
-                                        Rating = reader.GetInt32("rating")
+                                        Rating = reader["rating"] == DBNull.Value ? 0 : reader.GetInt32("rating")
                                     });
                 }
             }

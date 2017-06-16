@@ -2,8 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Windows.Forms;
 
+    using AllInPoker.Controllers;
     using AllInPoker.Models;
 
     /// <summary>
@@ -12,6 +14,10 @@
     public partial class UpcomingTournamentView : Form
     {
         private TournamentModel Tournament { get; set; }
+
+        private List<PlayerModel> JoinedPlayers { get; set; }
+
+        private List<PlayerModel> AllPlayers { get; set; }
 
         /// <summary>
         /// Initialize TournamentView
@@ -25,21 +31,16 @@
 
             // Initialize View Components
             this.InitializeComponent();
-            this.Text = "All In Poker - Toernooi " + this.Location;
-            this.txtTitle.Text = "Toernooi " + this.Location;
+            this.Text = "All In Poker - Toernooi " + this.Tournament.Location.City;
+            this.txtTitle.Text = this.Tournament.Location.City;
             this.datePicker.Value = this.Tournament.Date;
+
+            this.JoinedPlayers = new List<PlayerModel>();
+            this.AllPlayers = new List<PlayerModel>();
 
             this.lstTournamentPlayers.Columns.Add("Name");
             this.lstAllPlayers.Columns.Add("Name");
             this.ReloadPlayers();
-        }
-
-        /// <summary>
-        /// Get the data about the tournament from the database
-        /// </summary>
-        private void GetData()
-        {
-            // TODO: MySQL Request here
         }
 
         /// <summary>
@@ -90,16 +91,19 @@
         {
             this.lstTournamentPlayers.Clear();
             this.lstAllPlayers.Clear();
-            /*
-            foreach (string player in this.Players)
+            foreach (TournamentEntryModel entry in this.Tournament.Entries)
             {
-                this.lstTournamentPlayers.Items.Add(player);
+                this.JoinedPlayers.Add(entry.Player);
             }
-            
-            foreach (string player in this.AllPlayers)
+            this.AllPlayers = new PlayerController().GetPlayers().Except(this.JoinedPlayers).ToList();
+            foreach (PlayerModel player in this.JoinedPlayers)
             {
-                this.lstAllPlayers.Items.Add(player);
-            }*/
+                this.lstTournamentPlayers.Items.Add(player.GetFullName());
+            }
+            foreach (PlayerModel player in this.AllPlayers)
+            {
+                this.lstAllPlayers.Items.Add(player.GetFullName());
+            }
         }
 
         /// <summary>
