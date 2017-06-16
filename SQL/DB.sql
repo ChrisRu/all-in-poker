@@ -69,6 +69,7 @@ CREATE TABLE tournament (
     max_age             int                 NOT NULL,
     location_id         int                 NULL,
     winner_id           int                 NULL,
+    type                varchar(40)         NULL,
 
     PRIMARY KEY(id),
     FOREIGN KEY(winner_id)                  REFERENCES player(id) ON DELETE SET NULL ON UPDATE CASCADE,

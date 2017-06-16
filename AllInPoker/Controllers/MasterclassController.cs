@@ -128,6 +128,7 @@
                 {
                     entries.Add(new MasterclassEntryModel
                                    {
+                                        ReferenceNumber = reader.GetInt32("reference_number"),
                                         PlayerId = reader.GetInt32("player_id"),
                                         MasterclassId = reader.GetInt32("masterclass_id"),
                                         Date = reader.GetDateTime("date"),

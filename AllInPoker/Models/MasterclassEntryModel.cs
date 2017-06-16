@@ -4,6 +4,8 @@
 
     public class MasterclassEntryModel
     {
+        public int ReferenceNumber { get; set; }
+
         public int PlayerId { get; set; }
 
         public int MasterclassId { get; set; }
