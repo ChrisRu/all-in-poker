@@ -267,33 +267,6 @@ insert into tournament (date, time, cost, min_players, min_age, max_age, locatio
 insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('30/03/2017','%d/%m/%Y'), NOW(), 11.19, 6, 8, 60, 21);
 insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('01/06/2017','%d/%m/%Y'), NOW(), 9.03, 8, 18, 60, 16);
 insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('14/07/2017','%d/%m/%Y'), NOW(), 13.04, 8, 18, 80, 19);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('10/06/2016','%d/%m/%Y'), NOW(), 13.26, 4, 18, 100, 23);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('24/12/2016','%d/%m/%Y'), NOW(), 7.03, 6, 18, 80, 33);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('14/07/2017','%d/%m/%Y'), NOW(), 7.72, 8, 18, 80, 29);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('02/03/2017','%d/%m/%Y'), NOW(), 11.15, 4, 21, 80, 31);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('21/04/2017','%d/%m/%Y'), NOW(), 11.96, 6, 30, 60, 7);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('03/10/2016','%d/%m/%Y'), NOW(), 6.67, 8, 18, 60, 31);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('21/07/2016','%d/%m/%Y'), NOW(), 9.70, 6, 18, 100, 29);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('20/08/2016','%d/%m/%Y'), NOW(), 6.27, 6, 50, 80, 36);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('30/03/2017','%d/%m/%Y'), NOW(), 11.53, 6, 30, 100, 37);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('12/07/2017','%d/%m/%Y'), NOW(), 5.11, 8, 50, 60, 17);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('08/10/2016','%d/%m/%Y'), NOW(), 14.26, 8, 21, 80, 4);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('08/05/2017','%d/%m/%Y'), NOW(), 5.88, 8, 8, 100, 19);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('23/09/2016','%d/%m/%Y'), NOW(), 5.34, 8, 8, 100, 22);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('10/06/2017','%d/%m/%Y'), NOW(), 10.65, 4, 30, 80, 9);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('28/03/2017','%d/%m/%Y'), NOW(), 10.83, 6, 21, 100, 35);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('02/07/2017','%d/%m/%Y'), NOW(), 14.91, 8, 50, 100, 16);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('15/09/2016','%d/%m/%Y'), NOW(), 12.79, 6, 8, 100, 21);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('07/12/2016','%d/%m/%Y'), NOW(), 12.96, 4, 21, 100, 1);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('18/03/2017','%d/%m/%Y'), NOW(), 9.25, 6, 18, 80, 34);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('04/02/2017','%d/%m/%Y'), NOW(), 13.93, 8, 18, 100, 33);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('12/04/2017','%d/%m/%Y'), NOW(), 14.19, 4, 21, 100, 12);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('30/06/2017','%d/%m/%Y'), NOW(), 12.74, 6, 50, 100, 26);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('29/01/2017','%d/%m/%Y'), NOW(), 6.86, 6, 21, 80, 17);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('04/08/2016','%d/%m/%Y'), NOW(), 7.92, 8, 21, 80, 36);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('09/09/2016','%d/%m/%Y'), NOW(), 14.86, 8, 18, 80, 24);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('09/11/2016','%d/%m/%Y'), NOW(), 11.05, 4, 18, 60, 23);
-insert into tournament (date, time, cost, min_players, min_age, max_age, location_id) values (STR_TO_DATE('29/11/2016','%d/%m/%Y'), NOW(), 7.37, 4, 30, 80, 21);
 
 --
 --
@@ -303,16 +276,27 @@ insert into tournament (date, time, cost, min_players, min_age, max_age, locatio
 --
 --
 
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (5, 12, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (10, 30, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (12, 15, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 6, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 3, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (13, 23, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (5, 1, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (10, 1, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (12, 1, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 1, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 1, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (13, 4, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
 insert into tournament_entry (player_id, tournament_id, date, has_paid) values (15, 3, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 19, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (14, 14, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
-insert into tournament_entry (player_id, tournament_id, date, has_paid) values (3, 16, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 1, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (14, 5, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (3, 6, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 2, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 3, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (2, 5, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (3, 6, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (4, 3, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (5, 3, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (6, 3, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 9, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 4, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 6, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+
 
 --
 --
@@ -326,42 +310,6 @@ insert into masterclass (date, time, min_players, location_id, min_rating, profe
 insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 16, 1909, 35);
 insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 8, 2782, 35);
 insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 13, 2932, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 34, 2872, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 35, 2212, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 13, 2281, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 14, 1370, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 15, 2045, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 9, 2872, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 10, 1025, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 13, 2880, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 20, 2520, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 26, 1672, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 38, 2215, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 12, 1026, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 28, 2408, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 22, 1658, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 36, 1185, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 1, 2914, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 28, 2230, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 22, 2105, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 12, 2338, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 37, 2993, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 14, 1148, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 4, 2675, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 7, 2756, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 5, 1090, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 11, 2545, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 34, 2000, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 8, 4, 2780, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 14, 2589, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 29, 2730, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 13, 1684, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 25, 2672, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 38, 1502, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 4, 5, 1777, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 29, 2133, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 35, 2265, 35);
-insert into masterclass (date, time, min_players, location_id, min_rating, professional_id) values (NOW(), NOW(), 6, 23, 1572, 35);
 
 --
 --
@@ -371,13 +319,33 @@ insert into masterclass (date, time, min_players, location_id, min_rating, profe
 --
 --
 
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (7, 12, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 30, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (12, 15, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (7, 6, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (1, 3, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (13, 23, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (9, 3, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 19, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (1, 14, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
-insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (3, 16, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (1, 1, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (11, 2, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (1, 3, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (2, 1, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (12, 2, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (2, 3, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (13, 1, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (3, 3, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (3, 4, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (4, 1, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (4, 2, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (15, 3, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (5, 3, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (6, 1, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (16, 2, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (6, 3, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (7, 1, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (7, 2, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (17, 3, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 4, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (8, 12, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (19, 3, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 2, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 1, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (11, 1, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (14, 1, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (11, 4, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (17, 1, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (12, 1, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into masterclass_entry (player_id, masterclass_id, date, has_paid) values (10, 4, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
