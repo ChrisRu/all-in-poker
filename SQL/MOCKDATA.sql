@@ -298,6 +298,24 @@ insert into tournament_entry (player_id, tournament_id, date, has_paid) values (
 insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 9, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
 insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 4, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
 insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 6, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (3, 8, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 9, STR_TO_DATE('25/09/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 9, STR_TO_DATE('20/05/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (2, 8, STR_TO_DATE('28/06/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (3, 11, STR_TO_DATE('15/08/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (4, 12, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (5, 11, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (6, 13, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 13, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 13, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 11, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (4, 8, STR_TO_DATE('20/06/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (5, 9, STR_TO_DATE('10/08/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (6, 8, STR_TO_DATE('11/03/2017','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (7, 7, STR_TO_DATE('08/12/2016','%d/%m/%Y'), false);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (8, 12, STR_TO_DATE('29/12/2016','%d/%m/%Y'), true);
+insert into tournament_entry (player_id, tournament_id, date, has_paid) values (1, 13, STR_TO_DATE('30/08/2016','%d/%m/%Y'), true);
+
 
 
 --
