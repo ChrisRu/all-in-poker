@@ -1,3 +1,6 @@
+CREATE DATABASE allin_poker;
+USE allin_poker;
+
 CREATE TABLE person (
     id                  int                 NOT NULL AUTO_INCREMENT,
     first_name          varchar(80)         NOT NULL,
