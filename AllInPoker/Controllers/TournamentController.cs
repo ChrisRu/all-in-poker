@@ -30,17 +30,20 @@
 
                 while (reader.Read())
                 {
-                    tournaments.Add(new TournamentModel
-                    {
-                        Id = reader.GetInt32("id"),
-                        Date = reader.GetDateTime("date").ToLocalTime(),
-                        Cost = reader.GetDecimal("cost"),
-                        MinPlayers = reader.GetInt32("min_players"),
-                        MinAge = reader.GetInt32("min_age"),
-                        MaxAge = reader.GetInt32("max_age"),
-                        LocationId = reader.GetInt32("location_id"),
-                        WinnerId = reader.IsDBNull(reader.GetOrdinal("winner_id")) ? -1 : reader.GetInt32("winner_id")
-                    });
+                    tournaments.Add(
+                        new TournamentModel
+                            {
+                                Id = reader.GetInt32("id"),
+                                Date = reader.GetDateTime("date").ToLocalTime(),
+                                Cost = reader.GetDecimal("cost"),
+                                MinPlayers = reader.GetInt32("min_players"),
+                                MinAge = reader.GetInt32("min_age"),
+                                MaxAge = reader.GetInt32("max_age"),
+                                LocationId = reader.GetInt32("location_id"),
+                                WinnerId = reader.IsDBNull(reader.GetOrdinal("winner_id"))
+                                               ? -1
+                                               : reader.GetInt32("winner_id")
+                            });
                 }
             }
             catch (Exception e)
@@ -87,23 +90,73 @@
                 this.Connection.Open();
                 trans = this.Connection.BeginTransaction();
 
-                const string InsertString = @"INSERT INTO tournament (date, time, cost, min_players, min_age, max_age, location_id, winner_id) VALUES (@date, @time, @cost, @min_players, @min_age, @location_id, @winner_id)";
+                const string InsertString =
+                    @"INSERT INTO tournament (date, time, cost, min_players, min_age, max_age, location_id, winner_id) VALUES (@date, @time, @cost, @min_players, @min_age, @location_id, @winner_id)";
 
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                    {
-                        Parameters =
                         {
-                            new MySqlParameter("@date", MySqlDbType.DateTime) {Value = date},
-                            new MySqlParameter("@time", MySqlDbType.Time) {Value = date.ToLocalTime()},
-                            new MySqlParameter("@cost", MySqlDbType.Decimal) {Value = cost},
-                            new MySqlParameter("@min_players", MySqlDbType.Int32) {Value = minPlayers},
-                            new MySqlParameter("@min_age", MySqlDbType.Int32) {Value = minAge},
-                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = maxAge},
-                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = locationId},
-                            new MySqlParameter("@winner_id", MySqlDbType.Int32) {Value = winnerId}
-                        }
-                    };
+                            Parameters =
+                                {
+                                    new MySqlParameter(
+                                        "@date",
+                                        MySqlDbType.DateTime)
+                                        {
+                                            Value
+                                                = date
+                                        },
+                                    new MySqlParameter(
+                                        "@time",
+                                        MySqlDbType.Time)
+                                        {
+                                            Value
+                                                = date
+                                                    .ToLocalTime()
+                                        },
+                                    new MySqlParameter(
+                                        "@cost",
+                                        MySqlDbType.Decimal)
+                                        {
+                                            Value
+                                                = cost
+                                        },
+                                    new MySqlParameter(
+                                        "@min_players",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = minPlayers
+                                        },
+                                    new MySqlParameter(
+                                        "@min_age",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = minAge
+                                        },
+                                    new MySqlParameter(
+                                        "@location_id",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = maxAge
+                                        },
+                                    new MySqlParameter(
+                                        "@location_id",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = locationId
+                                        },
+                                    new MySqlParameter(
+                                        "@winner_id",
+                                        MySqlDbType.Int32)
+                                        {
+                                            Value
+                                                = winnerId
+                                        }
+                                }
+                        };
 
                 command.Prepare();
                 command.ExecuteNonQuery();
@@ -140,12 +193,13 @@
 
                 while (reader.Read())
                 {
-                    tables.Add(new TournamentTableModel
-                    {
-                        Id = reader.GetInt32("id"),
-                        TournamentId = reader.GetInt32("tournament_id"),
-                        Round = reader.GetInt32("round")
-                    });
+                    tables.Add(
+                        new TournamentTableModel
+                            {
+                                Id = reader.GetInt32("id"),
+                                TournamentId = reader.GetInt32("tournament_id"),
+                                Round = reader.GetInt32("round")
+                            });
                 }
             }
             catch (Exception e)
@@ -180,14 +234,15 @@
 
                 while (reader.Read())
                 {
-                    entries.Add(new TournamentEntryModel
-                    {
-                        ReferenceNumber = reader.GetInt32("reference_number"),
-                        PlayerId = reader.GetInt32("player_id"),
-                        TournamentId = reader.GetInt32("tournament_id"),
-                        HasPaid = reader.GetBoolean("has_paid"),
-                        Date = reader.GetDateTime("date")
-                    });
+                    entries.Add(
+                        new TournamentEntryModel
+                            {
+                                ReferenceNumber = reader.GetInt32("reference_number"),
+                                PlayerId = reader.GetInt32("player_id"),
+                                TournamentId = reader.GetInt32("tournament_id"),
+                                HasPaid = reader.GetBoolean("has_paid"),
+                                Date = reader.GetDateTime("date")
+                            });
                 }
             }
             catch (Exception e)
@@ -222,12 +277,13 @@
 
                 while (reader.Read())
                 {
-                    players.Add(new TournamentTablePlayerModel
-                    {
-                        TableId = reader.GetInt32("table_id"),
-                        PlayerId = reader.GetInt32("player_id"),
-                        Position = reader.GetInt32("position")
-                    });
+                    players.Add(
+                        new TournamentTablePlayerModel
+                            {
+                                TableId = reader.GetInt32("table_id"),
+                                PlayerId = reader.GetInt32("player_id"),
+                                Position = reader.GetInt32("position")
+                            });
                 }
             }
             catch (Exception e)
@@ -241,6 +297,67 @@
             }
 
             return players;
+        }
+
+        public void RemoveTournamentEntry(int playerId, int tournamentId)
+        {
+            try
+            {
+                this.Connection.Open();
+
+                string query =
+                    $@"DELETE FROM tournament_entry WHERE tournament_id = {tournamentId} AND player_id = {playerId}";
+                MySqlCommand cmd = new MySqlCommand(query, this.Connection);
+                cmd.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Fetching tournament table players failed. " + e.Message);
+                MessageBox.Show("Ophalen spelers van toernooi tafel is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+        }
+
+        public void AddTournamentEntry(int playerId, int tournamentId, bool hasPaid = false)
+        {
+            MySqlTransaction trans = null;
+
+            try
+            {
+                this.Connection.Open();
+                trans = this.Connection.BeginTransaction();
+
+                const string InsertString =
+                    @"insert into tournament_entry(player_id, tournament_id, date, has_paid) values(@player_id, @tournament_id, @date, @has_paid)";
+                MySqlCommand command =
+                    new MySqlCommand(InsertString, this.Connection)
+                        {
+                            Parameters =
+                                {
+                                    new MySqlParameter("@player_id", MySqlDbType.Int32) { Value = playerId },
+                                    new MySqlParameter("@tournament_id", MySqlDbType.Int32) { Value = tournamentId },
+                                    new MySqlParameter("@date", MySqlDbType.DateTime) { Value = DateTime.Now }
+                                }
+                        };
+                command.Parameters.AddWithValue("@has_paid", hasPaid);
+
+                command.Prepare();
+                command.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (Exception e)
+            {
+                trans?.Rollback();
+                Console.WriteLine("Adding Player failed. " + e.Message);
+                MessageBox.Show("Speler toevoegen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
         }
     }
 }

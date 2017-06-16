@@ -32,6 +32,7 @@
             {
                 return this._masterclass;
             }
+
             set
             {
                 this._masterclass = value;

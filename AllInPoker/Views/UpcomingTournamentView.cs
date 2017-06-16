@@ -15,9 +15,13 @@
     {
         private TournamentModel Tournament { get; set; }
 
-        private List<PlayerModel> JoinedPlayers { get; set; }
+        private List<PlayerModel> TournamentPlayers { get; set; }
 
         private List<PlayerModel> AllPlayers { get; set; }
+
+        private List<PlayerModel> tempTournamentPlayers { get; set; }
+
+        private List<PlayerModel> tempAllPlayers { get; set; }
 
         /// <summary>
         /// Initialize TournamentView
@@ -35,12 +39,12 @@
             this.txtTitle.Text = this.Tournament.Location.City;
             this.datePicker.Value = this.Tournament.Date;
 
-            this.JoinedPlayers = new List<PlayerModel>();
+            this.TournamentPlayers = new List<PlayerModel>();
             this.AllPlayers = new List<PlayerModel>();
 
             this.lstTournamentPlayers.Columns.Add("Name");
             this.lstAllPlayers.Columns.Add("Name");
-            this.ReloadPlayers();
+            this.ReloadPlayers(true);
         }
 
         /// <summary>
@@ -52,8 +56,11 @@
             {
                 this.lstTournamentPlayers.Items.Remove(item);
                 this.lstAllPlayers.Items.Add(item);
-                // this.AllPlayers.Remove(item.Text);
-                // this.Players.Add(item.Text);
+
+                PlayerModel player = this.tempTournamentPlayers.Find(tournamentPlayer => tournamentPlayer.GetFullName() == item.Text);
+
+                this.tempAllPlayers.Add(player);
+                this.tempTournamentPlayers.Remove(player);
             }
 
             this.UnselectAll();
@@ -68,8 +75,13 @@
             {
                 this.lstAllPlayers.Items.Remove(item);
                 this.lstTournamentPlayers.Items.Add(item);
-                // this.AllPlayers.Add(item.Text);
-                // this.Players.Remove(item.Text);
+
+                PlayerModel player = this.tempAllPlayers.Find(allPlayer => allPlayer.GetFullName() == item.Text);
+
+                MessageBox.Show(player.GetFullName());
+
+                this.tempTournamentPlayers.Add(player);
+                this.tempAllPlayers.Remove(player);
             }
 
             this.UnselectAll();
@@ -87,20 +99,30 @@
         /// <summary>
         /// Reload all lists with current players
         /// </summary>
-        private void ReloadPlayers()
+        private void ReloadPlayers(bool completeReload = false)
         {
             this.lstTournamentPlayers.Clear();
             this.lstAllPlayers.Clear();
+
+            this.TournamentPlayers = new List<PlayerModel>();
             foreach (TournamentEntryModel entry in this.Tournament.Entries)
             {
-                this.JoinedPlayers.Add(entry.Player);
+                this.TournamentPlayers.Add(entry.Player);
             }
-            this.AllPlayers = new PlayerController().GetPlayers().Except(this.JoinedPlayers).ToList();
-            foreach (PlayerModel player in this.JoinedPlayers)
+            this.AllPlayers = new PlayerController().GetPlayers()
+                .Where(player => !this.TournamentPlayers.Select(i => i.Id).Contains(player.Id)).ToList();
+
+            if (completeReload)
+            {
+                this.tempAllPlayers = this.AllPlayers;
+                this.tempTournamentPlayers = this.TournamentPlayers;
+            }
+
+            foreach (PlayerModel player in this.tempTournamentPlayers)
             {
                 this.lstTournamentPlayers.Items.Add(player.GetFullName());
             }
-            foreach (PlayerModel player in this.AllPlayers)
+            foreach (PlayerModel player in this.tempAllPlayers)
             {
                 this.lstAllPlayers.Items.Add(player.GetFullName());
             }
@@ -115,7 +137,7 @@
         {
             text = text.ToLower();
 
-            if (text == string.Empty)
+            if (text.Equals(string.Empty))
             {
                 this.ReloadPlayers();
 
@@ -148,5 +170,22 @@
         /// </summary>
         private void txtSearchAllPlayersTextChanged(object sender, EventArgs e)
             => this.SearchPlayer(this.lstAllPlayers, this.txtSearchAllPlayers.Text);
+
+        private void saveTournamentButton_Click(object sender, EventArgs e)
+        {
+            TournamentController tournamentController = new TournamentController();
+
+            List<int> addchanges = this.tempTournamentPlayers.Select(player => player.Id).Where(player => this.TournamentPlayers.Select(tplayer => tplayer.Id).Contains(player)).ToList();
+            foreach (int change in addchanges)
+            {
+                tournamentController.AddTournamentEntry(change, this.Tournament.Id);
+            }
+
+            List<int> removechanges = this.tempAllPlayers.Select(player => player.Id).Where(player => this.AllPlayers.Select(tplayer => tplayer.Id).Contains(player)).ToList();
+            foreach (int change in removechanges)
+            {
+                tournamentController.RemoveTournamentEntry(change, this.Tournament.Id);
+            }
+        }
     }
 }
