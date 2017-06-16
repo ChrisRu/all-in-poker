@@ -118,16 +118,57 @@
             return player;
         }
 
-        public void CreateMasterclass(
-            DateTime date,
-            decimal cost,
-            int minPlayers,
-            int minAge,
-            int maxAge,
-            int locationId,
-            int winnerId)
+        public bool CreatePlayer(PlayerModel player)
         {
-            /*
+            MySqlTransaction trans = null;
+            bool success;
+
+            try
+            {
+                this.Connection.Open();
+                trans = this.Connection.BeginTransaction();
+
+                string middleName = player.MiddleName == "" ? null : player.MiddleName;
+
+                const string InsertString =
+                    @"insert into person (first_name, middle_name, last_name, gender, birth_date) values (@first_name, @middle_name, @last_name, @gender, @birth_date);";
+                MySqlCommand command =
+                    new MySqlCommand(InsertString, this.Connection)
+                    {
+                        Parameters =
+                        {
+                            new MySqlParameter("@first_name", MySqlDbType.VarChar) { Value = player.FirstName },
+                            new MySqlParameter("@birth_date", MySqlDbType.DateTime) { Value = player.BirthDate },
+                            new MySqlParameter("@last_name", MySqlDbType.VarChar) { Value = player.LastName},
+                            new MySqlParameter("@middle_name", MySqlDbType.VarChar) { Value = middleName },
+                            new MySqlParameter("@gender", MySqlDbType.VarChar) { Value = player.Gender }
+                        }
+                    };
+
+                command.Prepare();
+                command.ExecuteNonQuery();
+                trans.Commit();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                success = false;
+                trans?.Rollback();
+                Console.WriteLine("Adding Player failed. " + e.Message);
+                MessageBox.Show("Speler toevoegen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            this.InsertPlayer(player);
+
+            return success;
+        }
+
+        public void InsertPlayer(PlayerModel player)
+        {
             MySqlTransaction trans = null;
 
             try
@@ -135,23 +176,21 @@
                 this.Connection.Open();
                 trans = this.Connection.BeginTransaction();
 
-                const string InsertString = @"INSERT INTO masterclass (date, time, cost, min_players, min_age, max_age, location_id, winner_id) VALUES (@date, @time, @cost, @min_players, @min_age, @location_id, @winner_id)";
-
+                const string InsertString =
+                    @"insert into player(id, postal_code, city, street, house_number, iban_number, rating) value (LAST_INSERT_ID(), @postal_code, @city, @street, @house_number, @iban_number, @rating)";
                 MySqlCommand command =
                     new MySqlCommand(InsertString, this.Connection)
-                    {
-                        Parameters =
                         {
-                            new MySqlParameter("@date", MySqlDbType.DateTime) {Value = date},
-                            new MySqlParameter("@time", MySqlDbType.Time) {Value = date.ToLocalTime()},
-                            new MySqlParameter("@cost", MySqlDbType.Decimal) {Value = cost},
-                            new MySqlParameter("@min_players", MySqlDbType.Int32) {Value = minPlayers},
-                            new MySqlParameter("@min_age", MySqlDbType.Int32) {Value = minAge},
-                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = maxAge},
-                            new MySqlParameter("@location_id", MySqlDbType.Int32) {Value = locationId},
-                            new MySqlParameter("@winner_id", MySqlDbType.Int32) {Value = winnerId}
-                        }
-                    };
+                            Parameters =
+                                {
+                                    new MySqlParameter("@postal_code", MySqlDbType.VarChar) { Value = player.PostalCode },
+                                    new MySqlParameter("@city", MySqlDbType.VarChar) { Value = player.City },
+                                    new MySqlParameter("@street", MySqlDbType.VarChar) { Value = player.Street },
+                                    new MySqlParameter("@house_number", MySqlDbType.VarChar) { Value = player.HouseNumber },
+                                    new MySqlParameter("@iban_number", MySqlDbType.VarChar) { Value = player.IbanNumber },
+                                    new MySqlParameter("@rating", MySqlDbType.Int32) { Value = player.Rating }
+                                }
+                        };
 
                 command.Prepare();
                 command.ExecuteNonQuery();
@@ -160,13 +199,13 @@
             catch (Exception e)
             {
                 trans?.Rollback();
-                Console.WriteLine("Adding Masterclass failed. " + e.Message);
-                MessageBox.Show("Masterclass toevoegen mislukt.");
+                Console.WriteLine("Adding Player failed. " + e.Message);
+                MessageBox.Show("Speler toevoegen is mislukt.");
             }
             finally
             {
                 this.Connection.Close();
-            }*/
+            }
         }
 
         /// <summary>

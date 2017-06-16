@@ -111,8 +111,8 @@
         /// <summary>
         /// Get all Players that are in a tournament
         /// </summary>
-        /// <param name="playerId">ID of the player</param>
-        /// <returns>List of player emails</returns>
+        /// <param name="playerId">ID of the professional</param>
+        /// <returns>List of professional emails</returns>
         public List<string> GetEmails(int playerId)
         {
             List<string> emails = new List<string>();
@@ -146,7 +146,7 @@
         /// <summary>
         /// Get all Players that are in a tournament
         /// </summary>
-        /// <param name="playerId">ID of the player</param>
+        /// <param name="playerId">ID of the professional</param>
         /// <returns>List of phone numbers</returns>
         public List<string> GetPhoneNumbers(int playerId)
         {
@@ -176,6 +176,91 @@
             }
 
             return phonenumbers;
+        }
+
+        public bool CreateProfessional(ProfessionalModel professional)
+        {
+            MySqlTransaction trans = null;
+            bool success;
+
+            try
+            {
+                this.Connection.Open();
+                trans = this.Connection.BeginTransaction();
+
+                string middleName = professional.MiddleName == "" ? null : professional.MiddleName;
+
+                const string InsertString =
+                    @"insert into person (first_name, middle_name, last_name, gender, birth_date) values (@first_name, @middle_name, @last_name, @gender, @birth_date);";
+                MySqlCommand command =
+                    new MySqlCommand(InsertString, this.Connection)
+                        {
+                            Parameters =
+                                {
+                                    new MySqlParameter("@first_name", MySqlDbType.VarChar) { Value = professional.FirstName },
+                                    new MySqlParameter("@birth_date", MySqlDbType.DateTime) { Value = professional.BirthDate },
+                                    new MySqlParameter("@last_name", MySqlDbType.VarChar) { Value = professional.LastName},
+                                    new MySqlParameter("@middle_name", MySqlDbType.VarChar) { Value = middleName },
+                                    new MySqlParameter("@gender", MySqlDbType.VarChar) { Value = professional.Gender }
+                                }
+                        };
+
+                command.Prepare();
+                command.ExecuteNonQuery();
+                trans.Commit();
+                success = true;
+            }
+            catch (Exception e)
+            {
+                success = false;
+                trans?.Rollback();
+                Console.WriteLine("Adding person failed. " + e.Message);
+                MessageBox.Show("Persoon toevoegen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+
+            this.InsertProfessional(professional);
+
+            return success;
+        }
+
+        public void InsertProfessional(ProfessionalModel professional)
+        {
+            MySqlTransaction trans = null;
+
+            try
+            {
+                this.Connection.Open();
+                trans = this.Connection.BeginTransaction();
+
+                const string InsertString =
+                    @"insert into professional(id, nationality) value (LAST_INSERT_ID(), @nationality)";
+                MySqlCommand command =
+                    new MySqlCommand(InsertString, this.Connection)
+                        {
+                            Parameters =
+                                {
+                                    new MySqlParameter("@nationality", MySqlDbType.VarChar) { Value = professional.Nationality }
+                                }
+                        };
+
+                command.Prepare();
+                command.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (Exception e)
+            {
+                trans?.Rollback();
+                Console.WriteLine("Adding professional failed. " + e.Message);
+                MessageBox.Show("Professional toevoegen is mislukt.");
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
         }
     }
 }

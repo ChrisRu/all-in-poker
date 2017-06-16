@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.createTournamentButton = new System.Windows.Forms.Button();
-            this.txtSurName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@
             this.lblMiddleName = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtHouseNumber = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.genderGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +99,7 @@
             this.createTournamentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createTournamentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTournamentButton.ForeColor = System.Drawing.Color.White;
-            this.createTournamentButton.Location = new System.Drawing.Point(301, 530);
+            this.createTournamentButton.Location = new System.Drawing.Point(301, 566);
             this.createTournamentButton.Name = "createTournamentButton";
             this.createTournamentButton.Size = new System.Drawing.Size(149, 39);
             this.createTournamentButton.TabIndex = 14;
@@ -105,13 +107,13 @@
             this.createTournamentButton.UseVisualStyleBackColor = false;
             this.createTournamentButton.Click += new System.EventHandler(this.CreateUserButtonClick);
             // 
-            // txtSurName
+            // txtLastName
             // 
-            this.txtSurName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSurName.Location = new System.Drawing.Point(138, 187);
-            this.txtSurName.Name = "txtSurName";
-            this.txtSurName.Size = new System.Drawing.Size(312, 20);
-            this.txtSurName.TabIndex = 5;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.Location = new System.Drawing.Point(138, 187);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(312, 20);
+            this.txtLastName.TabIndex = 5;
             // 
             // txtAddress
             // 
@@ -124,7 +126,7 @@
             // txtCity
             // 
             this.txtCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCity.Location = new System.Drawing.Point(138, 263);
+            this.txtCity.Location = new System.Drawing.Point(138, 299);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(312, 20);
             this.txtCity.TabIndex = 7;
@@ -145,15 +147,15 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(14, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.Size = new System.Drawing.Size(43, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Adres";
+            this.label4.Text = "Straat";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 263);
+            this.label5.Location = new System.Drawing.Point(14, 299);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 12;
@@ -162,7 +164,7 @@
             // txtPostalCode
             // 
             this.txtPostalCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPostalCode.Location = new System.Drawing.Point(138, 302);
+            this.txtPostalCode.Location = new System.Drawing.Point(138, 338);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(312, 20);
             this.txtPostalCode.TabIndex = 8;
@@ -171,7 +173,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 302);
+            this.label6.Location = new System.Drawing.Point(14, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 16);
             this.label6.TabIndex = 14;
@@ -227,7 +229,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(14, 342);
+            this.label8.Location = new System.Drawing.Point(14, 378);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 16);
             this.label8.TabIndex = 18;
@@ -236,7 +238,7 @@
             // txtPhone
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Location = new System.Drawing.Point(138, 342);
+            this.txtPhone.Location = new System.Drawing.Point(138, 378);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(312, 20);
             this.txtPhone.TabIndex = 9;
@@ -244,7 +246,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Location = new System.Drawing.Point(138, 380);
+            this.txtEmail.Location = new System.Drawing.Point(138, 416);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(312, 20);
             this.txtEmail.TabIndex = 10;
@@ -253,7 +255,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 380);
+            this.label9.Location = new System.Drawing.Point(14, 416);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 16);
             this.label9.TabIndex = 21;
@@ -262,7 +264,7 @@
             // txtIban
             // 
             this.txtIban.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIban.Location = new System.Drawing.Point(139, 457);
+            this.txtIban.Location = new System.Drawing.Point(139, 493);
             this.txtIban.Name = "txtIban";
             this.txtIban.Size = new System.Drawing.Size(312, 20);
             this.txtIban.TabIndex = 11;
@@ -271,7 +273,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 457);
+            this.label10.Location = new System.Drawing.Point(14, 493);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 16);
             this.label10.TabIndex = 23;
@@ -281,7 +283,7 @@
             // 
             this.groupBox1.Controls.Add(this.rdoProfessional);
             this.groupBox1.Controls.Add(this.rdoSpeler);
-            this.groupBox1.Location = new System.Drawing.Point(138, 483);
+            this.groupBox1.Location = new System.Drawing.Point(138, 519);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 34);
             this.groupBox1.TabIndex = 24;
@@ -330,7 +332,7 @@
             // txtNationality
             // 
             this.txtNationality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNationality.Location = new System.Drawing.Point(138, 420);
+            this.txtNationality.Location = new System.Drawing.Point(138, 456);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(312, 20);
             this.txtNationality.TabIndex = 27;
@@ -339,17 +341,37 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 420);
+            this.label11.Location = new System.Drawing.Point(14, 456);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 16);
             this.label11.TabIndex = 28;
             this.label11.Text = "Nationaliteit";
             // 
+            // txtHouseNumber
+            // 
+            this.txtHouseNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHouseNumber.Location = new System.Drawing.Point(139, 261);
+            this.txtHouseNumber.Name = "txtHouseNumber";
+            this.txtHouseNumber.Size = new System.Drawing.Size(312, 20);
+            this.txtHouseNumber.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(14, 261);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 16);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Huis Nummer";
+            // 
             // CreateUserPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 581);
+            this.ClientSize = new System.Drawing.Size(459, 628);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtHouseNumber);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtNationality);
             this.Controls.Add(this.lblMiddleName);
@@ -369,7 +391,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtSurName);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.createTournamentButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -396,7 +418,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button createTournamentButton;
-        private System.Windows.Forms.TextBox txtSurName;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label1;
@@ -421,5 +443,7 @@
         private System.Windows.Forms.Label lblMiddleName;
         private System.Windows.Forms.TextBox txtNationality;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtHouseNumber;
+        private System.Windows.Forms.Label label12;
     }
 }
